@@ -1,0 +1,48 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# Santiago
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of Santiago is to contribute to psychological impacts on travelers by examining the feelings of stress by users of active and motorized modes of transportation.Furthermore, it also investigates the importance that travelers attach to their feelings of stress. More words.
+
+## Installation
+
+You can install the development version of Santiago from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("paezha/bSantiago")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r introduction}
+library(bSantiago)
+data("Santiago_BE")
+```
+
+## basic example code
+
+
+What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+
+```{r summary}
+summary(Santiago_BE)
+```
