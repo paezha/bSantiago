@@ -22,7 +22,7 @@ NULL
 #' @references \url{https://github.com/NiloofarNL/Santiago}
 NULL
 
-#' Santiago_IC.
+#' A data frame with socio-demographic information of respondents to the survey
 #'
 #' A dataset containing socio-demographic information of users of active and motorized modes of transportation in
 #' Santiago sourced from 2016 survey.
@@ -63,9 +63,9 @@ NULL
 #'  ID <- Santiago_IC$ID
 "Santiago_IC"
 
-#'  Santiago_H
+#' A data frame with information about the health of respondents to the survey
 #'
-#'  A dataset containing Health information of users of active and motorized modes of transportation in
+#' A dataset containing Health information of users of active and motorized modes of transportation in
 #'  Santiago sourced from 2016 survey.
 #'
 #'  @format A data frame with 451 rows and 12 variables:
@@ -93,7 +93,7 @@ NULL
 #'  r1A_STRESS <- Santiago_H$r1A_STRESS
 "Santiago_H"
 
-#' Santiago_FE
+#' A data frame with information about the feelings and emotions of respondents to the survey
 #'
 #' A dataset containing information about Feelings and emotions of users of active and motorized modes of transportation in
 #' Santiago sourced from 2016 survey.
@@ -133,7 +133,7 @@ NULL
 #'  r2AA_FREEDOM <- Santiago_FE$r2AA_FREEDOM
 "Santiago_FE"
 
-#' Santiago_RPD
+#' A data frame with information about the reason and planning decision of respondents to the survey
 #'
 #' A dataset containing information about reason and planning decision of users of active and motorized modes of transportation in
 #' Santiago sourced from 2016 survey.
@@ -174,7 +174,7 @@ NULL
 #'  r3A_ACCESS <- Santiago_RPD$r3A_ACCESS
 "Santiago_RPD"
 
-#' Santiago_SI
+#' A data frame with information of the Social interaction of respondents to the survey
 #'
 #' A dataset containing information about Social interaction of users of active and motorized modes of transportation in
 #' Santiago sourced from 2016 survey.
@@ -196,9 +196,9 @@ NULL
 #'  r4A_INTERACC <- Santiago_SI$r4A_INTERACC
 "Santiago_SI"
 
-#' Santiago_NS
+#' A data frame with information about the nature and sustainability from the viewpoint of respondents to the survey
 #'
-#'  A dataset containing information about Nature and sustainability from the viewpoint of users of active and motorized modes of transportation in
+#' A dataset containing information about Nature and sustainability from the viewpoint of users of active and motorized modes of transportation in
 #'  Santiago sourced from 2016 survey.
 #'
 #'  @format A data frame with 451 rows and 10 variables:
@@ -224,9 +224,9 @@ NULL
 #'  r5A_CHANGE <- Santiago_NS$r5A_CHANGE
 "Santiago_NS"
 
-#' Santiago_IS
+#' A data frame with information about the telecommunication and shifting different modes of travel by respondents to the survey
 #'
-#' A dataset containing information about shifting different modes by users of active and motorized modes of transportation in
+#' A dataset containing information about the telecommunication and shifting different modes by users of active and motorized modes of transportation in
 #' Santiago sourced from 2016 survey.
 #'
 #'  @format A data frame with 451 rows and 9 variables:
@@ -291,9 +291,9 @@ NULL
 #'  r7AA_AUTOSPACE <- Santiago_BE$r7AA_AUTOSPACE
 "Santiago_BE"
 
-#' Santiago_TW
+#' A data frame with information about traveling to work by respondents to the survey
 #'
-#' A dataset containing information about Traveling to work users of active and motorized modes of transportation in
+#' A dataset containing information about traveling to work users of active and motorized modes of transportation in
 #' Santiago sourced from 2016 survey.
 #'
 #'  @format A data frame with 451 rows and 7 variables:

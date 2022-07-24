@@ -25,7 +25,7 @@ The goal of Santiago is to contribute to psychological impacts on travelers by e
 You can install the development version of Santiago from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("remotes")
+install.packages("remotes")
 remotes::install_github("paezha/bSantiago")
 ```
 
