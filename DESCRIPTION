@@ -5,7 +5,7 @@ Authors@R:
     c(person("Antonio", "Paez", , "paezha@mcmaster.ca", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-6912-9919")),
            person("Niloofar", "Nalaee", , "nalaeen@mcmaster.ca", role = c("aut"),
-           comment = c(ORCID = "")),
+           comment = c(ORCID = "0000-0003-4344-0412")),
            person("Beatriz", "Mella Lira", , "beatriz.mellalira@uc.cl", role = c("aut"),
            comment = c(ORCID = "0000-0002-5248-2684")))
 Description: A dataset containing information about socio-demographics, health-related, perceptions and travel behaviour, travel choices and planning, social interaction factors, built environment of users of active and motorized modes of transportation.
