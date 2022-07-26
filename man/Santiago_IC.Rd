@@ -11,8 +11,8 @@ A data frame with 451 rows and 23 variables:
 \item{ORIGIN}{Origin of travel}
 \item{r0A_COMMUNE}{Commune of residence}
 \item{r0B_MACR_ZONE}{Macro area of residence}
-\item{r0B_CALLE_1}{Intersections close to your home}
-\item{r0B_CALLE_2}{Intersections close to your home}
+\item{r0B_STREET_1}{Intersections close to your home}
+\item{r0B_STREET_2}{Intersections close to your home}
 \item{r0C_GENDER}{Gender of respondents in Santiago in 2016}
 \item{r0D_AGE}{Age of respondents in Santiago in 2016}
 \item{r0E_WEIGHT}{Weight of respondents in Santiago in 2016}
