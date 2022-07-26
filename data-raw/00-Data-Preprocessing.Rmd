@@ -445,7 +445,7 @@ Santiago_NS <- SantiagoSurvey_trans %>%
 ```{r ITC AND SHIFTING}
 Santiago_IS <- SantiagoSurvey_trans %>%
   dplyr::select(starts_with("r6")) %>%
-mutate(r6A_SHIFT = factor(r6A_SHIFT, 
+  mutate(r6A_SHIFT = factor(r6A_SHIFT, 
                              levels = c("A", "B"), 
                              labels = c("YES", "NO"))) %>%
   mutate(r6B_QUALITY_SHIFT = factor(r6B_QUALITY_SHIFT, 
