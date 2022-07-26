@@ -3,7 +3,7 @@
 \docType{data}
 \name{Santiago_SI}
 \alias{Santiago_SI}
-\title{Santiago_SI}
+\title{A data frame with information of the Social interaction of respondents to the survey}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 451 rows and 4 columns.
 }

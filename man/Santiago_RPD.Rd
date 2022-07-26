@@ -3,7 +3,7 @@
 \docType{data}
 \name{Santiago_RPD}
 \alias{Santiago_RPD}
-\title{Santiago_RPD}
+\title{A data frame with information about the reason and planning decision of respondents to the survey}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 451 rows and 23 columns.
 }
@@ -28,12 +28,12 @@ Santiago sourced from 2016 survey.
 \item{r3CD_SPO}{How often do respondents perform these activities? Sport activities}
 \item{r3CE_GROC}{How often do respondents perform these activities? Grocery/Food shopping}
 \item{r3CF_SOC}{How often do respondents perform these activities? Social activities}
-\item{r3DA_FAM}{NEEDS DESCRIPTION}
-\item{r3DB_REC}{NEEDS DESCRIPTION}
-\item{r3DC_CUL}{NEEDS DESCRIPTION}
-\item{r3DD_SPO}{NEEDS DESCRIPTION}
-\item{r3DE_GROC}{NEEDS DESCRIPTION}
-\item{r3DF_SOC}{NEEDS DESCRIPTION}
+\item{r3DA_FAM}{What is the importance respondents assign to these aspects? Visiting family and friends}
+\item{r3DB_REC}{What is the importance respondents assign to these aspects? Recreational activities}
+\item{r3DC_CUL}{What is the importance respondents assign to these aspects? Cultural activities}
+\item{r3DD_SPO}{What is the importance respondents assign to these aspects? Sport activities}
+\item{r3DE_GROC}{What is the importance respondents assign to these aspects? Grocery/Food shopping}
+\item{r3DF_SOC}{What is the importance respondents assign to these aspects? Social activities}
 \item{r3E_OPTIONS}{How important do respondents consider having several options to use different modes of transport?}
 \item{r3F_ACCESS_DEPENDENCY}{How much does respondents' quality of life depend on the access respondents currently have to public transport?}
 \item{r3G_QUALITY_INCRS}{How much do respondents think their quality of life would increase if they have better access to public transport?}

@@ -3,7 +3,7 @@
 \docType{data}
 \name{Santiago_TW}
 \alias{Santiago_TW}
-\title{Santiago_TW}
+\title{A data frame with information about traveling to work by respondents to the survey}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 451 rows and 7 columns.
 }
@@ -14,7 +14,7 @@ A face to face survey considering pre-census 2012
 data(Santiago_TW)
 }
 \description{
-A dataset containing information about Traveling to work users of active and motorized modes of transportation in
+A dataset containing information about traveling to work users of active and motorized modes of transportation in
 Santiago sourced from 2016 survey.
 }
 \details{

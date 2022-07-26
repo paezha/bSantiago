@@ -3,7 +3,7 @@
 \docType{data}
 \name{Santiago_IC}
 \alias{Santiago_IC}
-\title{Santiago_IC.}
+\title{A data frame with socio-demographic information of respondents to the survey}
 \format{
 A data frame with 451 rows and 23 variables:
 \describe{

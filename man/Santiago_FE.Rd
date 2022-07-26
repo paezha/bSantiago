@@ -3,7 +3,7 @@
 \docType{data}
 \name{Santiago_FE}
 \alias{Santiago_FE}
-\title{Santiago_FE}
+\title{A data frame with information about the feelings and emotions of respondents to the survey}
 \format{
 An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 451 rows and 22 columns.
 }
