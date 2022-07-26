@@ -1,16 +1,17 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Santiago
+# bSantiago
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of Santiago is to contribute to psychological impacts on
-travelers by examining the feelings of stress by users of active and
-motorized modes of transportation.Furthermore, it also investigates the
-importance that travelers attach to their feelings of stress. More
-words.
+bSantiago is a data package with the results of a 2016 survey conducted
+in Santiago, Chile, designed to study the health and psychological
+status of residents in the city with respect to their daily
+commuting/travel experience. The survey provides data to examine
+feelings and values with respect to active and motorized modes of
+transportation.
 
 ## Installation
 
@@ -18,23 +19,22 @@ You can install the development version of Santiago from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("remotes")
+install.packages("remotes")
 remotes::install_github("paezha/bSantiago")
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This example shows how to load one of the data tables included in the
+package:
 
 ``` r
 library(bSantiago)
 data("Santiago_BE")
 ```
 
-## basic example code
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+The data table `Santiago_BE` includes information about the built
+environment around the place of residence of respondents:
 
 ``` r
 summary(Santiago_BE)
