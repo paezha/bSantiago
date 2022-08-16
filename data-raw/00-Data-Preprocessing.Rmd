@@ -594,3 +594,61 @@ usethis::use_data(Santiago_TW,
                   overwrite = TRUE)
 
 ```
+
+```{r prep}
+library(ggplot2)
+
+```
+
+```{r 1}
+SantiagoSurvey_trans %>%                      # begin with linelist
+  count(r0D_AGE, r0J_INCOME) %>%     # group and tabulate counts by two columns
+   mutate(r0D_AGE = factor(r0D_AGE, 
+                             levels = c("A", "B", "C", "D", "E", "F"), 
+                             labels = c("Less18", "18to24", "25to34", "35to54","55to64", "65more")))   %>%
+  mutate(r0J_INCOME = factor(r0J_INCOME, 
+                             levels = c("A", "B", "C","D", "E", "F"), 
+                             labels = c("Less423", "423to639", "639to977", "977to1550", "1550to2380","2380more"))) %>% 
+  ggplot()+                       # pass new data frame to ggplot
+    geom_col(                     # create bar plot
+      mapping = aes(   
+        x = r0J_INCOME,              # map outcome to x-axis
+        fill = r0D_AGE,           # map age_cat to the fill
+        y = n))                   # map the counts column `n` to the height
+```
+```{r 2}
+
+SantiagoSurvey_trans %>%                      
+  count(r1A_STRESS, r0J_INCOME) %>%     # group and tabulate counts by two columns
+  mutate(r1A_STRESS = factor(r1A_STRESS, 
+                             levels = c("A", "B", "C", "D", "E"), 
+                             labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"))) %>%
+  mutate(r0J_INCOME = factor(r0J_INCOME, 
+                             levels = c("A", "B", "C","D", "E", "F"), 
+                             labels = c("Less423", "423to639", "639to977", "977to1550", "1550to2380","2380more"))) %>% 
+  ggplot()+                       # pass new data frame to ggplot
+    geom_col(                     # create bar plot
+      mapping = aes(   
+        x = r0J_INCOME,              # map outcome to x-axis
+        fill = r1A_STRESS,           # map age_cat to the fill
+        y = n))                   # map the counts column `n` to the height
+
+```
+```{r 4}
+SantiagoSurvey_trans %>%                      # begin with linelist
+  count(r2AD_ENJOYMENT, r0P_MODE1 ) %>%     # group and tabulate counts by two columns
+  mutate(r2AD_ENJOYMENT  = factor(r2AD_ENJOYMENT , 
+                             levels = c("A", "B", "C","D", "E", "F", "G", "H"), 
+                             labels = c("CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"))) %>%
+   mutate(r0P_MODE1  = factor(r0P_MODE1 , 
+                             levels = c("A", "B", "C","D", "E", "F", "G", "H"), 
+                             labels = c("CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"))) %>% 
+  ggplot()+                       # pass new data frame to ggplot
+    geom_col(                     # create bar plot
+      mapping = aes(   
+        x = r0P_MODE1,              # map outcome to x-axis
+        fill = r2AD_ENJOYMENT,           # map age_cat to the fill
+        y = n))  
+```
+
+
