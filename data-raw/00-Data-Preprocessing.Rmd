@@ -367,7 +367,8 @@ Santiago_RPD <- SantiagoSurvey_trans %>%
                              labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"))) %>%
   mutate(r3G_QUALITY_INCRS = factor(r3G_QUALITY_INCRS, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"))) %>%
+                             labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"),
+                             ordered = TRUE)) %>%
   mutate(r3H_ECON = factor(r3H_ECON, 
                              levels = c("A", "B", "C","D", "E", "F", "G", "H", "TODAS"), 
                              labels = c("CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK", "ALL"))) %>%
@@ -479,7 +480,8 @@ Santiago_BE <- SantiagoSurvey_trans %>%
   dplyr::select(starts_with("r7")) %>%
 mutate(r7AA_AUTOSPACE = factor(r7AA_AUTOSPACE, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"))) %>%
+                             labels = c("POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"),
+                             ordered = TRUE)) %>%
   mutate(r7AB_PARKING_NUMB = factor(r7AB_PARKING_NUMB, 
                              levels = c("1", "2", "3", "4", "5"), 
                              labels = c("POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"))) %>%

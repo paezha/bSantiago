@@ -1,0 +1,42 @@
+---
+title: "A dataset to study equity in individual travel behavior and choices in Santiago, Chile"
+author: "Niloofar Nalaee, Beatriz Mella Lira, Antonio Paez"
+format: docx
+---
+
+```{r}
+#| label: load-packages
+#| echo: false
+library(bSantiago) # A data package with the results of a travel and well-being survey conducted in Santiago in 2016
+library(skimr) # Compact and Flexible Summaries of Data
+```
+
+# Abstract
+
+The dataset presented in this article would be advantageous to give intuition about the experience of daily travel and its psychological impact on travelers, ranging from positive feelings of enjoyment in some to the sensation of stress in many others. This dataset particularly examines the feelings of stress by users of active and motorized modes of transportation. Furthermore, it also investigates the importance that travelers attach to their feelings of stress. This allows us to explore the concept of “limited horizons”, the normalization of subpar experiences by those less able to adapt. This data provides information about commuters in terms of their individual characteristics, health-related factors while using transportation modes, feelings and emotions towards different modes of travel, own decisions, social interaction, attitudes towards nature and sustainability, shifts between modes, attitudes towards built environment, traveling to work. Data for the research are drawn from a survey conducted in Santiago, Chile, based on a quota-sampling method based on the information from Pre-Census of 2012, and in total, 451 persons validly completed the survey. Describe the statistics and conclude suggest that
+
+## Key words 
+
+## Specifications Table
+
+See @tbl-specifications for details of the data set.
+
+| Default | Left |
+|:--------|:-----|
+| Subject area      | Transportation, Geography, Public Health and Health Policy, Urban development   |
+| More specific subject area     | Transport inequalities, Stress and limited horizons, Travel behavior, Global South  |
+| Type of data       | R Data Package    |
+
+: Specifications table {#tbl-specifications}
+
+## Value of the data 
+
+## Running Code
+
+```{r}
+#| label: Built-Environment-Descriptives
+#| echo: false
+skim(Santiago_BE)
+```
+
+

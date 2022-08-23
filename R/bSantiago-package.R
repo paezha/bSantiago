@@ -231,7 +231,7 @@ NULL
 #'
 #'  @format A data frame with 451 rows and 9 variables:
 #' \describe{
-#'   \item{r6A_SHIFT}{Do respondents shift between transport modes on their usual trips?}
+#'   \item{r6A_SHIFT}{Do respondents shift between transport modes on their usual trips? Responses are "YES"/"NO"}
 #'   \item{r6B_QUALITY_SHIFT}{If YES in the previous question, how is the quality of these interchanges?}
 #'   \item{r6CA_WAITING}{How would respondents assess their regular trips in terms of: Waiting times}
 #'   \item{r6CB_TIME_SHIFT}{How would respondents assess their regular trips in terms of: Time of shifts}
@@ -258,7 +258,7 @@ NULL
 #'
 #'  @format A data frame with 451 rows and 22 variables:
 #' \describe{
-#'   \item{r7AA_AUTOSPACE}{How do respondents evaluate the following aspects near their home? Space for cars}
+#'   \item{r7AA_AUTOSPACE}{How do respondents evaluate the following aspects near their home? Space for cars; this variable is an ordered factor with five levels, "POOR", "FAIR",...}
 #'   \item{r7AB_PARKING_NUMB}{How do respondents evaluate the following aspects near their home? Amount of parking spaces}
 #'   \item{r7AC_QHIWAY}{How do respondents evaluate the following aspects near their home? Quality of highways}
 #'   \item{r7AD_PEDESTRN}{How do respondents evaluate the following aspects near their home? Space for pedestrians}
