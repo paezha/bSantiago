@@ -672,8 +672,5 @@ ggplot(data = SantiagoSurvey_trans) +
 ```
 ```{r 7}
 
-ggbarplot( data = SantiagoSurvey_trans,
-           df, x = "Hair", y = "Freq",
-          color = "Eye", position = position_dodge(),
-          palette = c("brown", "blue", "gold", "green"))
+
 ```
