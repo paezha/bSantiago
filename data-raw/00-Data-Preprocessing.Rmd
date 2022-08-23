@@ -594,3 +594,84 @@ usethis::use_data(Santiago_TW,
                   overwrite = TRUE)
 
 ```
+
+```{r prep}
+library(ggplot2)
+
+```
+
+```{r 1}
+SantiagoSurvey_trans %>%                      # begin with linelist
+  count(r0C_GENDER, r0J_INCOME) %>%     # group and tabulate counts by two columns
+       mutate(r0C_GENDER = factor(r0C_GENDER, 
+                             levels = c("A", "B"), 
+                             labels = c("FEMALE", "MALE"))) %>%
+  mutate(r0J_INCOME = factor(r0J_INCOME, 
+                             levels = c("A", "B", "C","D", "E", "F"), 
+                             labels = c("Less423", "423to639", "639to977", "977to1550", "1550to2380","2380more"))) %>% 
+  ggplot()+                       # pass new data frame to ggplot
+    geom_col(                     # create bar plot
+      mapping = aes(   
+        x = r0J_INCOME,              # map outcome to x-axis
+        fill = r0C_GENDER,           # map age_cat to the fill
+        y = n))                   # map the counts column `n` to the height
+```
+```{r 2}
+
+SantiagoSurvey_trans %>%                      # begin with linelist
+  count(r0P_MODE1, r0J_INCOME) %>%     # group and tabulate counts by two columns
+   mutate(r0P_MODE1  = factor(r0P_MODE1 , 
+                             levels = c("A", "B", "C","D", "E", "F", "G", "H"), 
+                             labels = c("CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"))) %>%
+  mutate(r0J_INCOME = factor(r0J_INCOME, 
+                             levels = c("A", "B", "C","D", "E", "F"), 
+                             labels = c("Less423", "423to639", "639to977", "977to1550", "1550to2380","2380more"))) %>% 
+  ggplot()+                       # pass new data frame to ggplot
+    geom_col(                     # create bar plot
+      mapping = aes(   
+        x = r0J_INCOME,              # map outcome to x-axis
+        fill = r0P_MODE1,           # map age_cat to the fill
+        y = n))                   # map the counts column `n` to the height
+
+```
+
+```{r 5}
+ggplot(data = SantiagoSurvey_trans) + 
+  (aes(x = r0C_GENDER,
+       levels = c("A","B"),
+labels = c("FEMALE", "MALE"),
+       fill = r0P_MODE1)) +
+  geom_bar(position = "fill") +
+  labs(y = "Proportion",
+       x = "r1GA_STRESS", 
+       fill = "r0P_MODE1") + 
+  facet_wrap(~r1GA_STRESS)
+
+SantiagoSurvey_trans$r0C_GENDER <- factor(SantiagoSurvey_trans$r0C_GENDER,
+levels = c("A","B"),
+labels = c("FEMALE", "MALE"))
+
+SantiagoSurvey_trans$r0P_MODE1 <- factor(SantiagoSurvey_trans$r0P_MODE1,
+levels = c( "A", "B", "C","D", "E", "F", "G", "H"),
+labels = c("CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"))
+```
+
+
+
+```{r 4}
+ggplot(data = SantiagoSurvey_trans) + 
+  (aes(x = r0C_GENDER, 
+       fill = r0P_MODE1)) +
+  geom_bar(position = "fill") +
+  labs(y = "Proportion",
+       x = "r1GA_STRESS", 
+       fill = "r0P_MODE1") + 
+  facet_wrap(~r1GA_STRESS)
+```
+```{r 7}
+
+ggbarplot( data = SantiagoSurvey_trans,
+           df, x = "Hair", y = "Freq",
+          color = "Eye", position = position_dodge(),
+          palette = c("brown", "blue", "gold", "green"))
+```
