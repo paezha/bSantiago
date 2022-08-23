@@ -31,6 +31,11 @@ See @tbl-specifications for details of the data set.
 
 ## Value of the data 
 
+A large body of the data has made inroads investigating psychological impact on travelers ranging from positive feelings of enjoyment in some to the sensation of stress in many others that can affect the effectiveness of policy measure (in the case of positive feelings) and are known to affect health outcomes (in the case of stress). This would be interesting for those with transport policies concerns.
+Dataset contribute to psychological impact on travelers both active and motorized modes of transportation to examines not only the feeling of stress, but also how these effects are experienced by travelers and investigates the importance that travelers attach to their feelings of stress which makes it valuable for researchers who focused on public sector development and health-related policies.
+This dataset allows us to explore the concept of “limited horizons”, the normalization of subpar experiences by those less able to adapt, an advantageous resource for further research regarding transport inequalities, index of stress, travel behavior in the region or even as a representative for other areas with similar attributes.
+The dataset provides a wide range of travel-related issues such as socio-demographics, health-related, perceptions and travel behavior, travel choices and planning, social interaction factors, built environment, among others.  
+
 ## Running Code
 
 ```{r}
