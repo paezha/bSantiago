@@ -35,23 +35,23 @@ NULL
 #'   \item{r0B_MACR_ZONE}{Macro area of residence}
 #'   \item{r0B_STREET_1}{Intersections close to your home}
 #'   \item{r0B_STREET_2}{Intersections close to your home}
-#'   \item{r0C_GENDER}{Gender of respondents in Santiago in 2016}
-#'   \item{r0D_AGE}{Age of respondents in Santiago in 2016}
+#'   \item{r0C_GENDER}{Gender of respondents in Santiago in 2016; this variable is an out of order factor with two levels, "FEMALE" and "MALE"}
+#'   \item{r0D_AGE}{Age of respondents in Santiago in 2016; this variable is an ordered factor with Six levels, "Less18", "18to24", "25to34", "35to54", "55to64", "65more"}
 #'   \item{r0E_WEIGHT}{Weight of respondents in Santiago in 2016}
 #'   \item{r0F_HEIGHT}{Height of respondents in Santiago in 2016}
-#'   \item{r0G_EDUCATION}{Level of education of respondents in Santiago in 2016}
-#'   \item{r0H_OCCUPATION}{Occupation of respondents in Santiago in 2016}
+#'   \item{r0G_EDUCATION}{Level of education of respondents in Santiago in 2016; this variable is an ordered factor with five levels, "ELEMENTARY", "SECUNDARY", "PROFESS_TECH", "COLLEGE", "POSTGRAD"}
+#'   \item{r0H_OCCUPATION}{Occupation of respondents in Santiago in 2016; this variable is an out of order factor with nine levels, "FULL_TIME", "PART_TIME", "SELF_EMPLOYED", "UNEMPLOYED", "HOME_TAKER", "STUDENT", "STUDENT_WORK", "RETIRED", "OTHER"}
 #'   \item{r0I_COM_TRAB_1}{Communes where you perform your work/studies/regular trips}
 #'   \item{r0I_COM_TRAB_2}{Communes where you perform your work/studies/regular trips}
-#'   \item{r0J_INCOME}{Level of income of respondents in Santiago in 2016}
+#'   \item{r0J_INCOME}{Level of income of respondents in Santiago in 2016; this variable is an ordered factor with six levels, "Less423", "423to639", "639to977", "977to1550", "1550to2380", "2380more"}
 #'   \item{r0K_ADULTS}{Number of adults living at home}
 #'   \item{r0L_CHILDREN}{Number of children iving at home}
-#'   \item{r0N_DRIVING_LICENSE}{Having driving licence}
-#'   \item{r0M_DISABILITY}{Being disable or not }
+#'   \item{r0N_DRIVING_LICENSE}{Having driving licence; this variable is an out of order factor with two levels, "YES", "NO"}
+#'   \item{r0M_DISABILITY}{Being disable or not; this variable is an out of order factor with two levels, "YES", "NO"}
 #'   \item{r0O_TYPE_DIS}{Type of disability}
-#'   \item{r0P_MODE1}{Main transport mode used by respondents in Santiago in 2016}
-#'   \item{r0Q_MODE2}{Secondary transport mode used by respondents in Santiago in 2016}
-#'   \item{r0R_MODE3}{Other transport mode to add used by respondents in Santiago in 2016}
+#'   \item{r0P_MODE1}{Main transport mode used by respondents in Santiago in 2016; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r0Q_MODE2}{Secondary transport mode used by respondents in Santiago in 2016; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r0R_MODE3}{Other transport mode to add used by respondents in Santiago in 2016; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
 #'}
 #' @docType data
 #' @keywords socio-demographic information of travelers in Santiago 2016.
@@ -70,18 +70,18 @@ NULL
 #'
 #'  @format A data frame with 451 rows and 12 variables:
 #' \describe{
-#'   \item{r1A_STRESS}{How do respondents assess the level of stress they experience on their usual trips?}
-#'   \item{r1B_EFFORT}{How do respondents assess the physical effort they make in their travels?}
-#'   \item{r1C_PROXIMITY}{How do respondents assess their level of proximity (proximity) to other transport users on their usual trips?}
-#'   \item{r1D_CONTAM}{How do respondents assess the level of environmental pollution they experience on their usual trips?}
-#'   \item{r1E_SAFETY}{How do respondents assess the level of safety (not being assaulted or harassed) that they experience on their usual trips?}
-#'   \item{r1F_COMFORT}{How do respondents assess the level of comfort they experience on their usual trips?}
-#'   \item{r1GA_STRESS}{What is the importance respondents assign to these aspects? Levels of stress}
-#'   \item{r1GB_EFFORT}{What is the importance respondents assign to these aspects? Levels of physical effort}
-#'   \item{r1GC_PROXIMITY}{What is the importance respondents assign to these aspects? Levels of proximity to other transport users}
-#'   \item{r1GD_CONTAM}{What is the importance respondents assign to these aspects? Levels of (perceived) air pollution}
-#'   \item{r1GE_SAFETY}{What is the importance respondents assign to these aspects? Levels of safety}
-#'   \item{r1GF_COMFORT}{What is the importance respondents assign to these aspects? Levels of comfort}
+#'   \item{r1A_STRESS}{How do respondents assess the level of stress they experience on their usual trips?; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+#'   \item{r1B_EFFORT}{How do respondents assess the physical effort they make in their travels?; this variable is an ordered factor with five levels, "VERY NEGATIVE", "SLIGHTLY NEGATIVE", "NEUTRAL", "MOSTLY POSITIVE", "COMPLETELY POSITVE"}
+#'   \item{r1C_PROXIMITY}{How do respondents assess their level of proximity (proximity) to other transport users on their usual trips?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r1D_CONTAM}{How do respondents assess the level of environmental pollution they experience on their usual trips?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r1E_SAFETY}{How do respondents assess the level of safety (not being assaulted or harassed) that they experience on their usual trips?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r1F_COMFORT}{How do respondents assess the level of comfort they experience on their usual trips?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r1GA_STRESS}{What is the importance respondents assign to these aspects? Levels of stress; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r1GB_EFFORT}{What is the importance respondents assign to these aspects? Levels of physical effort; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r1GC_PROXIMITY}{What is the importance respondents assign to these aspects? Levels of proximity to other transport users; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r1GD_CONTAM}{What is the importance respondents assign to these aspects? Levels of (perceived) air pollution; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r1GE_SAFETY}{What is the importance respondents assign to these aspects? Levels of safety; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r1GF_COMFORT}{What is the importance respondents assign to these aspects? Levels of comfort; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 #'}
 #' @docType data
 #' @keywords health information of travelers in Santiago 2016.
@@ -100,28 +100,28 @@ NULL
 #'
 #'  @format A data frame with 451 rows and 22 variables:
 #' \describe{
-#'   \item{r2AA_FREEDOM}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Freedom}
-#'   \item{r2AB_UNSAFETY}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Unsafety}
-#'   \item{r2AC_FUNCTIONALITY}{indicatation of of the modes of transport that respondents relate to the following feelings and concepts: Functionality}
-#'   \item{r2AD_ENJOYMENT}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Enjoyment}
-#'   \item{r2AE_LOWCOST}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Low cost}
-#'   \item{r2AF_POVERTY}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Poverty}
-#'   \item{r2AG_SAFETY}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Safety}
-#'   \item{r2AH_WASTE_OF_TIME}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Waste of time}
-#'   \item{r2AI_UNPUNCTUALITY}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Unpunctuality}
-#'   \item{r2AJ_CONGEST}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Congestion}
-#'   \item{r2AK_EFFICIENCY}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Efficiency}
-#'   \item{r2AL_LUXURY}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Luxury}
-#'   \item{r2AM_ENVIRONMENT}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Environmental care}
-#'   \item{r2AN_HEALTH}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Health}
-#'   \item{r2AO_INTSOCI}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Social Interaction}
-#'   \item{r2AP_UNCOMFT}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Uncomfort}
-#'   \item{r2AQ_HAPPINESS}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Happiness}
-#'   \item{r2AR_STATUS}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Status}
-#'   \item{r2B_DAILY_ENJOY}{How much do respondents usually enjoy traveling to their daily activities?}
-#'   \item{r2C_IMP_QUALITY}{What level of importance do respondents attribute to the quality of their trips?}
-#'   \item{r2D_AFFECT}{What does affect the most to their travel experience?}
-#'   \item{r2E_FACILIT}{What does help respondents the most to their travel experience?}
+#'   \item{r2AA_FREEDOM}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Freedom; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r2AB_UNSAFETY}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Unsafety; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r2AC_FUNCTIONALITY}{indicatation of of the modes of transport that respondents relate to the following feelings and concepts: Functionality; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r2AD_ENJOYMENT}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Enjoyment; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r2AE_LOWCOST}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Low cost; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r2AF_POVERTY}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Poverty; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r2AG_SAFETY}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Safety; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r2AH_WASTE_OF_TIME}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Waste of time; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r2AI_UNPUNCTUALITY}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Unpunctuality; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r2AJ_CONGEST}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Congestion; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r2AK_EFFICIENCY}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Efficiency; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r2AL_LUXURY}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Luxury; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r2AM_ENVIRONMENT}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Environmental care; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r2AN_HEALTH}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Health; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r2AO_INTSOCI}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Social Interaction; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r2AP_UNCOMFT}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Uncomfort; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r2AQ_HAPPINESS}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Happiness; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r2AR_STATUS}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Status; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r2B_DAILY_ENJOY}{How much do respondents usually enjoy traveling to their daily activities?; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+#'   \item{r2C_IMP_QUALITY}{What level of importance do respondents attribute to the quality of their trips?; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+#'   \item{r2D_AFFECT}{What does affect the most to their travel experience?; this variable is an out of order factor with eight levels, "LACK OF COMFORT", "LACK OF SAFETY", "POOR QUALITY OF STREETS", "CROWDNESS OF PASSENGERS", "DISABILITY OR REDUCED MOBILITY", "TRAVEL TIME", "ALL OF THEM", "OTHER"}
+#'   \item{r2E_FACILIT}{What does help respondents the most to their travel experience?; this variable is an out of order factor with eight levels, "BETTER COMFORT", "BETTER SAFETY", "BETTER QULALITY ON STREETS", "LESS CROWDNESS OF PASSENGERS", "IMPROVEMENT ON ACCESIBILITY", "REDUCTION OF TIME TRAVEL", "ALL OF THEM", "OTHER"}
 #'}
 #' @docType data
 #' @keywords feelings and emotions of travelers in Santiago 2016.
