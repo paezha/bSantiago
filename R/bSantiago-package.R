@@ -140,29 +140,29 @@ NULL
 #'
 #'  @format A data frame with 451 rows and 23 variables:
 #' \describe{
-#'   \item{r3A_ACCESS}{How do respondents assess their access to employment opportunities through public transport?}
-#'   \item{r3B_ACC_EM}{How does their access to public transport allows you to access the employment you need?}
-#'   \item{r3CA_FAM}{How often do respondents perform these activities? Visiting family and friends}
-#'   \item{r3CB_REC}{How often do respondents perform these activities? Recreational activities}
-#'   \item{r3CC_CUL}{How often do respondents perform these activities? Cultural activities}
-#'   \item{r3CD_SPO}{How often do respondents perform these activities? Sport activities}
-#'   \item{r3CE_GROC}{How often do respondents perform these activities? Grocery/Food shopping}
-#'   \item{r3CF_SOC}{How often do respondents perform these activities? Social activities}
-#'   \item{r3DA_FAM}{What is the importance respondents assign to these aspects? Visiting family and friends}
-#'   \item{r3DB_REC}{What is the importance respondents assign to these aspects? Recreational activities}
-#'   \item{r3DC_CUL}{What is the importance respondents assign to these aspects? Cultural activities}
-#'   \item{r3DD_SPO}{What is the importance respondents assign to these aspects? Sport activities}
-#'   \item{r3DE_GROC}{What is the importance respondents assign to these aspects? Grocery/Food shopping}
-#'   \item{r3DF_SOC}{What is the importance respondents assign to these aspects? Social activities}
-#'   \item{r3E_OPTIONS}{How important do respondents consider having several options to use different modes of transport?}
-#'   \item{r3F_ACCESS_DEPENDENCY}{How much does respondents' quality of life depend on the access respondents currently have to public transport?}
-#'   \item{r3G_QUALITY_INCRS}{How much do respondents think their quality of life would increase if they have better access to public transport?}
-#'   \item{r3H_ECON}{Which transport modes are affordable for respondents and their family?}
-#'   \item{r3I_NOECON}{Which transport modes are economically unaffordable?}
-#'   \item{r3JA_OFIC}{How important it is to improve the following aspects of the public transport system? Improve access to offices and comerccial areas}
-#'   \item{r3JB_MODES}{How important it is to improve the following aspects of the public transport system? Improve disponibility of different transport modes}
-#'   \item{r3JC_COMFORT}{How important it is to improve the following aspects of the public transport system? Improve comfort for the use of public transport}
-#'   \item{r3JD_OTHERS}{How important it is to improve the following aspects of the public transport system? Incorporate other modes to the fare system}
+#'   \item{r3A_ACCESS}{How do respondents assess their access to employment opportunities through public transport?; this variable is an ordered factor with five levels,"POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r3B_ACC_EM}{How does their access to public transport allows you to access the employment you need?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r3CA_FAM}{How often do respondents perform these activities? Visiting family and friends; this variable is an ordered factor with five levels, "NEVER", "RARELY", "SOMETIMES", "OFTEN", "ALWAYS"}
+#'   \item{r3CB_REC}{How often do respondents perform these activities? Recreational activities; this variable is an ordered factor with five levels, "NEVER", "RARELY", "SOMETIMES", "OFTEN", "ALWAYS"}
+#'   \item{r3CC_CUL}{How often do respondents perform these activities? Cultural activities; this variable is an ordered factor with five levels, "NEVER", "RARELY", "SOMETIMES", "OFTEN", "ALWAYS"}
+#'   \item{r3CD_SPO}{How often do respondents perform these activities? Sport activities; this variable is an ordered factor with five levels, "NEVER", "RARELY", "SOMETIMES", "OFTEN", "ALWAYS"}
+#'   \item{r3CE_GROC}{How often do respondents perform these activities? Grocery/Food shopping; this variable is an ordered factor with five levels, "NEVER", "RARELY", "SOMETIMES", "OFTEN", "ALWAYS"}
+#'   \item{r3CF_SOC}{How often do respondents perform these activities? Social activities; this variable is an ordered factor with five levels, "NEVER", "RARELY", "SOMETIMES", "OFTEN", "ALWAYS"}
+#'   \item{r3DA_FAM}{What is the importance respondents assign to these aspects? Visiting family and friends; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+#'   \item{r3DB_REC}{What is the importance respondents assign to these aspects? Recreational activities; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+#'   \item{r3DC_CUL}{What is the importance respondents assign to these aspects? Cultural activities; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+#'   \item{r3DD_SPO}{What is the importance respondents assign to these aspects? Sport activities; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+#'   \item{r3DE_GROC}{What is the importance respondents assign to these aspects? Grocery/Food shopping; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+#'   \item{r3DF_SOC}{What is the importance respondents assign to these aspects? Social activities; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+#'   \item{r3E_OPTIONS}{How important do respondents consider having several options to use different modes of transport?; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r3F_ACCESS_DEPENDENCY}{How much does respondents' quality of life depend on the access respondents currently have to public transport?; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+#'   \item{r3G_QUALITY_INCRS}{How much do respondents think their quality of life would increase if they have better access to public transport?; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+#'   \item{r3H_ECON}{Which transport modes are affordable for respondents and their family?; this variable is an out of order factor with eight levels, "CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r3I_NOECON}{Which transport modes are economically unaffordable?; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r3JA_OFIC}{How important it is to improve the following aspects of the public transport system? Improve access to offices and comerccial areas; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r3JB_MODES}{How important it is to improve the following aspects of the public transport system? Improve disponibility of different transport modes; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r3JC_COMFORT}{How important it is to improve the following aspects of the public transport system? Improve comfort for the use of public transport; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r3JD_OTHERS}{How important it is to improve the following aspects of the public transport system? Incorporate other modes to the fare system; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 #'   }
 #' @docType data
 #' @keywords reason and planning decision of travelers in Santiago 2016.
@@ -181,10 +181,10 @@ NULL
 #'
 #'  @format A data frame with 451 rows and 4 variables:
 #' \describe{
-#'   \item{r4A_INTERACC}{How do respondents rate the level of interaction they have with other people during their usual trips?}
-#'   \item{r4B_PERSON}{How important do respondents consider the presence of other people during their usual travels?}
-#'   \item{r4C_DISCRIM}{Have respondents ever felt discriminated while traveling in any mode of transport?}
-#'   \item{r4D_MODE}{If their answer was yes (respondents have felt discriminated),indication of the mode(s) is required}
+#'   \item{r4A_INTERACC}{How do respondents rate the level of interaction they have with other people during their usual trips?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r4B_PERSON}{How important do respondents consider the presence of other people during their usual travels?; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r4C_DISCRIM}{Have respondents ever felt discriminated while traveling in any mode of transport?; this variable is an out of order factor with two levels, "YES", "NO"}
+#'   \item{r4D_MODE}{If their answer was yes (respondents have felt discriminated),indication of the mode(s) is required; this variable is an out of order factor with eight levels, "CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
 #'    }
 #' @docType data
 #' @keywords social interaction of travelers in Santiago 2016.
@@ -203,16 +203,16 @@ NULL
 #'
 #'  @format A data frame with 451 rows and 10 variables:
 #' \describe{
-#'   \item{r5A_CHANGE}{In a climatic event like heavy rain or flood, do respondents change their main mode of transport?}
-#'   \item{r5B_CHANGE_MODE}{If respondents answered yes (change mode of transport in a weather event), indication of the mode(s) is required}
-#'   \item{r5C_SUST}{How do respondents assess their access to the currently available sustainable modes of transport? (eg hybrid buses, electric cars, public bicycles)}
-#'   \item{r5D_IMP_SUST}{How important is it for respondents to have access to sustainable modes of transport?}
-#'   \item{r5E_PAYMENT}{Would respondents be willing to spend more on transportation to gain access to more sustainable modes?}
-#'   \item{r5F_PAYMENTS}{If respondents' previous response was positive, indication of how much their transportation expense would increase:}
-#'   \item{r5GA_TREE}{indication of how important it is improving the following aspects in public transport routes: Presence of trees}
-#'   \item{r5GB_PARK}{indication of how important it is improving the following aspects in public transport routes: Access to parks}
-#'   \item{r5GC_MODE}{indication of how important it is improving the following aspects in public transport routes: Access to sustainable transport modes}
-#'   \item{r5GD_MODE}{indication of how important it is improving the following aspects in public transport routes: Broaden supply of sustainable transport modes}
+#'   \item{r5A_CHANGE}{In a climatic event like heavy rain or flood, do respondents change their main mode of transport?; this variable is an out of order factor with two levels, "YES", "NO"}
+#'   \item{r5B_CHANGE_MODE}{If respondents answered yes (change mode of transport in a weather event), indication of the mode(s) is required; this variable is an out of order factor with eight levels, "CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+#'   \item{r5C_SUST}{How do respondents assess their access to the currently available sustainable modes of transport? (eg hybrid buses, electric cars, public bicycles); this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r5D_IMP_SUST}{How important is it for respondents to have access to sustainable modes of transport?; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r5E_PAYMENT}{Would respondents be willing to spend more on transportation to gain access to more sustainable modes?; this variable is an out of order factor with two levels, "YES", "NO"}
+#'   \item{r5F_PAYMENTS}{If respondents' previous response was positive, indication of how much their transportation expense would increase; this variable is an ordered factor with three levels, "5-15%", "15-30%", "30% or more"}
+#'   \item{r5GA_TREE}{indication of how important it is improving the following aspects in public transport routes: Presence of trees; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r5GB_PARK}{indication of how important it is improving the following aspects in public transport routes: Access to parks; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r5GC_MODE}{indication of how important it is improving the following aspects in public transport routes: Access to sustainable transport modes; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r5GD_MODE}{indication of how important it is improving the following aspects in public transport routes: Broaden supply of sustainable transport modes; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 #'   }
 #' @docType data
 #' @keywords nature and sustainability of travelers'viewpoint in Santiago 2016.
@@ -231,15 +231,15 @@ NULL
 #'
 #'  @format A data frame with 451 rows and 9 variables:
 #' \describe{
-#'   \item{r6A_SHIFT}{Do respondents shift between transport modes on their usual trips? Responses are "YES"/"NO"}
-#'   \item{r6B_QUALITY_SHIFT}{If YES in the previous question, how is the quality of these interchanges?}
-#'   \item{r6CA_WAITING}{How would respondents assess their regular trips in terms of: Waiting times}
-#'   \item{r6CB_TIME_SHIFT}{How would respondents assess their regular trips in terms of: Time of shifts}
-#'   \item{r6CC_TOTALTIME}{How would respondents assess their regular trips in terms of: Travel time}
-#'   \item{r6D_DIFFICULTY}{What main aspect makes their shifts difficult?}
-#'   \item{r6E_TOOL}{Do respondents have access to technology tools such as smartphones and internet, with which they can view information on transportation services?}
-#'   \item{r6F_INFO}{How do you assess the level of technological information available to see transportation alternatives? (eg smartphone applications, internet, signs)}
-#'   \item{r6G_IMP_INFO}{How important is it for respondents to have access to technological information for their usual trips?}
+#'   \item{r6A_SHIFT}{Do respondents shift between transport modes on their usual trips?; this variable is an out of order factor with two levels, "YES", "NO"}
+#'   \item{r6B_QUALITY_SHIFT}{If YES in the previous question, how is the quality of these interchanges?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r6CA_WAITING}{How would respondents assess their regular trips in terms of: Waiting times; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r6CB_TIME_SHIFT}{How would respondents assess their regular trips in terms of: Time of shifts; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r6CC_TOTALTIME}{How would respondents assess their regular trips in terms of: Travel time; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r6D_DIFFICULTY}{What main aspect makes their shifts difficult?; this variable is an out of order factor with six levels, "Bad physical conection in sidewalks", "Shifts take too long", "Shifting is not comfortable", "Bad infrastructure for waiting times", "Shifting is not safe", "All the previous ones","Other"}
+#'   \item{r6E_TOOL}{Do respondents have access to technology tools such as smartphones and internet, with which they can view information on transportation services?; this variable is an out of order factor with two levels, "YES", "NO"}
+#'   \item{r6F_INFO}{How do you assess the level of technological information available to see transportation alternatives? (eg smartphone applications, internet, signs); this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r6G_IMP_INFO}{How important is it for respondents to have access to technological information for their usual trips?; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 #'    }
 #' @docType data
 #' @keywords shifting different modes by travelers in Santiago 2016.
@@ -258,28 +258,28 @@ NULL
 #'
 #'  @format A data frame with 451 rows and 22 variables:
 #' \describe{
-#'   \item{r7AA_AUTOSPACE}{How do respondents evaluate the following aspects near their home? Space for cars; this variable is an ordered factor with five levels, "POOR", "FAIR",...}
-#'   \item{r7AB_PARKING_NUMB}{How do respondents evaluate the following aspects near their home? Amount of parking spaces}
-#'   \item{r7AC_QHIWAY}{How do respondents evaluate the following aspects near their home? Quality of highways}
-#'   \item{r7AD_PEDESTRN}{How do respondents evaluate the following aspects near their home? Space for pedestrians}
-#'   \item{r7AE_QSIDEWA}{How do respondents evaluate the following aspects near their home? Quality of sidewalks}
-#'   \item{r7AF_CLEAN_STOP}{How do respondents evaluate the following aspects near their home? Cleaningness of bus stops}
-#'   \item{r7AG_SEAT}{How do respondents evaluate the following aspects near their home? Sitting areas in bus stops}
-#'   \item{r7AH_CLIMA}{How do respondents evaluate the following aspects near their home? Weather protection in bus stops}
-#'   \item{r7AI_CICLEWA_NUMB}{How do respondents evaluate the following aspects near their home? Amount of cycleways}
-#'   \item{r7AJ_CICLEWA_Q}{How do respondents evaluate the following aspects near their home? Quality of cycleways}
-#'   \item{r7AK_BICSHARE}{How do respondents evaluate the following aspects near their home? Bike sharing schemes}
-#'   \item{r7BA_IMPAUTOSPACE}{How do respondents rate the level of importance of: Space for cars}
-#'   \item{r7BB_IMPPARKING_NUMB}{How do respondents rate the leve of importance of: Amount of parking spaces}
-#'   \item{r7BC_IMPQHIWAY}{How do respondents rate the leve of importance of: Quality of highways}
-#'   \item{r7BD_IMPPEDESTRN}{How do respondents rate the leve of importance of: Space for pedestrians}
-#'   \item{r7BE_IMPQSIDEWA}{How do respondents rate the leve of importance of: Quality of sidewalks}
-#'   \item{r7BF_IMPCLEAN_STOP}{How do respondents rate the leve of importance of: Cleaningness of bus stops}
-#'   \item{r7BG_IMPSEAT}{How do respondents rate the leve of importance of: Sitting areas in bus stops}
-#'   \item{r7BH_IMPCLIMA}{How do respondents rate the leve of importance of: Weather protection in bus stops}
-#'   \item{r7BI_IMPCICLEWA_NUMB}{How do respondents rate the leve of importance of: Amount of cycleways}
-#'   \item{r7BJ_IMPCICLEWA_Q}{How do respondents rate the leve of importance of: Quality of cycleways}
-#'   \item{r7BK_IMPBICSHARE}{How do respondents rate the leve of importance of: Bike sharing schemes}
+#'   \item{r7AA_AUTOSPACE}{How do respondents evaluate the following aspects near their home? Space for cars; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r7AB_PARKING_NUMB}{How do respondents evaluate the following aspects near their home? Amount of parking spaces; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r7AC_QHIWAY}{How do respondents evaluate the following aspects near their home? Quality of highways; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r7AD_PEDESTRN}{How do respondents evaluate the following aspects near their home? Space for pedestrians; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r7AE_QSIDEWA}{How do respondents evaluate the following aspects near their home? Quality of sidewalks; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r7AF_CLEAN_STOP}{How do respondents evaluate the following aspects near their home? Cleaningness of bus stops; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r7AG_SEAT}{How do respondents evaluate the following aspects near their home? Sitting areas in bus stops; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r7AH_CLIMA}{How do respondents evaluate the following aspects near their home? Weather protection in bus stops; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r7AI_CICLEWA_NUMB}{How do respondents evaluate the following aspects near their home? Amount of cycleways; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r7AJ_CICLEWA_Q}{How do respondents evaluate the following aspects near their home? Quality of cycleways; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r7AK_BICSHARE}{How do respondents evaluate the following aspects near their home? Bike sharing schemes; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r7BA_IMPAUTOSPACE}{How do respondents rate the level of importance of: Space for cars; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r7BB_IMPPARKING_NUMB}{How do respondents rate the leve of importance of: Amount of parking spaces; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r7BC_IMPQHIWAY}{How do respondents rate the leve of importance of: Quality of highways; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r7BD_IMPPEDESTRN}{How do respondents rate the leve of importance of: Space for pedestrians; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r7BE_IMPQSIDEWA}{How do respondents rate the leve of importance of: Quality of sidewalks; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r7BF_IMPCLEAN_STOP}{How do respondents rate the leve of importance of: Cleaningness of bus stops; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r7BG_IMPSEAT}{How do respondents rate the leve of importance of: Sitting areas in bus stops; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r7BH_IMPCLIMA}{How do respondents rate the leve of importance of: Weather protection in bus stops; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r7BI_IMPCICLEWA_NUMB}{How do respondents rate the leve of importance of: Amount of cycleways; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r7BJ_IMPCICLEWA_Q}{How do respondents rate the leve of importance of: Quality of cycleways; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+#'   \item{r7BK_IMPBICSHARE}{How do respondents rate the leve of importance of: Bike sharing schemes; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 #'   }
 #' @docType data
 #' @keywords built environment near travelers in Santiago 2016.
@@ -298,13 +298,13 @@ NULL
 #'
 #'  @format A data frame with 451 rows and 7 variables:
 #' \describe{
-#'   \item{r8A_ACCESSJOB}{How much do respondents think their access to the transport network has affected their chances of having a better job?}
-#'   \item{r8B_JOBOPP}{How do respondents assess the job opportunities available in their commune of residence?}
-#'   \item{r8C_ACC_COM}{What level of access to employment are respondents interested in having in their commune of residence?}
-#'   \item{r8D_EMPLSATISF}{How satisfied are respondents with their current job?}
-#'   \item{r8E_TIMECOMMUT}{How long is your regular commuting?}
-#'   \item{r8F_SCHEDULE}{What is the frequent time of their commuting?}
-#'   \item{r8G_SPENDING}{Monthly expenditure on transport}
+#'   \item{r8A_ACCESSJOB}{How much do respondents think their access to the transport network has affected their chances of having a better job?; this variable is an ordered factor with five levels, "NO AFFECT", "MINOR AFFECT", "NEUTRAL", "MODERATE AFFECT", "MAJOR AFEECT"}
+#'   \item{r8B_JOBOPP}{How do respondents assess the job opportunities available in their commune of residence?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r8C_ACC_COM}{What level of access to employment are respondents interested in having in their commune of residence?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+#'   \item{r8D_EMPLSATISF}{How satisfied are respondents with their current job?; this variable is an ordered factor with five levels, "NOT AT ALL SATISFIED", "SLIGHTLY SATISFIED", "MODERATELY SATISFIED", "VERY SATIAFIED", "EXTREMELY SATISFIED"}
+#'   \item{r8E_TIMECOMMUT}{How long is your regular commuting?; this variable is an ordered factor with four levels, "0-20 min", "20-40 min", "40-60 min", "1h and more"}
+#'   \item{r8F_SCHEDULE}{What is the frequent time of their commuting?; this variable is an ordered factor with six levels, "7:00 - 9:00", "9:00 - 13:00", "13:00 - 15:00", "15:00 - 18:00", "18:00 - 21:00", "Others"}
+#'   \item{r8G_SPENDING}{Monthly expenditure on transport; this variable is an ordered factor with four levels, "Less than 35.000", "35.000-75.000", "75.000-125.000", "More than 125.000"}
 #' }
 #'
 #' @docType data
