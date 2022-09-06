@@ -44,12 +44,9 @@ The dataset provides a wide range of travel-related issues such as socio-demogra
 
 ## Data
  
- The dataset described in this paper contains individual characteristics, health information, feelings and emotions information, reason and planning decision of respondents, social interaction of respondents, nature and sustainability, telecommunication and shifting, built environment and travel-work related information. As can be seen in data set, we have a wide variety of variables in each section.
-Data collected regarding individual characteristics reveals interesting difference when it comes to gender, age, income, main mode of transport and so on. Among persons who responded to the survey, males have far more higher income levels than females. It can be seen among people who have a salary more than 997 dollars and 18 aged until 54, using different modes of travel as the main mode is almost similar in terms of using car and metro. 
+The dataset described in this paper contains individual characteristics, health information, feelings and emotions information, reason and planning decision of respondents, social interaction of respondents, nature and sustainability, telecommunication and shifting, built environment and travel-work related information. As can be seen in data set, we have a wide variety of variables in each section.
+Data collected regarding individual characteristics reveals interesting difference when it comes to gender, age, income, main mode of transport and so on. Among persons who responded to the survey, males have far more higher income levels than females. It can be seen among people who have a salary more than 997 dollars and 18 aged until 54, using different modes of travel as the main mode is almost similar in terms of using car and metro.These information give insights about different segments of gender, age and so on to organize planning decisions for them according to their requirements. Also this part would be advantageous for business to figuring out marketing and applying strategies for future patterns based on consumer demands.
 
- 
- 
- 
 ## Running Code
 
 ```{r Individual characteristics}
@@ -58,6 +55,8 @@ Data collected regarding individual characteristics reveals interesting differen
 skim(Santiago_IC)
 ```
 
+
+Health information could be useful in investigating affects of transportation policy decisions on public health.
 ```{r Health Information}
 #| label: Health-Information-Descriptives
 #| echo: false
