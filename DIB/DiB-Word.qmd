@@ -52,19 +52,53 @@ Data collected regarding individual characteristics reveals interesting differen
  
 ## Running Code
 
-```{r}
-#| label: Built-Environment-Descriptives
-#| echo: false
-skim(Santiago_BE)
-```
-
 ```{r Individual characteristics}
 #| label: Individual-characteristics-Descriptives
+#| echo: false
+skim(Santiago_IC)
+```
+
+```{r Health Information}
+#| label: Health-Information-Descriptives
 #| echo: false
 skim(Santiago_H)
 ```
 
+```{r Feelings and Emotions}
+#| label: Feelings-Emotions-Descriptives
+#| echo: false
+skim(Santiago_FE)
+```
 
+```{r Reason and Planning Decision}
+#| label: Reason-Planning-Decision-Descriptives
+#| echo: false
+skim(Santiago_RPD)
+```
+
+```{r Social Interaction}
+#| label: Social-Interaction-Descriptives
+#| echo: false
+skim(Santiago_SI)
+```
+
+```{r Nature and Sustainability}
+#| label: Nature-Nustainability-Descriptives
+#| echo: false
+skim(Santiago_NS)
+```
+
+```{r ITC and Shifting}
+#| label: ITC-Shifting-Descriptives
+#| echo: false
+skim(Santiago_IS)
+```
+
+```{r Built Environment}
+#| label: Built-Environment-Descriptives
+#| echo: false
+skim(Santiago_BE)
+```
 ## Experimental Design, Materials and Methods
 
 The study is based on a paper-based survey conducted face-to-face in Santiago in 2016. The survey collected information on a wide range of travel-related issues (socio-demographics, health-related, perceptions and travel behavior, travel choices and planning, social interaction factors, built environment, among others). The data collection considered a quota-sampling method based on the information from Pre-Census of 2012, and in total, 451 persons validly completed the survey. This paper considers the first part of the survey, with information about the basic socio-economic data, travel choices, activities and commuting information, and the question related to the levels of stress experienced in while traveling.
