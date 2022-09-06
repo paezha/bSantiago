@@ -21,11 +21,17 @@ The dataset presented in this article would be advantageous to give intuition ab
 
 See @tbl-specifications for details of the data set.
 
-| Default | Left |
+| Items | Explanation |
 |:--------|:-----|
 | Subject area      | Transportation, Geography, Public Health and Health Policy, Urban development   |
 | More specific subject area     | Transport inequalities, Stress and limited horizons, Travel behavior, Global South  |
 | Type of data       | R Data Package    |
+| How data was acquired | The survey conducted using questionnaire. The instrument contains descriptive data of respondents and 5-Likert scale questionnaire regarding most sections of the questionnaire|
+| Data format | Raw Data | 
+| Parameters for data collection | The survey collected by a quota-sampling method based on the information from Pre-Census of 2012, and in total, 451 persons validly completed the survey and face-to-face in Santiago, Chile in 2016. The survey collected information on a wide range of travel-related issues (socio-demographics, health-related, perceptions and travel behavior, travel choices and planning, social interaction factors, built environment, among others) |
+| Description of data collection | Data was acquired through the 5-Likert scale questionnaire regarding most sections of the questionnaire, using a face-to-face and quota-sampling method for individual characteristics  | 
+| Data source location | Santiago, Chile | 
+| Data accessibility | State if data is with this article or in public repository.  If public repository, please explicitly name repository and data identification number and provide a direct URL to data | 
 
 : Specifications table {#tbl-specifications}
 
@@ -36,6 +42,14 @@ Dataset contribute to psychological impact on travelers both active and motorize
 This dataset allows us to explore the concept of “limited horizons”, the normalization of subpar experiences by those less able to adapt, an advantageous resource for further research regarding transport inequalities, index of stress, travel behavior in the region or even as a representative for other areas with similar attributes.
 The dataset provides a wide range of travel-related issues such as socio-demographics, health-related, perceptions and travel behavior, travel choices and planning, social interaction factors, built environment, among others.  
 
+## Data
+ 
+ The dataset described in this paper contains individual characteristics, health information, feelings and emotions information, reason and planning decision of respondents, social interaction of respondents, nature and sustainability, telecommunication and shifting, built environment and travel-work related information. As can be seen in data set, we have a wide variety of variables in each section.
+Data collected regarding individual characteristics reveals interesting difference when it comes to gender, age, income, main mode of transport and so on. Among persons who responded to the survey, males have far more higher income levels than females. It can be seen among people who have a salary more than 997 dollars and 18 aged until 54, using different modes of travel as the main mode is almost similar in terms of using car and metro. 
+
+ 
+ 
+ 
 ## Running Code
 
 ```{r}
@@ -44,4 +58,17 @@ The dataset provides a wide range of travel-related issues such as socio-demogra
 skim(Santiago_BE)
 ```
 
+```{r Individual characteristics}
+#| label: Individual-characteristics-Descriptives
+#| echo: false
+skim(Santiago_H)
+```
 
+
+## Experimental Design, Materials and Methods
+
+The study is based on a paper-based survey conducted face-to-face in Santiago in 2016. The survey collected information on a wide range of travel-related issues (socio-demographics, health-related, perceptions and travel behavior, travel choices and planning, social interaction factors, built environment, among others). The data collection considered a quota-sampling method based on the information from Pre-Census of 2012, and in total, 451 persons validly completed the survey. This paper considers the first part of the survey, with information about the basic socio-economic data, travel choices, activities and commuting information, and the question related to the levels of stress experienced in while traveling.
+
+## Acknowledgements
+
+## References 
