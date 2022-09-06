@@ -56,12 +56,14 @@ skim(Santiago_IC)
 ```
 
 
-Health information could be useful in investigating affects of transportation policy decisions on public health.
+Health information could be useful in investigating affects of transportation policy decisions on public health.This information would be useful for planners and transportation experts to develop transport models used to identify how different policies or plans could affect active modes of travel and public transit. Having such a detailed data set would help them to adapt reform policies and management strategies in accordance with public health goals. 
 ```{r Health Information}
 #| label: Health-Information-Descriptives
 #| echo: false
 skim(Santiago_H)
 ```
+
+Data set of feelings and emotions can be used to mapping and understanding travel behavior and would lead to a more sustainable transportation network. By trying to identify a correlation between feelings, emotions and modes of transportation, planners would be able to persuade people to use more active modes of travel or public transport will be resulted in making our transportation system more sustainable. 
 
 ```{r Feelings and Emotions}
 #| label: Feelings-Emotions-Descriptives
@@ -69,11 +71,13 @@ skim(Santiago_H)
 skim(Santiago_FE)
 ```
 
+The most important role of the transportation network and public modes of travel is to provide people with access to different destination in order to travel for business, reuniting with other people, doing grocery shopping and so on. This data set gives us a wide range of variables helpful for identifying people's travel pattern and what level of importance do people assign. So it would be useful for transport-related experts to have an insight about people movement to provide network system with a an appropriate level of performance to increase the efficiency and promote urban transportation system.
 ```{r Reason and Planning Decision}
 #| label: Reason-Planning-Decision-Descriptives
 #| echo: false
 skim(Santiago_RPD)
 ```
+
 
 ```{r Social Interaction}
 #| label: Social-Interaction-Descriptives
@@ -92,12 +96,19 @@ skim(Santiago_NS)
 #| echo: false
 skim(Santiago_IS)
 ```
-
+Built environment data set gives intuition about how people evaluate facilities and infrastructures such as parking sites, quality of highways, spaces for pedestrian, condition of bus stops, quality of cycle ways and so on. Decision makers would use this information in different contexts such as planning for arrangement and appearance of the various physical elements in a transportation system. Some of them may focus on enriching the environment in a way that they can encourage people to use more active modes of travel especially walking to reach a destination. Some of them would contribute to climate change background and study human activity to identify how transportation system, constructions, land-use and so on could be destructive due to high green house gas emissions. 
 ```{r Built Environment}
 #| label: Built-Environment-Descriptives
 #| echo: false
 skim(Santiago_BE)
 ```
+
+```{r Travel to work}
+#| label: Travel-work-Descriptives
+#| echo: false
+skim(Santiago_TW)
+```
+
 ## Experimental Design, Materials and Methods
 
 The study is based on a paper-based survey conducted face-to-face in Santiago in 2016. The survey collected information on a wide range of travel-related issues (socio-demographics, health-related, perceptions and travel behavior, travel choices and planning, social interaction factors, built environment, among others). The data collection considered a quota-sampling method based on the information from Pre-Census of 2012, and in total, 451 persons validly completed the survey. This paper considers the first part of the survey, with information about the basic socio-economic data, travel choices, activities and commuting information, and the question related to the levels of stress experienced in while traveling.
