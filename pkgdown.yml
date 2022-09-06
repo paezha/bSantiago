@@ -2,7 +2,7 @@ pandoc: 2.14.2
 pkgdown: 2.0.6
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-09-06T03:18Z
+last_built: 2022-09-06T03:43Z
 urls:
   reference: https://paezha.github.io/bSantiago/reference
   article: https://paezha.github.io/bSantiago/articles
