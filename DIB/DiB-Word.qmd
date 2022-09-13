@@ -1,7 +1,9 @@
 ---
 title: "A dataset to study equity in individual travel behavior and choices in Santiago, Chile"
 author: "Niloofar Nalaee, Beatriz Mella Lira, Antonio Paez"
-format: docx
+format:
+  docx:
+    reference-doc: custom-reference-doc.docx
 ---
 
 ```{r}
@@ -13,9 +15,18 @@ library(skimr) # Compact and Flexible Summaries of Data
 
 # Abstract
 
-The dataset presented in this article would be advantageous to give intuition about the experience of daily travel and its psychological impact on travelers, ranging from positive feelings of enjoyment in some to the sensation of stress in many others. This dataset particularly examines the feelings of stress by users of active and motorized modes of transportation. Furthermore, it also investigates the importance that travelers attach to their feelings of stress. This allows us to explore the concept of “limited horizons”, the normalization of subpar experiences by those less able to adapt. This data provides information about commuters in terms of their individual characteristics, health-related factors while using transportation modes, feelings and emotions towards different modes of travel, own decisions, social interaction, attitudes towards nature and sustainability, shifts between modes, attitudes towards built environment, traveling to work. Data for the research are drawn from a survey conducted in Santiago, Chile, based on a quota-sampling method based on the information from Pre-Census of 2012, and in total, 451 persons validly completed the survey. Describe the statistics and conclude suggest that
+The data set presented in this article would be advantageous to give intuition about the experience of daily travel and its psychological impact on travelers, ranging from positive feelings of enjoyment in some to the sensation of stress in many others. This dataset particularly examines the feelings of stress by users of active and motorized modes of transportation. Furthermore, it also investigates the importance that travelers attach to their feelings of stress. This allows us to explore the concept of “limited horizons”, the normalization of subpar experiences by those less able to adapt. This data provides information about commuters in terms of their individual characteristics, health-related factors while using transportation modes, feelings and emotions towards different modes of travel, own decisions, social interaction, attitudes towards nature and sustainability, shifts between modes, attitudes towards built environment, traveling to work. Data for the research are drawn from a survey conducted in Santiago, Chile, based on a quota-sampling method based on the information from Pre-Census of 2012, and in total, 451 persons validly completed the survey. Describe the statistics and conclude suggest that
 
 ## Key words 
+
+- Travel behavior
+- Well-being
+- Equity
+- Transportation
+- Santiago
+- Chile
+-
+-
 
 ## Specifications Table
 
@@ -44,20 +55,29 @@ The dataset provides a wide range of travel-related issues such as socio-demogra
 
 ## Data
  
-The dataset described in this paper contains individual characteristics, health information, feelings and emotions information, reason and planning decision of respondents, social interaction of respondents, nature and sustainability, telecommunication and shifting, built environment and travel-work related information. As can be seen in data set, we have a wide variety of variables in each section.
-Data collected regarding individual characteristics reveals interesting difference when it comes to gender, age, income, main mode of transport and so on. Among persons who responded to the survey, males have far more higher income levels than females. It can be seen among people who have a salary more than 997 dollars and 18 aged until 54, using different modes of travel as the main mode is almost similar in terms of using car and metro.These information give insights about different segments of gender, age and so on to organize planning decisions for them according to their requirements. Also this part would be advantageous for business to figuring out marketing and applying strategies for future patterns based on consumer demands.
+The data package described in this paper contains XX tables as listed in @tbl-list-of-tables. Each table is thematic and includes information about the individual characteristics, health information, feelings and emotions information, reason and planning decision of respondents, social interaction of respondents, nature and sustainability, telecommunication and shifting, built environment and travel-work related information. As can be seen in data set, we have a wide variety of variables in each section.
 
-## Running Code
+| Table | Theme |
+|:--------|:-----|
+| Santiago_IC      | A table with `r ncol(Santiago_IC)` variables that describe the individual characteristics of respondents   |
+| Santiago_H     | A table with XX variables with health attributes of respondents  |
+
+: List of tables in data package {#tbl-list-of-tables}
+
+Data collected regarding individual characteristics (see @tbl-individual-characteristics-descriptives) reveals interesting difference when it comes to gender, age, income, main mode of transport and so on. Among persons who responded to the survey, males have far more higher income levels than females. It can be seen among people who have a salary more than 997 dollars and 18 aged until 54, using different modes of travel as the main mode is almost similar in terms of using car and metro.These information give insights about different segments of gender, age and so on to organize planning decisions for them according to their requirements. Also this part would be advantageous for business to figuring out marketing and applying strategies for future patterns based on consumer demands.
 
 ```{r Individual characteristics}
-#| label: Individual-characteristics-Descriptives
+#| tbl-cap: Variables regarding individual characteristics of respondents
+#| tbl-cap-location: top
+#| label: tbl-individual-characteristics-descriptives
 #| echo: false
 skim(Santiago_IC)
 ```
 
-
 Health information could be useful in investigating affects of transportation policy decisions on public health.This information would be useful for planners and transportation experts to develop transport models used to identify how different policies or plans could affect active modes of travel and public transit. Having such a detailed data set would help them to adapt reform policies and management strategies in accordance with public health goals. 
 ```{r Health Information}
+#| tbl-cap: Variables regarding health information of respondents
+#| tbl-cap-location: top
 #| label: Health-Information-Descriptives
 #| echo: false
 skim(Santiago_H)
@@ -66,6 +86,8 @@ skim(Santiago_H)
 Data set of feelings and emotions can be used to mapping and understanding travel behavior and would lead to a more sustainable transportation network. By trying to identify a correlation between feelings, emotions and modes of transportation, planners would be able to persuade people to use more active modes of travel or public transport will be resulted in making our transportation system more sustainable. 
 
 ```{r Feelings and Emotions}
+#| tbl-cap: Variables regarding feelings and emotions of respondents
+#| tbl-cap-location: top
 #| label: Feelings-Emotions-Descriptives
 #| echo: false
 skim(Santiago_FE)
@@ -73,6 +95,8 @@ skim(Santiago_FE)
 
 The most important role of the transportation network and public modes of travel is to provide people with access to different destination in order to travel for business, reuniting with other people, doing grocery shopping and so on. This data set gives us a wide range of variables helpful for identifying people's travel pattern and what level of importance do people assign. So it would be useful for transport-related experts to have an insight about people movement to provide network system with a an appropriate level of performance to increase the efficiency and promote urban transportation system.
 ```{r Reason and Planning Decision}
+#| tbl-cap: Variables regarding decision-making and planning of respondents
+#| tbl-cap-location: top
 #| label: Reason-Planning-Decision-Descriptives
 #| echo: false
 skim(Santiago_RPD)
@@ -80,30 +104,40 @@ skim(Santiago_RPD)
 
 
 ```{r Social Interaction}
+#| tbl-cap: Variables regarding social interactions of respondents
+#| tbl-cap-location: top
 #| label: Social-Interaction-Descriptives
 #| echo: false
 skim(Santiago_SI)
 ```
 
 ```{r Nature and Sustainability}
+#| tbl-cap: Variables regarding perspectives about nature and sustainability of respondents
+#| tbl-cap-location: top
 #| label: Nature-Nustainability-Descriptives
 #| echo: false
 skim(Santiago_NS)
 ```
 
 ```{r ITC and Shifting}
+#| tbl-cap: Variables regarding information and telecommunications and mode shifting of respondents
+#| tbl-cap-location: top
 #| label: ITC-Shifting-Descriptives
 #| echo: false
 skim(Santiago_IS)
 ```
 Built environment data set gives intuition about how people evaluate facilities and infrastructures such as parking sites, quality of highways, spaces for pedestrian, condition of bus stops, quality of cycle ways and so on. Decision makers would use this information in different contexts such as planning for arrangement and appearance of the various physical elements in a transportation system. Some of them may focus on enriching the environment in a way that they can encourage people to use more active modes of travel especially walking to reach a destination. Some of them would contribute to climate change background and study human activity to identify how transportation system, constructions, land-use and so on could be destructive due to high green house gas emissions. 
 ```{r Built Environment}
+#| tbl-cap: Variables regarding the built environment at the place of residence of respondents
+#| tbl-cap-location: top
 #| label: Built-Environment-Descriptives
 #| echo: false
 skim(Santiago_BE)
 ```
 
 ```{r Travel to work}
+#| tbl-cap: Variables regarding the commuting behavior of respondents
+#| tbl-cap-location: top
 #| label: Travel-work-Descriptives
 #| echo: false
 skim(Santiago_TW)

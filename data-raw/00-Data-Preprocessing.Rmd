@@ -200,56 +200,56 @@ Santiago_IC <- SantiagoSurvey_trans %>%
   
 ```
 
-
+<!-- NOTE: these variables are coded with numbers 1,2,...,5, instead of letters "A", "B", etc.-->
 ```{r Health}
 Santiago_H <- SantiagoSurvey_trans %>%
   dplyr::select(starts_with("r1")) %>%
   mutate(r1A_STRESS = factor(r1A_STRESS, 
-                             levels = c("A", "B", "C", "D", "E"), 
+                             levels = c("1", "2", "3", "4", "5"), 
                              labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"),
                              ordered = TRUE)) %>%
   mutate(r1B_EFFORT = factor(r1B_EFFORT, 
-                             levels = c("A", "B", "C","D", "E"), 
+                             levels = c("1", "2", "3", "4", "5"), 
                              labels = c("VERY NEGATIVE", "SLIGHTLY NEGATIVE", "NEUTRAL", "MOSTLY POSITIVE", "COMPLETELY POSITVE"),
                              ordered = TRUE)) %>%
   mutate(r1C_PROXIMITY = factor(r1C_PROXIMITY, 
-                             levels = c("A", "B", "C","D", "E"), 
+                             levels = c("1", "2", "3", "4", "5"), 
                              labels = c("POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"),
                              ordered = TRUE)) %>%
   mutate(r1D_CONTAM = factor(r1D_CONTAM, 
-                             levels = c("A", "B", "C","D", "E"), 
+                             levels = c("1", "2", "3", "4", "5"), 
                              labels = c("VERY DISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VEERY SATISFIED"),
                              ordered = TRUE)) %>%
   mutate(r1E_SAFETY = factor(r1E_SAFETY, 
-                             levels = c("A", "B", "C","D", "E"), 
+                             levels = c("1", "2", "3", "4", "5"), 
                              labels = c("VERY DISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VEERY SATISFIED"),
                              ordered = TRUE)) %>%
   mutate(r1F_COMFORT = factor(r1F_COMFORT, 
-                             levels = c("A", "B", "C","D", "E"), 
+                             levels = c("1", "2", "3", "4", "5"), 
                              labels = c("VERY DISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VEERY SATISFIED"),
                              ordered = TRUE)) %>%
   mutate(r1GA_STRESS  = factor(r1GA_STRESS , 
-                             levels = c("A", "B", "C","D", "E"), 
+                             levels = c("1", "2", "3", "4", "5"), 
                              labels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),
                              ordered = TRUE)) %>%
   mutate(r1GB_EFFORT = factor(r1GB_EFFORT, 
-                            levels = c("A", "B", "C","D", "E"), 
+                            levels = c("1", "2", "3", "4", "5"), 
                              labels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),
                             ordered = TRUE)) %>%
   mutate(r1GC_PROXIMITY = factor(r1GC_PROXIMITY, 
-                             levels = c("A", "B", "C","D", "E"), 
+                             levels = c("1", "2", "3", "4", "5"), 
                              labels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),
                              ordered = TRUE)) %>%
   mutate(r1GD_CONTAM = factor(r1GD_CONTAM, 
-                             levels = c("A", "B", "C","D", "E"), 
+                             levels = c("1", "2", "3", "4", "5"), 
                              labels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),
                              ordered = TRUE)) %>%
   mutate(r1GE_SAFETY = factor(r1GE_SAFETY, 
-                             levels = c("A", "B", "C","D", "E"), 
+                             levels = c("1", "2", "3", "4", "5"), 
                              labels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),
                              ordered = TRUE)) %>%
   mutate(r1GF_COMFORT = factor(r1GF_COMFORT, 
-                             levels = c("A", "B", "C","D", "E"), 
+                             levels = c("1", "2", "3", "4", "5"), 
                              labels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),
                              ordered = TRUE)) 
   
