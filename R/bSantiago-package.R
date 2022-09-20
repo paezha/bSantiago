@@ -215,7 +215,7 @@ NULL
 #'   \item{r5GD_MODE}{indication of how important it is improving the following aspects in public transport routes: Broaden supply of sustainable transport modes; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 #'   }
 #' @docType data
-#' @keywords nature and sustainability of travelers'viewpoint in Santiago 2016.
+#' @keywords nature and sustainability of travelers'viewpoints in Santiago 2016.
 #' @name Santiago_NS
 #' @usage data(Santiago_NS)
 #' @source A face to face survey considering pre-census 2012

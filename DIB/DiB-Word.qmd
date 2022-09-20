@@ -60,7 +60,14 @@ The data package described in this paper contains XX tables as listed in @tbl-li
 | Table | Theme |
 |:--------|:-----|
 | Santiago_IC      | A table with `r ncol(Santiago_IC)` variables that describe the individual characteristics of respondents   |
-| Santiago_H     | A table with XX variables with health attributes of respondents  |
+| Santiago_H     | A table with `r ncol(Santiago_H)` variables about health attributes of respondents  |
+| Santiago_FE     | A table with `r ncol(Santiago_FE)` variables with information about the feelings and emotions of respondents  |
+| Santiago_RPD     | A table with `r ncol(Santiago_RPD)` variables that reveal information about the decision-making and planning characteristics of respondents  |
+| Santiago_SI     | A table with `r ncol(Santiago_SI)` variables about social interaction of respondents  |
+| Santiago_NS     | A table with `r ncol(Santiago_NS)` variables which indicate nature and sustainability factors from the viewpoint of respondents  |
+| Santiago_IS     | A table with `r ncol(Santiago_IS)` variables related to information and telecommunications and mode shifting  of respondents  |
+| Santiago_BE     | A table with `r ncol(Santiago_BE)` variables about built environment at the place of residence of respondents  |
+| Santiago_TW     | A table with `r ncol(Santiago_TW)` variables regarding the commuting behavior of respondents  |
 
 : List of tables in data package {#tbl-list-of-tables}
 
