@@ -10,7 +10,9 @@ format:
 #| label: load-packages
 #| echo: false
 library(bSantiago) # A data package with the results of a travel and well-being survey conducted in Santiago in 2016
+library(dplyr) # A Grammar of Data Manipulation
 library(skimr) # Compact and Flexible Summaries of Data
+library(stringr) # Simple, Consistent Wrappers for Common String Operations
 ```
 
 # Abstract
@@ -90,7 +92,20 @@ Health information could be useful in investigating affects of transportation po
 #| tbl-cap-location: top
 #| label: tbl-Health-Information-Descriptives
 #| echo: false
-skim(Santiago_H)
+skim_SH <- skim(Santiago_H)
+
+skim_SH$factor.top_counts[1] <- skim_SH$factor.top_counts[1] |>
+  str_replace_all(c(AVE = "Average", 
+                    BEL = "Below Average",
+                    ABO = "Above Average",
+                    VER = "Very Low"))
+
+skim_SH$factor.top_counts[2] <- skim_SH$factor.top_counts[2] |>
+  str_replace_all(c(NEU = "Neutral", 
+                    MOS = "Mostly",
+                    COM = "Commonly",
+                    SLI = "Slightly"))
+
 ```
 
 First part of the data set of feelings and emotions (see @tbl-Feelings-Emotions-Descriptives) reveals factorial variables that people consider them pertained to a specific mode of travel. In terms of freedom, health and social interactions most of people mention them related to walking as a transportation mode. Many people consider using bus connected to unsafety, poverty, unpunctuality, congestion and uncomfortale conditions variables.In terms of using car as the mode of travel, most of respondents identified it connected to functionality, safety, luxury and status. A large group of people declare that bike riding would be related to enjoyment, low-cost and environment care. The only efficiency variable is being connected to using metro as the mode of transportation in respondents' opinions. In the second part of this table people evaluate the level of enjoy when they are traveling to their daily activities and most pf them uses average level for this variable and revealed the quality of their trips are very low which is not satisfying. Totally in this table we have half of respondents' answer and the other half is missing values in all variables.
@@ -167,3 +182,5 @@ The study is based on a paper-based survey conducted face-to-face in Santiago in
 ## Acknowledgements
 
 ## References 
+
+
