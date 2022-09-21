@@ -55,7 +55,7 @@ The dataset provides a wide range of travel-related issues such as socio-demogra
 
 ## Data
  
-The data package described in this paper contains XX tables as listed in @tbl-list-of-tables. Each table is thematic and includes information about the individual characteristics, health information, feelings and emotions information, reason and planning decision of respondents, social interaction of respondents, nature and sustainability, telecommunication and shifting, built environment and travel-work related information. As can be seen in data set, we have a wide variety of variables in each section.
+The data package described in this paper contains 9 tables as listed in @tbl-list-of-tables. Each table is thematic and includes information about the individual characteristics, health information, feelings and emotions information, reason and planning decision of respondents, social interaction of respondents, nature and sustainability, telecommunication and shifting, built environment and travel-work related information. As can be seen in data set, we have a wide variety of variables in each section.
 
 | Table | Theme |
 |:--------|:-----|
@@ -71,7 +71,8 @@ The data package described in this paper contains XX tables as listed in @tbl-li
 
 : List of tables in data package {#tbl-list-of-tables}
 
-Data collected regarding individual characteristics (see @tbl-individual-characteristics-descriptives) reveals interesting difference when it comes to gender, age, income, main mode of transport and so on. Among persons who responded to the survey, males have far more higher income levels than females. It can be seen among people who have a salary more than 997 dollars and 18 aged until 54, using different modes of travel as the main mode is almost similar in terms of using car and metro.These information give insights about different segments of gender, age and so on to organize planning decisions for them according to their requirements. Also this part would be advantageous for business to figuring out marketing and applying strategies for future patterns based on consumer demands.
+Data collected regarding individual characteristics (see @tbl-individual-characteristics-descriptives) reveals  characteristic variables like the information about the neighborhood of respondents. In this section most of them are complete but type of disability has numerous missing values and it seems like most people have not disability to specify its type. Also we have many missing responses for the commune of different activities like study or work. This is because people would more prefer one region for their regular trips than the second one(#origin).In terms of factorial variables like gender, age education it can be seen most of the variables are almost complete except mode 3. It looks like a large number of people tend to use one mode and less number of them use second or third mode of travel. It can be seen in numeric variables like number of adults and children in a family, weight and height that we have approximately complete answers. The only variables with considerable number of missing values, are weight and height which seems a few people did not perfectly response to them. 
+These information give insights about different segments of gender, age and so on to organize planning decisions for them according to their requirements. Also this part would be advantageous for business developments to figure out marketing and apply strategies for future patterns based on consumer demands.
 
 ```{r Individual characteristics}
 #| tbl-cap: Variables regarding individual characteristics of respondents
@@ -81,43 +82,49 @@ Data collected regarding individual characteristics (see @tbl-individual-charact
 skim(Santiago_IC)
 ```
 
+The Health information (see @tbl-Health-Information-Descriptives) indicates different factorial variables that are almost complete and organized categorically because of using Likert scale. In this table we have two part of variables: first the respondents' assessment of each variable and second what level of importance do people assign to each variable. Speaking about stress most people experience average level of stress on regular trips and they feel it is very important for them. Most of people were neutral in demonstrating physical effort on their usual trips and they assign high level of importance to it. Many people mentioned poor level of proximity (proximity) to other transport users on their usual trips and felt it was very important in their viewpoint. In terms of environmental contamination most of people were very dissatisfied and they consider it is very important on their regular trips. About safety variable most respondents were unsatisfied with level of safety (not being assaulted or harassed) that they experience on their usual trips and declared it was very important in their trips. A large number of people specified very dissatisfying level of comfort throughout their trips and they assume it is very important when they are on their trips. 
+
 Health information could be useful in investigating affects of transportation policy decisions on public health.This information would be useful for planners and transportation experts to develop transport models used to identify how different policies or plans could affect active modes of travel and public transit. Having such a detailed data set would help them to adapt reform policies and management strategies in accordance with public health goals. 
 ```{r Health Information}
 #| tbl-cap: Variables regarding health information of respondents
 #| tbl-cap-location: top
-#| label: Health-Information-Descriptives
+#| label: tbl-Health-Information-Descriptives
 #| echo: false
 skim(Santiago_H)
 ```
 
-Data set of feelings and emotions can be used to mapping and understanding travel behavior and would lead to a more sustainable transportation network. By trying to identify a correlation between feelings, emotions and modes of transportation, planners would be able to persuade people to use more active modes of travel or public transport will be resulted in making our transportation system more sustainable. 
+First part of the data set of feelings and emotions (see @tbl-Feelings-Emotions-Descriptives) reveals factorial variables that people consider them pertained to a specific mode of travel. In terms of freedom, health and social interactions most of people mention them related to walking as a transportation mode. Many people consider using bus connected to unsafety, poverty, unpunctuality, congestion and uncomfortale conditions variables.In terms of using car as the mode of travel, most of respondents identified it connected to functionality, safety, luxury and status. A large group of people declare that bike riding would be related to enjoyment, low-cost and environment care. The only efficiency variable is being connected to using metro as the mode of transportation in respondents' opinions. In the second part of this table people evaluate the level of enjoy when they are traveling to their daily activities and most pf them uses average level for this variable and revealed the quality of their trips are very low which is not satisfying. Totally in this table we have half of respondents' answer and the other half is missing values in all variables.
+feelings and emotions information can be used to mapping and understanding travel behavior and would lead to a more sustainable transportation network. By trying to identify a correlation between feelings, emotions and modes of transportation, planners would be able to persuade people to use more active modes of travel or public transport will be resulted in making our transportation system more sustainable. 
 
 ```{r Feelings and Emotions}
 #| tbl-cap: Variables regarding feelings and emotions of respondents
 #| tbl-cap-location: top
-#| label: Feelings-Emotions-Descriptives
+#| label: tbl-Feelings-Emotions-Descriptives
 #| echo: false
 skim(Santiago_FE)
 ```
+
+Table of decision-making and planning of respondents (see @tbl-Reason-Planning-Decision-Descriptives) includes different factorial variables using Likert scale and has two parts of an assessment of a variable and its importance from respondents' viewpoints. Most of people assign level of good when they assess their access to employment opportunities through public transport and presume a good level about their access to public transport which allows them to access the employment they need. While people sometimes visit family and friends, do recreational, cultural and sport activities,  and they assign a  moderate importance to them, most of them often go for grocery/food shopping and social activities and consider it moderately important. In terms of options most of people assume it is very important to have several options in using different modes of transport and they assign very high when they consider quality of life depends on the access they currently have to public transport. Also most people highly think their quality of life would increase if they have better access to public transport.About the affordability and unaffordability of a mode of travel, a large group of people assign car and taxi to these variables, respectively. For different aspects of the public transport system most of people mention that it has very importance for them to improve access to offices and commercial areas, disponibility of different transport modes, comfort for the use of public transport and the incorporation of other modes to the fare system. Almost all the variables are fairly complete except being economic and uneconomic variables which nearly half of respondents reacted to them.
 
 The most important role of the transportation network and public modes of travel is to provide people with access to different destination in order to travel for business, reuniting with other people, doing grocery shopping and so on. This data set gives us a wide range of variables helpful for identifying people's travel pattern and what level of importance do people assign. So it would be useful for transport-related experts to have an insight about people movement to provide network system with a an appropriate level of performance to increase the efficiency and promote urban transportation system.
 ```{r Reason and Planning Decision}
 #| tbl-cap: Variables regarding decision-making and planning of respondents
 #| tbl-cap-location: top
-#| label: Reason-Planning-Decision-Descriptives
+#| label: tbl-Reason-Planning-Decision-Descriptives
 #| echo: false
 skim(Santiago_RPD)
 ```
 
+Table of social interaction (see @tbl-Social-Interaction-Descriptives) disclose factorial variables and information using Likert scale to have an ordered data set. In terms of the level of interaction people have with others during their usual trips, most of them presume a good level and they moderately feel it is important when they consider the presence of other people during their usual travels. We have a large number of missing values in mode variable because most of people said no when they were asked to specify the mode of travel if they ever felt discriminated and most of people who felt discrimination they connected it to using bus. 
 
 ```{r Social Interaction}
 #| tbl-cap: Variables regarding social interactions of respondents
 #| tbl-cap-location: top
-#| label: Social-Interaction-Descriptives
+#| label: tbl-Social-Interaction-Descriptives
 #| echo: false
 skim(Santiago_SI)
 ```
-
+It can be seen there are different variables in nature and sustainability table (see @tbl-Social-Interaction-Descriptives) more through using Likert scale to organize respondents' answer  to variables.We can see lots of missing values for changing the mode because most of people do not tend to change their main mode  of travel when it comes to a climatic event like heavy rain or flood and for whom wants to change, using car has the most priority. Most of people have poor level of access to the currently available sustainable modes of transport (eg hybrid buses, electric cars, public bicycles) and they assign high level of imoprtance to that. Again we have so many missing value in payment variable because almost half of people would be willing to spend more on transportation to gain access to more sustainable modes and they indicate 5-15% of their payments they tend to spend in this regard.In terms of level of importance of improving different aspects in public transport routes most respondents assume high level of importance to presence of trees,  access to parks, access to sustainable transport modes and broaden supply of sustainable transport modes. 
 ```{r Nature and Sustainability}
 #| tbl-cap: Variables regarding perspectives about nature and sustainability of respondents
 #| tbl-cap-location: top
@@ -125,27 +132,30 @@ skim(Santiago_SI)
 #| echo: false
 skim(Santiago_NS)
 ```
-
+The information, telecommunications and mode shifting of respondents (see @tbl-ITC-Shifting-Descriptives) reveals numerous factorial variables using Likert scale to identify the exact level of respondents' viewpoints. We can see a considerable number of missing values in quality of changing mode of travel because of people's decision on mostly saying yes to shift between transport modes on their usual trips and for those who change the quality of these inerchanges was good. Many people assign a good level when they are asked to assess the waiting times, time of shifts and total travel time in their regular trips. Most people have access to technology tools such as smartphones and internet, with which they can view information on transportation services and they assign a good level of technological information available to see transportation alternatives? (eg smartphone applications, internet, signs) and most of them assume it is very important to have access to technological information for their usual trips
 ```{r ITC and Shifting}
 #| tbl-cap: Variables regarding information and telecommunications and mode shifting of respondents
 #| tbl-cap-location: top
-#| label: ITC-Shifting-Descriptives
+#| label: tbl-ITC-Shifting-Descriptives
 #| echo: false
 skim(Santiago_IS)
 ```
-Built environment data set gives intuition about how people evaluate facilities and infrastructures such as parking sites, quality of highways, spaces for pedestrian, condition of bus stops, quality of cycle ways and so on. Decision makers would use this information in different contexts such as planning for arrangement and appearance of the various physical elements in a transportation system. Some of them may focus on enriching the environment in a way that they can encourage people to use more active modes of travel especially walking to reach a destination. Some of them would contribute to climate change background and study human activity to identify how transportation system, constructions, land-use and so on could be destructive due to high green house gas emissions. 
+Built environment data set (see @tbl-Built-Environment-Descriptives) gives intuition about how people evaluate and assign importance to facilities and infrastructures such as parking sites, quality of highways, spaces for pedestrian based on Likert scales and with mainly complete responses to the variables. Most of people consider a good level when they are asked to evaluate space for cars and amount of parking spaces near their home and felt a high level of importance. Lots of people assign a very good and good level to the quality of highways and both space for pedestrians and quality of sidewalks located near of their home, respectively and it is very important to them. Unfortunately while it is important for people to have clean bus stops, sitting areas in bus stops, weather protection in bus stops,amount of cycle ways, quality of cycle ways and bike sharing schemes, they felt poor level when they were asked to evaluate them. 
+
+Decision makers would use this information in different contexts such as planning for arrangement and appearance of the various physical elements in a transportation system. Some of them may focus on enriching the environment in a way that they can encourage people to use more active modes of travel especially walking to reach a destination. Some of them would contribute to climate change background and study human activity to identify how transportation system, constructions, land-use and so on could be destructive due to high green house gas emissions. 
 ```{r Built Environment}
 #| tbl-cap: Variables regarding the built environment at the place of residence of respondents
 #| tbl-cap-location: top
-#| label: Built-Environment-Descriptives
+#| label: tbl-Built-Environment-Descriptives
 #| echo: false
 skim(Santiago_BE)
 ```
 
+The data set of commuting behavior of respondents(see @tbl-Travel-work-Descriptives) indicates several factorial variables mostly using Likert scales. While most of people were neutral when they think their access to the transport network has affected their chances of having a better job, others assign a goof level of job opportunities available in their commune of residence. In terms of the level of access to employment are people interested in having in their commune of residence most of them tend to have the highest level and most of them are very satisfied with their current job. Most of people spend more than one hour in their regular commuting and their frequent time of commuting for them is between 7:00 - 9:00. Also many people spend 35.000-75.000 monthly on their transportation expenditure. 
 ```{r Travel to work}
 #| tbl-cap: Variables regarding the commuting behavior of respondents
 #| tbl-cap-location: top
-#| label: Travel-work-Descriptives
+#| label: tbl-Travel-work-Descriptives
 #| echo: false
 skim(Santiago_TW)
 ```

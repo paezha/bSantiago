@@ -316,11 +316,11 @@ Santiago_FE <- SantiagoSurvey_trans %>%
                              labels = c("CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"))) %>%
   
   mutate(r2B_DAILY_ENJOY = factor(r2B_DAILY_ENJOY, 
-                             levels = c("A", "B", "C", "D", "E"), 
+                             levels = c("1", "2", "3", "4", "5"), 
                              labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"),
                              ordered = TRUE)) %>%
   mutate(r2C_IMP_QUALITY = factor(r2C_IMP_QUALITY, 
-                             levels = c("A", "B", "C", "D", "E"), 
+                             levels = c("1", "2", "3", "4", "5"), 
                              labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"),
                              ordered = TRUE)) %>%
   mutate(r2D_AFFECT = factor(r2D_AFFECT, 
@@ -396,11 +396,11 @@ Santiago_RPD <- SantiagoSurvey_trans %>%
                              ordered = TRUE)) %>%
   mutate(r3F_ACCESS_DEPENDENCY = factor(r3F_ACCESS_DEPENDENCY, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"),
+                             labels = c("VERY LOW", "BELOW AVERAGE", "AVERAGE", "ABOVE AVERAGE", "VERY HIGH"),
                              ordered = TRUE)) %>%
   mutate(r3G_QUALITY_INCRS = factor(r3G_QUALITY_INCRS, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"),
+                             labels = c("VERY LOW", "BELOW AVERAGE", "AVERAGE", "ABOVE AVERAGE", "VERY HIGH"),
                              ordered = TRUE)) %>%
   mutate(r3H_ECON = factor(r3H_ECON, 
                              levels = c("A", "B", "C","D", "E", "F", "G", "H", "TODAS"), 
