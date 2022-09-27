@@ -206,7 +206,7 @@ Santiago_H <- SantiagoSurvey_trans %>%
   dplyr::select(starts_with("r1")) %>%
   mutate(r1A_STRESS = factor(r1A_STRESS, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"),
+                             labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "Too LOW"),
                              ordered = TRUE)) %>%
   mutate(r1B_EFFORT = factor(r1B_EFFORT, 
                              levels = c("1", "2", "3", "4", "5"), 
@@ -218,15 +218,15 @@ Santiago_H <- SantiagoSurvey_trans %>%
                              ordered = TRUE)) %>%
   mutate(r1D_CONTAM = factor(r1D_CONTAM, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("VERY DISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VEERY SATISFIED"),
+                             labels = c("Too DISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VEERY SATISFIED"),
                              ordered = TRUE)) %>%
   mutate(r1E_SAFETY = factor(r1E_SAFETY, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("VERY DISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VEERY SATISFIED"),
+                             labels = c("Too DISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VEERY SATISFIED"),
                              ordered = TRUE)) %>%
   mutate(r1F_COMFORT = factor(r1F_COMFORT, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("VERY DISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VEERY SATISFIED"),
+                             labels = c("Too DISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VEERY SATISFIED"),
                              ordered = TRUE)) %>%
   mutate(r1GA_STRESS  = factor(r1GA_STRESS , 
                              levels = c("1", "2", "3", "4", "5"), 
@@ -317,18 +317,18 @@ Santiago_FE <- SantiagoSurvey_trans %>%
   
   mutate(r2B_DAILY_ENJOY = factor(r2B_DAILY_ENJOY, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"),
+                             labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "Too LOW"),
                              ordered = TRUE)) %>%
   mutate(r2C_IMP_QUALITY = factor(r2C_IMP_QUALITY, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"),
+                             labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "Too LOW"),
                              ordered = TRUE)) %>%
   mutate(r2D_AFFECT = factor(r2D_AFFECT, 
                              levels = c("A", "B", "C", "D", "E", "F", "G", "H"), 
-                             labels = c("LACK OF COMFORT", "LACK OF SAFETY", "POOR QUALITY OF STREETS", "CROWDNESS OF PASSENGERS", "DISABILITY OR REDUCED MOBILITY", "TRAVEL TIME", "ALL OF THEM", "OTHER"))) %>%
+                             labels = c("COMFORT ABSENCE", "SAFETY ABSENCE", "POOR QUALITY OF STREETS", "CROWDNESS OF PASSENGERS", "DISABILITY OR REDUCED MOBILITY", "TRAVEL TIME", "ALL OF THEM", "OTHER"))) %>%
   mutate(r2E_FACILIT = factor(r2E_FACILIT, 
                              levels = c("A", "B", "C", "D", "E", "F", "G", "H"), 
-                             labels = c("BETTER COMFORT", "BETTER SAFETY", "BETTER QULALITY ON STREETS", "LESS CROWDNESS OF PASSENGERS", "IMPROVEMENT ON ACCESIBILITY", "REDUCTION OF TIME TRAVEL", "ALL OF THEM", "OTHER"))) 
+                             labels = c("COMFORT IMPROVEMENT", "SAFETY IMPROVEMENT", "BETTER QULALITY ON STREETS", "LESS CROWDNESS OF PASSENGERS", "IMPROVEMENT ON ACCESIBILITY", "REDUCTION OF TIME TRAVEL", "ALL OF THEM", "OTHER"))) 
 ```
 
 ```{r REASON AND PLANNING OWN DECISIONS}
@@ -400,7 +400,7 @@ Santiago_RPD <- SantiagoSurvey_trans %>%
                              ordered = TRUE)) %>%
   mutate(r3G_QUALITY_INCRS = factor(r3G_QUALITY_INCRS, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("VERY LOW", "BELOW AVERAGE", "AVERAGE", "ABOVE AVERAGE", "VERY HIGH"),
+                             labels = c("TOO LOW", "BELOW AVERAGE", "AVERAGE", "ABOVE AVERAGE", "VERY HIGH"),
                              ordered = TRUE)) %>%
   mutate(r3H_ECON = factor(r3H_ECON, 
                              levels = c("A", "B", "C","D", "E", "F", "G", "H", "TODAS"), 
@@ -513,7 +513,7 @@ Santiago_IS <- SantiagoSurvey_trans %>%
                              ordered = TRUE)) %>%
   mutate(r6D_DIFFICULTY = factor(r6D_DIFFICULTY, 
                              levels = c("A", "B", "C","D", "E", "F", "G"), 
-                             labels = c("Bad physical conection in sidewalks", "Shifts take too long", "Shifting is not comfortable", "Bad infrastructure for waiting times", "Shifting is not safe", "All the previous ones","Other"))) %>%
+                             labels = c("Bad physical conection in sidewalks", "Too long shifts", "Uncomfortable shifting", "Bad infrastructure for waiting times", "Unsafe shifting ", "All the previous ones","Other"))) %>%
   mutate(r6E_TOOL = factor(r6E_TOOL, 
                              levels = c("A", "B"), 
                              labels = c("YES", "NO"))) %>%
@@ -674,83 +674,5 @@ usethis::use_data(Santiago_BE,
                   overwrite = TRUE)
 usethis::use_data(Santiago_TW, 
                   overwrite = TRUE)
-
-```
-
-```{r prep}
-library(ggplot2)
-
-```
-
-```{r 1}
-SantiagoSurvey_trans %>%                      # begin with linelist
-  count(r0C_GENDER, r0J_INCOME) %>%     # group and tabulate counts by two columns
-       mutate(r0C_GENDER = factor(r0C_GENDER, 
-                             levels = c("A", "B"), 
-                             labels = c("FEMALE", "MALE"))) %>%
-  mutate(r0J_INCOME = factor(r0J_INCOME, 
-                             levels = c("A", "B", "C","D", "E", "F"), 
-                             labels = c("Less423", "423to639", "639to977", "977to1550", "1550to2380","2380more"))) %>% 
-  ggplot()+                       # pass new data frame to ggplot
-    geom_col(                     # create bar plot
-      mapping = aes(   
-        x = r0J_INCOME,              # map outcome to x-axis
-        fill = r0C_GENDER,           # map age_cat to the fill
-        y = n))                   # map the counts column `n` to the height
-```
-```{r 2}
-
-SantiagoSurvey_trans %>%                      # begin with linelist
-  count(r0P_MODE1, r0J_INCOME) %>%     # group and tabulate counts by two columns
-   mutate(r0P_MODE1  = factor(r0P_MODE1 , 
-                             levels = c("A", "B", "C","D", "E", "F", "G", "H"), 
-                             labels = c("CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"))) %>%
-  mutate(r0J_INCOME = factor(r0J_INCOME, 
-                             levels = c("A", "B", "C","D", "E", "F"), 
-                             labels = c("Less423", "423to639", "639to977", "977to1550", "1550to2380","2380more"))) %>% 
-  ggplot()+                       # pass new data frame to ggplot
-    geom_col(                     # create bar plot
-      mapping = aes(   
-        x = r0J_INCOME,              # map outcome to x-axis
-        fill = r0P_MODE1,           # map age_cat to the fill
-        y = n))                   # map the counts column `n` to the height
-
-```
-
-```{r 5}
-ggplot(data = SantiagoSurvey_trans) + 
-  (aes(x = r0C_GENDER,
-       levels = c("A","B"),
-labels = c("FEMALE", "MALE"),
-       fill = r0P_MODE1)) +
-  geom_bar(position = "fill") +
-  labs(y = "Proportion",
-       x = "r1GA_STRESS", 
-       fill = "r0P_MODE1") + 
-  facet_wrap(~r1GA_STRESS)
-
-SantiagoSurvey_trans$r0C_GENDER <- factor(SantiagoSurvey_trans$r0C_GENDER,
-levels = c("A","B"),
-labels = c("FEMALE", "MALE"))
-
-SantiagoSurvey_trans$r0P_MODE1 <- factor(SantiagoSurvey_trans$r0P_MODE1,
-levels = c( "A", "B", "C","D", "E", "F", "G", "H"),
-labels = c("CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"))
-```
-
-
-
-```{r 4}
-ggplot(data = SantiagoSurvey_trans) + 
-  (aes(x = r0C_GENDER, 
-       fill = r0P_MODE1)) +
-  geom_bar(position = "fill") +
-  labs(y = "Proportion",
-       x = "r1GA_STRESS", 
-       fill = "r0P_MODE1") + 
-  facet_wrap(~r1GA_STRESS)
-```
-```{r 7}
-
 
 ```
