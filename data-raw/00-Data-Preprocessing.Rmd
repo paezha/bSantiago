@@ -206,7 +206,7 @@ Santiago_H <- SantiagoSurvey_trans %>%
   dplyr::select(starts_with("r1")) %>%
   mutate(r1A_STRESS = factor(r1A_STRESS, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "Too LOW"),
+                             labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "TOO LOW"),
                              ordered = TRUE)) %>%
   mutate(r1B_EFFORT = factor(r1B_EFFORT, 
                              levels = c("1", "2", "3", "4", "5"), 

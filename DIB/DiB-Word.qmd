@@ -95,16 +95,16 @@ Health information could be useful in investigating affects of transportation po
 skim(Santiago_H)
 skim_SH <- skim(Santiago_H)
 skim_SH$factor.top_counts[1] <- skim_SH$factor.top_counts[1] |>
-  str_replace_all(c(AVE = "Average", 
-                    BEL = "Below Average",
-                    ABO = "Above Average",
-                    VER = "Very Low"))
+  str_replace_all(c(AVE = "AVERAGE", 
+                    BEL = "BELOW AVERAGE",
+                    ABO = "ABOVE AVERAGE",
+                    VER = "Very high"))
 
 skim_SH$factor.top_counts[2] <- skim_SH$factor.top_counts[2] |>
-  str_replace_all(c(NEU = "Neutral", 
-                    MOS = "Mostly",
-                    COM = "Commonly",
-                    SLI = "Slightly"))
+  str_replace_all(c(NEU = "NEUTRAL", 
+                    MOS = "MOSTLY POSITIVE",
+                    COM = "COMPLETELY POSITVE",
+                    SLI = "SLIGHTLY NEGATIVE"))
 
 skim_SH$factor.top_counts[3] <- skim_SH$factor.top_counts[3] |>
   str_replace_all(c(POO = "POOR", 
@@ -131,40 +131,40 @@ skim_SH$factor.top_counts[6] <- skim_SH$factor.top_counts[6] |>
                     SAT = "SATISFIED"))
 
 skim_SH$factor.top_counts[7] <- skim_SH$factor.top_counts[7] |>
-  str_replace_all(c(Too = "TOO DISSATISFIED", 
-                    DIS = "DISSATISFIED",
-                    UNS = "UNSURE",
-                    SAT = "SATISFIED"))
+  str_replace_all(c(VER = "VERY IMPORTANT",
+                    IMP = "IMPORTANT",
+                    MOD = "MODERATELY IMPORTANT",
+                    SLI = "SLIGHTLY IMPORTANT"))
 
 skim_SH$factor.top_counts[8] <- skim_SH$factor.top_counts[8] |>
-  str_replace_all(c(Too = "TOO DISSATISFIED", 
-                    DIS = "DISSATISFIED",
-                    UNS = "UNSURE",
-                    SAT = "SATISFIED"))
+  str_replace_all(c(VER = "VERY IMPORTANT",
+                    MOD = "MODERATELY IMPORTANT",
+                    IMP = "IMPORTANT",
+                    SLI = "SLIGHTLY IMPORTANT"))
 
 skim_SH$factor.top_counts[9] <- skim_SH$factor.top_counts[9] |>
-  str_replace_all(c(Too = "TOO DISSATISFIED", 
-                    DIS = "DISSATISFIED",
-                    UNS = "UNSURE",
-                    SAT = "SATISFIED"))
+  str_replace_all(c(VER = "VERY IMPORTANT",
+                    IMP = "IMPORTANT",
+                    MOD = "MODERATELY IMPORTANT",
+                    SLI = "SLIGHTLY IMPORTANT"))
 
 skim_SH$factor.top_counts[10] <- skim_SH$factor.top_counts[10] |>
-  str_replace_all(c(Too = "TOO DISSATISFIED", 
-                    DIS = "DISSATISFIED",
-                    UNS = "UNSURE",
-                    SAT = "SATISFIED"))
+  str_replace_all(c(VER = "VERY IMPORTANT",
+                    IMP = "IMPORTANT",
+                    MOD = "MODERATELY IMPORTANT",
+                    SLI = "SLIGHTLY IMPORTANT"))
 
 skim_SH$factor.top_counts[11] <- skim_SH$factor.top_counts[11] |>
-  str_replace_all(c(Too = "TOO DISSATISFIED", 
-                    DIS = "DISSATISFIED",
-                    UNS = "UNSURE",
-                    SAT = "SATISFIED"))
+  str_replace_all(c(VER = "VERY IMPORTANT",
+                    IMP = "IMPORTANT",
+                    MOD = "MODERATELY IMPORTANT",
+                    SLI = "SLIGHTLY IMPORTANT))
 
 skim_SH$factor.top_counts[12] <- skim_SH$factor.top_counts[12] |>
-  str_replace_all(c(Too = "TOO DISSATISFIED", 
-                    DIS = "DISSATISFIED",
-                    UNS = "UNSURE",
-                    SAT = "SATISFIED"))
+  str_replace_all(c(VER = "VERY IMPORTANT",
+                    IMP = "IMPORTANT",
+                    MOD = "MODERATELY IMPORTANT",
+                    SLI = "SLIGHTLY IMPORTANT))
 
 ```
  
@@ -268,28 +268,28 @@ skim_SFE$factor.top_counts[18] <- skim_SFE$factor.top_counts[18] |>
                     WAL = "WALK"))
 
 skim_SFE$factor.top_counts[19] <- skim_SFE$factor.top_counts[19] |>
-  str_replace_all(c(AVE = "Average", 
-                    ABO = "Above Average",
-                    VER = "Very High",
-                    BEL = "Below Average"))
+  str_replace_all(c(AVE = "AVERAGE", 
+                    ABO = "ABOVE AVERAGE",
+                    VER = "VERY High",
+                    BEL = "BELOW AVERAGE"))
 
 skim_SFE$factor.top_counts[20] <- skim_SFE$factor.top_counts[20] |>
-  str_replace_all(c(TOO = "Average", 
-                    BEL = "Below Average",
-                    AVE = "Average",
-                    ABO = "Above Average"))
+  str_replace_all(c(TOO = "AVERAGE", 
+                    BEL = "Below AVERAGE",
+                    AVE = "AVERAGE",
+                    ABO = "ABOVE AVERAGE"))
 
 skim_SFE$factor.top_counts[20] <- skim_SFE$factor.top_counts[20] |>
-  str_replace_all(c(ALL = "Average", 
-                    TRA = "Below Average",
-                    CRO = "Crowdness of Passengers",
-                    COM = "Comfort Absence"))
+  str_replace_all(c(ALL = "AVERAGE", 
+                    TRA = "BELOW AVERAGE",
+                    CRO = "CROWDNESS OF PASSENGERS",
+                    COM = "COMFORT ABSENCE"))
 
 skim_SFE$factor.top_counts[20] <- skim_SFE$factor.top_counts[20] |>
-  str_replace_all(c(ALL = "All of them", 
-                    RED = "Reduction of Time Travel",
-                    LES = "Less Crowdness of Passengers",
-                    BET = "Better quality of Streets"))
+  str_replace_all(c(ALL = "ALL OF THEM", 
+                    RED = "REDUCTION OF TIME TRAVEL",
+                    LES = "LESS CROWDNESS OF PASSENGERS",
+                    BET = "BETTER QULALITY ON STREETS"))
 ```
 
 
@@ -394,16 +394,16 @@ skim_SRPD$factor.top_counts[15] <- skim_SRPD$factor.top_counts[15] |>
                     SLI = "SLIGHTLY IMPORTANT"))
 
 skim_SRPD$factor.top_counts[16] <- skim_SRPD$factor.top_counts[16] |>
-  str_replace_all(c(VER = "NOT IMPORTANT",
-                    ABO = "IMPORTANT",
-                    AVE = "MODERATELY IMPORTANT",
-                    BEL = "SLIGHTLY IMPORTANT"))
+  str_replace_all(c(VER = "VERY HIGH",
+                    ABO = "ABOUVE AVERAGE",
+                    AVE = "AVERAGE",
+                    BEL = "BELOW AVERAGE"))
 
 skim_SRPD$factor.top_counts[17] <- skim_SRPD$factor.top_counts[17] |>
-  str_replace_all(c(VER = "NOT IMPORTANT",
-                    ABO = "IMPORTANT",
-                    AVE = "MODERATELY IMPORTANT",
-                    BEL = "SLIGHTLY IMPORTANT"))
+  str_replace_all(c(VER = "VERY HIGH",
+                    ABO = "ABOUVE AVERAGE",
+                    AVE = "AVERAGE",
+                    BEL = "BELOW AVERAGE"))
 
 skim_SRPD$factor.top_counts[18] <- skim_SRPD$factor.top_counts[18] |>
   str_replace_all(c(MET = "METRO"))
@@ -442,6 +442,8 @@ skim_SRPD$factor.top_counts[23] <- skim_SRPD$factor.top_counts[23] |>
 
 Table of social interaction (see @tbl-Social-Interaction-Descriptives) disclose factorial variables and information using Likert scale to have an ordered data set. In terms of the level of interaction people have with others during their usual trips, most of them presume a good level and they moderately feel it is important when they consider the presence of other people during their usual travels. We have a large number of missing values in mode variable because most of people said no when they were asked to specify the mode of travel if they ever felt discriminated and most of people who felt discrimination they connected it to using bus. 
 
+Information about discrimination while traveling by different modes of travel, would be a kind of racism and can affect people who can not afford private mode of travel. It may also lead to conflicting approach to cope with it as promoting private mode would be a danger to eviornment. So there might be a transport inequality needed to being tackled by urban planner, environmentalist or any other descion makers. Also getting familiar with the level of social interaction and its importance from respondents' viewpoint will give an insight into certainty or uncertainty about the conditions among members of a social network, people's tendency towards collaboration with others in different experiences like tourism networks and so on.
+
 ```{r Social Interaction}
 #| tbl-cap: Variables regarding social interactions of respondents
 #| tbl-cap-location: top
@@ -455,22 +457,24 @@ skim_SSI$factor.top_counts[1] <- skim_SSI$factor.top_counts[1] |>
                     POO = "POOR",
                     VER = "VERY GOOD"))
 
-skim_SRPD$factor.top_counts[2] <- skim_SRPD$factor.top_counts[2] |>
+skim_SSI$factor.top_counts[2] <- skim_SSI$factor.top_counts[2] |>
   str_replace_all(c(MOD = "MODERATELY IMPORTANT",
                     NOT = "NOT IMPORTANT",
                     IMP = "IMPORTANT",
                     SLI = "SLIGHTLY IMPORTANT"))
 
-skim_SRPD$factor.top_counts[4] <- skim_SRPD$factor.top_counts[4] |>
+skim_SSI$factor.top_counts[4] <- skim_SSI$factor.top_counts[4] |>
   str_replace_all(c(MET = "METRO",
                     TAX = "TAXI"))
 
 ```
-It can be seen there are different variables in nature and sustainability table (see @tbl-Social-Interaction-Descriptives) more through using Likert scale to organize respondents' answer  to variables.We can see lots of missing values for changing the mode because most of people do not tend to change their main mode  of travel when it comes to a climatic event like heavy rain or flood and for whom wants to change, using car has the most priority. Most of people have poor level of access to the currently available sustainable modes of transport (eg hybrid buses, electric cars, public bicycles) and they assign high level of importance to that. Again we have so many missing value in payment variable because almost half of people would be willing to spend more on transportation to gain access to more sustainable modes and they indicate 5-15% of their payments they tend to spend in this regard.In terms of level of importance of improving different aspects in public transport routes most respondents assume high level of importance to presence of trees,  access to parks, access to sustainable transport modes and broaden supply of sustainable transport modes. 
+It can be seen there are different variables in nature and sustainability table (see @tbl-Nature-Nustainability-Descriptives) more through using Likert scale to organize respondents' answer  to variables.We can see lots of missing values for changing the mode because most of people do not tend to change their main mode  of travel when it comes to a climatic event like heavy rain or flood and for whom wants to change, using car has the most priority. Most of people have poor level of access to the currently available sustainable modes of transport (eg hybrid buses, electric cars, public bicycles) and they assign high level of importance to that. Again we have so many missing value in payment variable because almost half of people would be willing to spend more on transportation to gain access to more sustainable modes and they indicate 5-15% of their payments they tend to spend in this regard.In terms of level of importance of improving different aspects in public transport routes most respondents assume high level of importance to presence of trees,  access to parks, access to sustainable transport modes and broaden supply of sustainable transport modes. 
+Nature and sustainablity information will helps planner to provide people with a safe, convenient and evironment-friendly transportation system. This will also boost the quality of life, people's mobility and goods and enhance economic growth through erfficient transpotation services. 
+
 ```{r Nature and Sustainability}
 #| tbl-cap: Variables regarding perspectives about nature and sustainability of respondents
 #| tbl-cap-location: top
-#| label: Nature-Nustainability-Descriptives
+#| label: @tbl-Nature-Nustainability-Descriptives
 #| echo: false
 skim(Santiago_NS)
 skim_SNS <- skim(Santiago_NS)
@@ -479,42 +483,42 @@ skim_SNS$factor.top_counts[2] <- skim_SNS$factor.top_counts[2] |>
                     TAX = "TAXI",
                     COL = "COLECTIVO"))
 
-skim_SSI$factor.top_counts[3] <- skim_SSI$factor.top_counts[3] |>
+skim_SNS$factor.top_counts[3] <- skim_SNS$factor.top_counts[3] |>
   str_replace_all(c(POO = "POOR",
                     FAI = "FAIR",
                     GOO = "GOOD", 
                     VER = "VERY GOOD"))
 
-skim_SSI$factor.top_counts[4] <- skim_SSI$factor.top_counts[4] |>
+skim_SNS$factor.top_counts[4] <- skim_SNS$factor.top_counts[4] |>
   str_replace_all(c(VER = "VERY IMPORTANT",
                     IMP = "IMPORTANT",
                     MOD = "MODERATELY IMPORTANT",
                     NOT = "NOT IMPORTANT"))
 
-skim_SSI$factor.top_counts[6] <- skim_SSI$factor.top_counts[6] |>
+#####skim_SNS$factor.top_counts[6] <- skim_SNS$factor.top_counts[6] |>
   str_replace_all(c(5-1 = "5-15%",
                     15 = "15-30%",
                     30 = "30% or more")) 
                   
-skim_SSI$factor.top_counts[7] <- skim_SSI$factor.top_counts[7] |>
+skim_SNS$factor.top_counts[7] <- skim_SNS$factor.top_counts[7] |>
   str_replace_all(c(VER = "VERY IMPORTANT",
                     IMP = "IMPORTANT",
                     MOD = "MODERATELY IMPORTANT",
                     NOT = "NOT IMPORTANT"))
 
-skim_SSI$factor.top_counts[8] <- skim_SSI$factor.top_counts[8] |>
+skim_SNS$factor.top_counts[8] <- skim_SNS$factor.top_counts[8] |>
   str_replace_all(c(VER = "VERY IMPORTANT",
                     IMP = "IMPORTANT",
                     MOD = "MODERATELY IMPORTANT",
                     SLI = "SLIGHTLY IMPORTANT"))
 
-skim_SSI$factor.top_counts[9] <- skim_SSI$factor.top_counts[9] |>
+skim_SNS$factor.top_counts[9] <- skim_SNS$factor.top_counts[9] |>
   str_replace_all(c(VER = "VERY IMPORTANT",
                     IMP = "IMPORTANT",
                     MOD = "MODERATELY IMPORTANT",
                     SLI = "SLIGHTLY IMPORTANT"))
 
-skim_SSI$factor.top_counts[10] <- skim_SSI$factor.top_counts[10] |>
+skim_SNS$factor.top_counts[10] <- skim_SNS$factor.top_counts[10] |>
   str_replace_all(c(VER = "VERY IMPORTANT",
                     IMP = "IMPORTANT",
                     MOD = "MODERATELY IMPORTANT",
@@ -523,7 +527,9 @@ skim_SSI$factor.top_counts[10] <- skim_SSI$factor.top_counts[10] |>
                     
 
 ```
-The information, telecommunications and mode shifting of respondents (see @tbl-ITC-Shifting-Descriptives) reveals numerous factorial variables using Likert scale to identify the exact level of respondents' viewpoints. We can see a considerable number of missing values in quality of changing mode of travel because of people's decision on mostly saying yes to shift between transport modes on their usual trips and for those who change the quality of these inerchanges was good. Many people assign a good level when they are asked to assess the waiting times, time of shifts and total travel time in their regular trips. Most people have access to technology tools such as smartphones and internet, with which they can view information on transportation services and they assign a good level of technological information available to see transportation alternatives? (eg smartphone applications, internet, signs) and most of them assume it is very important to have access to technological information for their usual trips
+The information, telecommunications and mode shifting of respondents (see @tbl-ITC-Shifting-Descriptives) reveals numerous factorial variables using Likert scale to identify the exact level of respondents' viewpoints. We can see a considerable number of missing values in quality of changing mode of travel because of people's decision on mostly saying yes to shift between transport modes on their usual trips and for those who change the quality of these inerchanges was good. Many people assign a good level when they are asked to assess the waiting times, time of shifts and total travel time in their regular trips. Most people have access to technology tools such as smartphones and internet, with which they can view information on transportation services and they assign a good level of technological information available to see transportation alternatives (eg smartphone applications, internet, signs) and most of them assume it is very important to have access to technological information for their usual trips. 
+
+This section will gives insights on desiging a strong transportation network to facilitate people's different activities such as work, school, grocery shopping and so forth. Also experts can make users informed about traffic circumstances, road information and cost of transportation by using various modes.
 ```{r ITC and Shifting}
 #| tbl-cap: Variables regarding information and telecommunications and mode shifting of respondents
 #| tbl-cap-location: top
@@ -556,10 +562,10 @@ skim_SIS$factor.top_counts[5] <- skim_SIS$factor.top_counts[5] |>
                     VER = "VERY GOOD"))
 
 skim_SIS$factor.top_counts[6] <- skim_SIS$factor.top_counts[6] |>
-  str_replace_all(c(ALL = "All the previous ones",
-                    TOO = "Too long shifts",
-                    UNC = "Uncomfortable shifting",
-                    BAD = "Bad infrastructure for waiting times"))
+  str_replace_all(c(ALL = "ALL THE PREVIOUS ONES",
+                    TOO = "TOO LONG SHIFTS",
+                    UNC = "UNCOMFORTABLE SHIFTING",
+                    BAD = "BAD INFRASTRUCTURE FOR WAITING TIMES"))
 
 skim_SIS$factor.top_counts[8] <- skim_SIS$factor.top_counts[8] |>
   str_replace_all(c(GOO = "GOOD",
@@ -567,7 +573,7 @@ skim_SIS$factor.top_counts[8] <- skim_SIS$factor.top_counts[8] |>
                     FAI = "FAIR",
                     EXC = "EXCELLENT"))
 
-skim_SSI$factor.top_counts[9] <- skim_SSI$factor.top_counts[9] |>
+skim_SIS$factor.top_counts[9] <- skim_SIS$factor.top_counts[9] |>
   str_replace_all(c(VER = "VERY IMPORTANT",
                     IMP = "IMPORTANT",
                     MOD = "MODERATELY IMPORTANT",
@@ -712,6 +718,9 @@ skim_SBE$factor.top_counts[22] <- skim_SBE$factor.top_counts[22] |>
 
 
 The data set of commuting behavior of respondents(see @tbl-Travel-work-Descriptives) indicates several factorial variables mostly using Likert scales. While most of people were neutral when they think their access to the transport network has affected their chances of having a better job, others assign a goof level of job opportunities available in their commune of residence. In terms of the level of access to employment are people interested in having in their commune of residence most of them tend to have the highest level and most of them are very satisfied with their current job. Most of people spend more than one hour in their regular commuting and their frequent time of commuting for them is between 7:00 - 9:00. Also many people spend 35.000-75.000 monthly on their transportation expenditure. 
+
+commuting behavior of respondents will be helpful when it comes to accessibility and commuting time. This table provides useful information which can play a role in promoting efficient road network wich is not too much time consuming and also provide users with a efficacious network.  
+
 ```{r Travel to work}
 #| tbl-cap: Variables regarding the commuting behavior of respondents
 #| tbl-cap-location: top
@@ -721,9 +730,9 @@ skim(Santiago_TW)
 skim_STW <- skim(Santiago_TW)
 skim_STW$factor.top_counts[1] <- skim_STW$factor.top_counts[1] |>
   str_replace_all(c(NEU = "Neutral", 
-                    NO = "Mostly",
-                    MIN = "Commonly",
-                    MAJ = "Slightly"))
+                    NO = "NO AFFECT",
+                    MIN = "MINOR AFFECT",
+                    MAJ = "MAJOR AFEECT"))
 
 skim_STW$factor.top_counts[2] <- skim_STW$factor.top_counts[2] |>
   str_replace_all(c(GOO = "GOOD",
@@ -742,23 +751,23 @@ skim_STW$factor.top_counts[4] <- skim_STW$factor.top_counts[4] |>
                     EXC = "EXTREMELY SATISFIED",
                     MOD = "MODERATELY SATISFIED",
                     SLI = "SLIGHTLY SATISFIED"))
-skim_STW$factor.top_counts[5] <- skim_STW$factor.top_counts[5] |>
+###skim_STW$factor.top_counts[5] <- skim_STW$factor.top_counts[5] |>
   str_replace_all(c(1h = "1h and more",
                     40- = "40-60 min",
                     20- = "20-40 min",
                     0-2 = "0-20 min"))
 
-skim_STW$factor.top_counts[6] <- skim_STW$factor.top_counts[6] |>
+###skim_STW$factor.top_counts[6] <- skim_STW$factor.top_counts[6] |>
   str_replace_all(c(7:0 = "7:00 - 9:00",
                     Oth = "Others",
                     9:0 = "9:00 - 13:00",
                     18: = "18:00 - 21:00"))
 
-skim_STW$factor.top_counts[7] <- skim_STW$factor.top_counts[7] |>
+###skim_STW$factor.top_counts[7] <- skim_STW$factor.top_counts[7] |>
   str_replace_all(c(35. = "35.000-75.000",
-                    Les = "Less than 35.000",
+                    Les = "LESS THAN 35.000",
                     75. = "75.000-125.000",
-                    Mor = "More than 125.000"))
+                    Mor = "MORE THAN 125.000"))
 ```
 
 ## Experimental Design, Materials and Methods
