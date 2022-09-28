@@ -396,7 +396,7 @@ Santiago_RPD <- SantiagoSurvey_trans %>%
                              ordered = TRUE)) %>%
   mutate(r3F_ACCESS_DEPENDENCY = factor(r3F_ACCESS_DEPENDENCY, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("VERY LOW", "BELOW AVERAGE", "AVERAGE", "ABOVE AVERAGE", "VERY HIGH"),
+                             labels = c("TOO LOW", "BELOW AVERAGE", "AVERAGE", "ABOVE AVERAGE", "VERY HIGH"),
                              ordered = TRUE)) %>%
   mutate(r3G_QUALITY_INCRS = factor(r3G_QUALITY_INCRS, 
                              levels = c("1", "2", "3", "4", "5"), 
