@@ -20,13 +20,13 @@ Santiago sourced from 2016 survey.
 \details{
 @format A data frame with 451 rows and 7 variables:
 \describe{
-\item{r8A_ACCESSJOB}{How much do respondents think their access to the transport network has affected their chances of having a better job?}
-\item{r8B_JOBOPP}{How do respondents assess the job opportunities available in their commune of residence?}
-\item{r8C_ACC_COM}{What level of access to employment are respondents interested in having in their commune of residence?}
-\item{r8D_EMPLSATISF}{How satisfied are respondents with their current job?}
-\item{r8E_TIMECOMMUT}{How long is your regular commuting?}
-\item{r8F_SCHEDULE}{What is the frequent time of their commuting?}
-\item{r8G_SPENDING}{Monthly expenditure on transport}
+\item{r8A_ACCESSJOB}{How much do respondents think their access to the transport network has affected their chances of having a better job?; this variable is an ordered factor with five levels, "NO AFFECT", "MINOR AFFECT", "NEUTRAL", "MODERATE AFFECT", "MAJOR AFEECT"}
+\item{r8B_JOBOPP}{How do respondents assess the job opportunities available in their commune of residence?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r8C_ACC_COM}{What level of access to employment are respondents interested in having in their commune of residence?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r8D_EMPLSATISF}{How satisfied are respondents with their current job?; this variable is an ordered factor with five levels, "NOT AT ALL SATISFIED", "SLIGHTLY SATISFIED", "MODERATELY SATISFIED", "VERY SATIAFIED", "EXTREMELY SATISFIED"}
+\item{r8E_TIMECOMMUT}{How long is your regular commuting?; this variable is an ordered factor with four levels, "0-20 min", "20-40 min", "40-60 min", "1h and more"}
+\item{r8F_SCHEDULE}{What is the frequent time of their commuting?; this variable is an ordered factor with six levels, "7:00 - 9:00", "9:00 - 13:00", "13:00 - 15:00", "15:00 - 18:00", "18:00 - 21:00", "Others"}
+\item{r8G_SPENDING}{Monthly expenditure on transport; this variable is an ordered factor with four levels, "Less than 35.000", "35.000-75.000", "75.000-125.000", "More than 125.000"}
 }
 }
 \examples{

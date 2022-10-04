@@ -206,11 +206,11 @@ Santiago_H <- SantiagoSurvey_trans %>%
   dplyr::select(starts_with("r1")) %>%
   mutate(r1A_STRESS = factor(r1A_STRESS, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "TOO LOW"),
+                             labels = c("VHIGH", "HIGH", "MEDIUM", "LOW", "VLOW"),
                              ordered = TRUE)) %>%
   mutate(r1B_EFFORT = factor(r1B_EFFORT, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("VERY NEGATIVE", "SLIGHTLY NEGATIVE", "NEUTRAL", "MOSTLY POSITIVE", "COMPLETELY POSITVE"),
+                             labels = c("VNEGATIVE", "NEGATIVE", "NEUTRAL", "POSITIVE", "VPOSITVE"),
                              ordered = TRUE)) %>%
   mutate(r1C_PROXIMITY = factor(r1C_PROXIMITY, 
                              levels = c("1", "2", "3", "4", "5"), 
@@ -218,15 +218,15 @@ Santiago_H <- SantiagoSurvey_trans %>%
                              ordered = TRUE)) %>%
   mutate(r1D_CONTAM = factor(r1D_CONTAM, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("Too DISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VEERY SATISFIED"),
+                             labels = c("VDISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VSATISFIED"),
                              ordered = TRUE)) %>%
   mutate(r1E_SAFETY = factor(r1E_SAFETY, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("Too DISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VEERY SATISFIED"),
+                             labels = c("VDISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VSATISFIED"),
                              ordered = TRUE)) %>%
   mutate(r1F_COMFORT = factor(r1F_COMFORT, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("Too DISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VEERY SATISFIED"),
+                             labels = c("VDISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VSATISFIED"),
                              ordered = TRUE)) %>%
   mutate(r1GA_STRESS  = factor(r1GA_STRESS , 
                              levels = c("1", "2", "3", "4", "5"), 
@@ -317,11 +317,11 @@ Santiago_FE <- SantiagoSurvey_trans %>%
   
   mutate(r2B_DAILY_ENJOY = factor(r2B_DAILY_ENJOY, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "Too LOW"),
+                             labels = c("VHIGH", "HIGH", "MEDIUM", "LOW", "VLOW"),
                              ordered = TRUE)) %>%
   mutate(r2C_IMP_QUALITY = factor(r2C_IMP_QUALITY, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "Too LOW"),
+                             labels = c("VHIGH", "HIGH", "MEDIUM", "LOW", "VLOW"),
                              ordered = TRUE)) %>%
   mutate(r2D_AFFECT = factor(r2D_AFFECT, 
                              levels = c("A", "B", "C", "D", "E", "F", "G", "H"), 
@@ -396,11 +396,11 @@ Santiago_RPD <- SantiagoSurvey_trans %>%
                              ordered = TRUE)) %>%
   mutate(r3F_ACCESS_DEPENDENCY = factor(r3F_ACCESS_DEPENDENCY, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("TOO LOW", "BELOW AVERAGE", "AVERAGE", "ABOVE AVERAGE", "VERY HIGH"),
+                             labels = c("VLOW", "LOW", "MEDIUM", "HIGH", "VHIGH"),
                              ordered = TRUE)) %>%
   mutate(r3G_QUALITY_INCRS = factor(r3G_QUALITY_INCRS, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("TOO LOW", "BELOW AVERAGE", "AVERAGE", "ABOVE AVERAGE", "VERY HIGH"),
+                             labels = c("VLOW", "LOW", "MEDIUM", "HIGH", "VHIGH"),
                              ordered = TRUE)) %>%
   mutate(r3H_ECON = factor(r3H_ECON, 
                              levels = c("A", "B", "C","D", "E", "F", "G", "H", "TODAS"), 

@@ -20,15 +20,15 @@ Santiago sourced from 2016 survey.
 \details{
 @format A data frame with 451 rows and 9 variables:
 \describe{
-\item{r6A_SHIFT}{Do respondents shift between transport modes on their usual trips?}
-\item{r6B_QUALITY_SHIFT}{If YES in the previous question, how is the quality of these interchanges?}
-\item{r6CA_WAITING}{How would respondents assess their regular trips in terms of: Waiting times}
-\item{r6CB_TIME_SHIFT}{How would respondents assess their regular trips in terms of: Time of shifts}
-\item{r6CC_TOTALTIME}{How would respondents assess their regular trips in terms of: Travel time}
-\item{r6D_DIFFICULTY}{What main aspect makes their shifts difficult?}
-\item{r6E_TOOL}{Do respondents have access to technology tools such as smartphones and internet, with which they can view information on transportation services?}
-\item{r6F_INFO}{How do you assess the level of technological information available to see transportation alternatives? (eg smartphone applications, internet, signs)}
-\item{r6G_IMP_INFO}{How important is it for respondents to have access to technological information for their usual trips?}
+\item{r6A_SHIFT}{Do respondents shift between transport modes on their usual trips?; this variable is an out of order factor with two levels, "YES", "NO"}
+\item{r6B_QUALITY_SHIFT}{If YES in the previous question, how is the quality of these interchanges?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r6CA_WAITING}{How would respondents assess their regular trips in terms of: Waiting times; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r6CB_TIME_SHIFT}{How would respondents assess their regular trips in terms of: Time of shifts; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r6CC_TOTALTIME}{How would respondents assess their regular trips in terms of: Travel time; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r6D_DIFFICULTY}{What main aspect makes their shifts difficult?; this variable is an out of order factor with six levels, "Bad physical conection in sidewalks", "Shifts take too long", "Shifting is not comfortable", "Bad infrastructure for waiting times", "Shifting is not safe", "All the previous ones","Other"}
+\item{r6E_TOOL}{Do respondents have access to technology tools such as smartphones and internet, with which they can view information on transportation services?; this variable is an out of order factor with two levels, "YES", "NO"}
+\item{r6F_INFO}{How do you assess the level of technological information available to see transportation alternatives? (eg smartphone applications, internet, signs); this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r6G_IMP_INFO}{How important is it for respondents to have access to technological information for their usual trips?; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 }
 }
 \examples{

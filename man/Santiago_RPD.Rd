@@ -20,29 +20,29 @@ Santiago sourced from 2016 survey.
 \details{
 @format A data frame with 451 rows and 23 variables:
 \describe{
-\item{r3A_ACCESS}{How do respondents assess their access to employment opportunities through public transport?}
-\item{r3B_ACC_EM}{How does their access to public transport allows you to access the employment you need?}
-\item{r3CA_FAM}{How often do respondents perform these activities? Visiting family and friends}
-\item{r3CB_REC}{How often do respondents perform these activities? Recreational activities}
-\item{r3CC_CUL}{How often do respondents perform these activities? Cultural activities}
-\item{r3CD_SPO}{How often do respondents perform these activities? Sport activities}
-\item{r3CE_GROC}{How often do respondents perform these activities? Grocery/Food shopping}
-\item{r3CF_SOC}{How often do respondents perform these activities? Social activities}
-\item{r3DA_FAM}{What is the importance respondents assign to these aspects? Visiting family and friends}
-\item{r3DB_REC}{What is the importance respondents assign to these aspects? Recreational activities}
-\item{r3DC_CUL}{What is the importance respondents assign to these aspects? Cultural activities}
-\item{r3DD_SPO}{What is the importance respondents assign to these aspects? Sport activities}
-\item{r3DE_GROC}{What is the importance respondents assign to these aspects? Grocery/Food shopping}
-\item{r3DF_SOC}{What is the importance respondents assign to these aspects? Social activities}
-\item{r3E_OPTIONS}{How important do respondents consider having several options to use different modes of transport?}
-\item{r3F_ACCESS_DEPENDENCY}{How much does respondents' quality of life depend on the access respondents currently have to public transport?}
-\item{r3G_QUALITY_INCRS}{How much do respondents think their quality of life would increase if they have better access to public transport?}
-\item{r3H_ECON}{Which transport modes are affordable for respondents and their family?}
-\item{r3I_NOECON}{Which transport modes are economically unaffordable?}
-\item{r3JA_OFIC}{How important it is to improve the following aspects of the public transport system? Improve access to offices and comerccial areas}
-\item{r3JB_MODES}{How important it is to improve the following aspects of the public transport system? Improve disponibility of different transport modes}
-\item{r3JC_COMFORT}{How important it is to improve the following aspects of the public transport system? Improve comfort for the use of public transport}
-\item{r3JD_OTHERS}{How important it is to improve the following aspects of the public transport system? Incorporate other modes to the fare system}
+\item{r3A_ACCESS}{How do respondents assess their access to employment opportunities through public transport?; this variable is an ordered factor with five levels,"POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r3B_ACC_EM}{How does their access to public transport allows you to access the employment you need?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r3CA_FAM}{How often do respondents perform these activities? Visiting family and friends; this variable is an ordered factor with five levels, "NEVER", "RARELY", "SOMETIMES", "OFTEN", "ALWAYS"}
+\item{r3CB_REC}{How often do respondents perform these activities? Recreational activities; this variable is an ordered factor with five levels, "NEVER", "RARELY", "SOMETIMES", "OFTEN", "ALWAYS"}
+\item{r3CC_CUL}{How often do respondents perform these activities? Cultural activities; this variable is an ordered factor with five levels, "NEVER", "RARELY", "SOMETIMES", "OFTEN", "ALWAYS"}
+\item{r3CD_SPO}{How often do respondents perform these activities? Sport activities; this variable is an ordered factor with five levels, "NEVER", "RARELY", "SOMETIMES", "OFTEN", "ALWAYS"}
+\item{r3CE_GROC}{How often do respondents perform these activities? Grocery/Food shopping; this variable is an ordered factor with five levels, "NEVER", "RARELY", "SOMETIMES", "OFTEN", "ALWAYS"}
+\item{r3CF_SOC}{How often do respondents perform these activities? Social activities; this variable is an ordered factor with five levels, "NEVER", "RARELY", "SOMETIMES", "OFTEN", "ALWAYS"}
+\item{r3DA_FAM}{What is the importance respondents assign to these aspects? Visiting family and friends; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+\item{r3DB_REC}{What is the importance respondents assign to these aspects? Recreational activities; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+\item{r3DC_CUL}{What is the importance respondents assign to these aspects? Cultural activities; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+\item{r3DD_SPO}{What is the importance respondents assign to these aspects? Sport activities; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+\item{r3DE_GROC}{What is the importance respondents assign to these aspects? Grocery/Food shopping; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+\item{r3DF_SOC}{What is the importance respondents assign to these aspects? Social activities; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+\item{r3E_OPTIONS}{How important do respondents consider having several options to use different modes of transport?; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{r3F_ACCESS_DEPENDENCY}{How much does respondents' quality of life depend on the access respondents currently have to public transport?; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+\item{r3G_QUALITY_INCRS}{How much do respondents think their quality of life would increase if they have better access to public transport?; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
+\item{r3H_ECON}{Which transport modes are affordable for respondents and their family?; this variable is an out of order factor with eight levels, "CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+\item{r3I_NOECON}{Which transport modes are economically unaffordable?; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+\item{r3JA_OFIC}{How important it is to improve the following aspects of the public transport system? Improve access to offices and comerccial areas; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{r3JB_MODES}{How important it is to improve the following aspects of the public transport system? Improve disponibility of different transport modes; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{r3JC_COMFORT}{How important it is to improve the following aspects of the public transport system? Improve comfort for the use of public transport; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{r3JD_OTHERS}{How important it is to improve the following aspects of the public transport system? Incorporate other modes to the fare system; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 }
 }
 \examples{

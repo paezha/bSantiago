@@ -20,28 +20,28 @@ Santiago sourced from 2016 survey.
 \details{
 @format A data frame with 451 rows and 22 variables:
 \describe{
-\item{r7AA_AUTOSPACE}{How do respondents evaluate the following aspects near their home? Space for cars}
-\item{r7AB_PARKING_NUMB}{How do respondents evaluate the following aspects near their home? Amount of parking spaces}
-\item{r7AC_QHIWAY}{How do respondents evaluate the following aspects near their home? Quality of highways}
-\item{r7AD_PEDESTRN}{How do respondents evaluate the following aspects near their home? Space for pedestrians}
-\item{r7AE_QSIDEWA}{How do respondents evaluate the following aspects near their home? Quality of sidewalks}
-\item{r7AF_CLEAN_STOP}{How do respondents evaluate the following aspects near their home? Cleaningness of bus stops}
-\item{r7AG_SEAT}{How do respondents evaluate the following aspects near their home? Sitting areas in bus stops}
-\item{r7AH_CLIMA}{How do respondents evaluate the following aspects near their home? Weather protection in bus stops}
-\item{r7AI_CICLEWA_NUMB}{How do respondents evaluate the following aspects near their home? Amount of cycleways}
-\item{r7AJ_CICLEWA_Q}{How do respondents evaluate the following aspects near their home? Quality of cycleways}
-\item{r7AK_BICSHARE}{How do respondents evaluate the following aspects near their home? Bike sharing schemes}
-\item{r7BA_IMPAUTOSPACE}{How do respondents rate the level of importance of: Space for cars}
-\item{r7BB_IMPPARKING_NUMB}{How do respondents rate the leve of importance of: Amount of parking spaces}
-\item{r7BC_IMPQHIWAY}{How do respondents rate the leve of importance of: Quality of highways}
-\item{r7BD_IMPPEDESTRN}{How do respondents rate the leve of importance of: Space for pedestrians}
-\item{r7BE_IMPQSIDEWA}{How do respondents rate the leve of importance of: Quality of sidewalks}
-\item{r7BF_IMPCLEAN_STOP}{How do respondents rate the leve of importance of: Cleaningness of bus stops}
-\item{r7BG_IMPSEAT}{How do respondents rate the leve of importance of: Sitting areas in bus stops}
-\item{r7BH_IMPCLIMA}{How do respondents rate the leve of importance of: Weather protection in bus stops}
-\item{r7BI_IMPCICLEWA_NUMB}{How do respondents rate the leve of importance of: Amount of cycleways}
-\item{r7BJ_IMPCICLEWA_Q}{How do respondents rate the leve of importance of: Quality of cycleways}
-\item{r7BK_IMPBICSHARE}{How do respondents rate the leve of importance of: Bike sharing schemes}
+\item{r7AA_AUTOSPACE}{How do respondents evaluate the following aspects near their home? Space for cars; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r7AB_PARKING_NUMB}{How do respondents evaluate the following aspects near their home? Amount of parking spaces; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r7AC_QHIWAY}{How do respondents evaluate the following aspects near their home? Quality of highways; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r7AD_PEDESTRN}{How do respondents evaluate the following aspects near their home? Space for pedestrians; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r7AE_QSIDEWA}{How do respondents evaluate the following aspects near their home? Quality of sidewalks; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r7AF_CLEAN_STOP}{How do respondents evaluate the following aspects near their home? Cleaningness of bus stops; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r7AG_SEAT}{How do respondents evaluate the following aspects near their home? Sitting areas in bus stops; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r7AH_CLIMA}{How do respondents evaluate the following aspects near their home? Weather protection in bus stops; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r7AI_CICLEWA_NUMB}{How do respondents evaluate the following aspects near their home? Amount of cycleways; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r7AJ_CICLEWA_Q}{How do respondents evaluate the following aspects near their home? Quality of cycleways; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r7AK_BICSHARE}{How do respondents evaluate the following aspects near their home? Bike sharing schemes; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r7BA_IMPAUTOSPACE}{How do respondents rate the level of importance of: Space for cars; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{r7BB_IMPPARKING_NUMB}{How do respondents rate the leve of importance of: Amount of parking spaces; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{r7BC_IMPQHIWAY}{How do respondents rate the leve of importance of: Quality of highways; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{r7BD_IMPPEDESTRN}{How do respondents rate the leve of importance of: Space for pedestrians; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{r7BE_IMPQSIDEWA}{How do respondents rate the leve of importance of: Quality of sidewalks; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{r7BF_IMPCLEAN_STOP}{How do respondents rate the leve of importance of: Cleaningness of bus stops; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{r7BG_IMPSEAT}{How do respondents rate the leve of importance of: Sitting areas in bus stops; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{r7BH_IMPCLIMA}{How do respondents rate the leve of importance of: Weather protection in bus stops; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{r7BI_IMPCICLEWA_NUMB}{How do respondents rate the leve of importance of: Amount of cycleways; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{r7BJ_IMPCICLEWA_Q}{How do respondents rate the leve of importance of: Quality of cycleways; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{r7BK_IMPBICSHARE}{How do respondents rate the leve of importance of: Bike sharing schemes; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 }
 }
 \examples{
