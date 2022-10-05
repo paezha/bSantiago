@@ -625,7 +625,7 @@ Santiago_TW <- SantiagoSurvey_trans %>%
   dplyr::select(starts_with("r8")) %>%
 mutate(r8A_ACCESSJOB = factor(r8A_ACCESSJOB, 
                              levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("NO AFFECT", "MINOR AFFECT", "NEUTRAL", "MODERATE AFFECT", "MAJOR AFEECT"),
+                             labels = c("NO IMPACT", "MINOR IMPACT", "SOME IMPACT", "MODERATE IMPACT", "MAJOR IMPACT"),
                              ordered = TRUE)) %>%
   mutate(r8B_JOBOPP = factor(r8B_JOBOPP, 
                              levels = c("1", "2", "3", "4", "5"), 

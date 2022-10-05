@@ -1,6 +1,7 @@
 ---
 title: "A dataset to study equity in individual travel behavior and choices in Santiago, Chile"
 author: "Niloofar Nalaee, Beatriz Mella Lira, Antonio Paez"
+bibliography: references.bib
 format:
   docx:
     reference-doc: custom-reference-doc.docx
@@ -9,6 +10,7 @@ format:
 ```{r}
 #| label: load-packages
 #| echo: false
+#| include: false
 library(bSantiago) # A data package with the results of a travel and well-being survey conducted in Santiago in 2016
 library(dplyr) # A Grammar of Data Manipulation
 library(skimr) # Compact and Flexible Summaries of Data
@@ -50,7 +52,7 @@ See @tbl-specifications for details of the data set.
 
 ## Value of the data 
 
-A large body of the data has made inroads investigating psychological impact on travelers ranging from positive feelings of enjoyment in some to the sensation of stress in many others that can affect the effectiveness of policy measure (in the case of positive feelings) and are known to affect health outcomes (in the case of stress). This would be interesting for those with transport policies concerns.
+Creating open data products can help accelerate research [@arribas2021open]. A large body of the data has made inroads investigating psychological impact on travelers ranging from positive feelings of enjoyment in some to the sensation of stress in many others that can affect the effectiveness of policy measure (in the case of positive feelings) and are known to affect health outcomes (in the case of stress). This would be interesting for those with transport policies concerns.
 Dataset contribute to psychological impact on travelers both active and motorized modes of transportation to examines not only the feeling of stress, but also how these effects are experienced by travelers and investigates the importance that travelers attach to their feelings of stress which makes it valuable for researchers who focused on public sector development and health-related policies.
 This dataset allows us to explore the concept of “limited horizons”, the normalization of subpar experiences by those less able to adapt, an advantageous resource for further research regarding transport inequalities, index of stress, travel behavior in the region or even as a representative for other areas with similar attributes.
 The dataset provides a wide range of travel-related issues such as socio-demographics, health-related, perceptions and travel behavior, travel choices and planning, social interaction factors, built environment, among others.  
@@ -484,7 +486,7 @@ Nature and sustainablity information will helps planner to provide people with a
 ```{r Nature and Sustainability}
 #| tbl-cap: Variables regarding perspectives about nature and sustainability of respondents
 #| tbl-cap-location: top
-#| label: @tbl-Nature-Nustainability-Descriptives
+#| label: tbl-Nature-Nustainability-Descriptives
 #| echo: false
 #
 #skim(Santiago_NS)
@@ -506,10 +508,10 @@ skim_SNS$factor.top_counts[4] <- skim_SNS$factor.top_counts[4] |>
                     MOD = "MODERATELY IMPORTANT",
                     NOT = "NOT IMPORTANT"))
 
-#####skim_SNS$factor.top_counts[6] <- skim_SNS$factor.top_counts[6] |>
-  #str_replace_all(c(5-1 = "5-15%",
-                    #15 = "15-30%",
-                    #30 = "30% or more")) 
+skim_SNS$factor.top_counts[6] <- skim_SNS$factor.top_counts[6] |>
+  str_replace_all(c("30" = "30% or more",
+                    "15" = "15-30%",
+                    "5-1" = "5-15%")) 
                   
 skim_SNS$factor.top_counts[7] <- skim_SNS$factor.top_counts[7] |>
   str_replace_all(c(IMP = "IMPORTANT",
@@ -755,10 +757,10 @@ commuting behavior of respondents will be helpful when it comes to accessibility
 #skim(Santiago_TW)
 skim_STW <- skim(Santiago_TW)
 skim_STW$factor.top_counts[1] <- skim_STW$factor.top_counts[1] |>
-  str_replace_all(c(NEU = "Neutral", 
-                    NO = "NO AFFECT",
-                    MIN = "MINOR AFFECT",
-                    MAJ = "MAJOR AFEECT"))
+  str_replace_all(c(SOM = "SOME IMPACT", 
+                    NO = "NO IMPACT",
+                    MIN = "MINOR IMPACT",
+                    MAJ = "MAJOR IMPACT"))
 
 skim_STW$factor.top_counts[2] <- skim_STW$factor.top_counts[2] |>
   str_replace_all(c(GOO = "GOOD",
@@ -773,28 +775,28 @@ skim_STW$factor.top_counts[3] <- skim_STW$factor.top_counts[3] |>
                     FAI = "FAIR"))
 
 skim_STW$factor.top_counts[4] <- skim_STW$factor.top_counts[4] |>
-  str_replace_all(c(HIG = "HIGH SATIAFIED",
+  str_replace_all(c(HIG = "HIGH SATISFIED",
                     VHI = "VHIGH SATISFIED",
                     MED = "MEDIUM SATISFIED",
                     LOW = "LOW SATISFIED"))
 
-###skim_STW$factor.top_counts[5] <- skim_STW$factor.top_counts[5] |>
-  #str_replace_all(c(1h = "1h and more",
-                    #40- = "40-60 min",
-                    #20- = "20-40 min",
-                    #0-2 = "0-20 min"))
+skim_STW$factor.top_counts[5] <- skim_STW$factor.top_counts[5] |>
+  str_replace_all(c("1h" = "1h and more",
+                    "40-" = "40-60 min",
+                    "20-" = "20-40 min",
+                    "0-2" = "0-20 min"))
 
-###skim_STW$factor.top_counts[6] <- skim_STW$factor.top_counts[6] |>
-  #str_replace_all(c(7:0 = "7:00 - 9:00",
-                   # Oth = "Others",
-                   # 9:0 = "9:00 - 13:00",
-                    #18: = "18:00 - 21:00"))
+skim_STW$factor.top_counts[6] <- skim_STW$factor.top_counts[6] |>
+  str_replace_all(c("9:0" = "9:00 - 13:00",
+                    "7:0" = "7:00 - 9:00",
+                    "Oth" = "Others",
+                    "18:" = "18:00 - 21:00"))
 
-###skim_STW$factor.top_counts[7] <- skim_STW$factor.top_counts[7] |>
-  #str_replace_all(c(35. = "35.000-75.000",
-                   # Les = "LESS THAN 35.000",
-                   # 75. = "75.000-125.000",
-                   # Mor = "MORE THAN 125.000"))
+skim_STW$factor.top_counts[7] <- skim_STW$factor.top_counts[7] |>
+  str_replace_all(c("75." = "75.000-125.000",
+                    "35." = "35.000-75.000",
+                    "Les" = "LESS THAN 35.000",
+                    "Mor" = "MORE THAN 125.000"))
   
   skim_STW
 ```

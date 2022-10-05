@@ -38,10 +38,10 @@ Santiago sourced from 2016 survey.
 \item{r2AP_UNCOMFT}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Uncomfort; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
 \item{r2AQ_HAPPINESS}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Happiness; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
 \item{r2AR_STATUS}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Status; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
-\item{r2B_DAILY_ENJOY}{How much do respondents usually enjoy traveling to their daily activities?; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
-\item{r2C_IMP_QUALITY}{What level of importance do respondents attribute to the quality of their trips?; this variable is an ordered factor with five levels, "VERY HIGH", "ABOVE AVERAGE", "AVERAGE", "BELOW AVERAGE", "VERY LOW"}
-\item{r2D_AFFECT}{What does affect the most to their travel experience?; this variable is an out of order factor with eight levels, "LACK OF COMFORT", "LACK OF SAFETY", "POOR QUALITY OF STREETS", "CROWDNESS OF PASSENGERS", "DISABILITY OR REDUCED MOBILITY", "TRAVEL TIME", "ALL OF THEM", "OTHER"}
-\item{r2E_FACILIT}{What does help respondents the most to their travel experience?; this variable is an out of order factor with eight levels, "BETTER COMFORT", "BETTER SAFETY", "BETTER QULALITY ON STREETS", "LESS CROWDNESS OF PASSENGERS", "IMPROVEMENT ON ACCESIBILITY", "REDUCTION OF TIME TRAVEL", "ALL OF THEM", "OTHER"}
+\item{r2B_DAILY_ENJOY}{How much do respondents usually enjoy traveling to their daily activities?; this variable is an ordered factor with five levels, "VHIGH", "HIGH", "MEDIUM", "LOW", "VLOW"}
+\item{r2C_IMP_QUALITY}{What level of importance do respondents attribute to the quality of their trips?; this variable is an ordered factor with five levels, "VHIGH", "HIGH", "MEDIUM", "LOW", "VLOW"}
+\item{r2D_AFFECT}{What does affect the most to their travel experience?; this variable is an out of order factor with eight levels, "COMFORT ABSENCE", "SAFETY ABSENCE", "POOR QUALITY OF STREETS", "CROWDNESS OF PASSENGERS", "DISABILITY OR REDUCED MOBILITY", "TRAVEL TIME", "ALL OF THEM", "OTHER"}
+\item{r2E_FACILIT}{What does help respondents the most to their travel experience?; this variable is an out of order factor with eight levels, "COMFORT IMPROVEMENT", "SAFETY IMPROVEMENT", "BETTER QULALITY ON STREETS", "LESS CROWDNESS OF PASSENGERS", "IMPROVEMENT ON ACCESIBILITY", "REDUCTION OF TIME TRAVEL", "ALL OF THEM", "OTHER"}
 }
 }
 \examples{
