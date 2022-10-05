@@ -773,10 +773,10 @@ skim_STW$factor.top_counts[3] <- skim_STW$factor.top_counts[3] |>
                     FAI = "FAIR"))
 
 skim_STW$factor.top_counts[4] <- skim_STW$factor.top_counts[4] |>
-  str_replace_all(c(VER = "VERY SATIAFIED",
-                    EXC = "EXTREMELY SATISFIED",
-                    MOD = "MODERATELY SATISFIED",
-                    SLI = "SLIGHTLY SATISFIED"))
+  str_replace_all(c(HIG = "HIGH SATIAFIED",
+                    VHI = "VHIGH SATISFIED",
+                    MED = "MEDIUM SATISFIED",
+                    LOW = "LOW SATISFIED"))
 
 ###skim_STW$factor.top_counts[5] <- skim_STW$factor.top_counts[5] |>
   #str_replace_all(c(1h = "1h and more",
