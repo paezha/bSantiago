@@ -20,6 +20,7 @@ Santiago sourced from 2016 survey.
 \details{
 @format A data frame with 451 rows and 4 variables:
 \describe{
+\item{ID}{Unique identifier of respondent}
 \item{r4A_INTERACC}{How do respondents rate the level of interaction they have with other people during their usual trips?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 \item{r4B_PERSON}{How important do respondents consider the presence of other people during their usual travels?; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 \item{r4C_DISCRIM}{Have respondents ever felt discriminated while traveling in any mode of transport?; this variable is an out of order factor with two levels, "YES", "NO"}

@@ -20,6 +20,7 @@ Santiago sourced from 2016 survey.
 \details{
 @format A data frame with 451 rows and 22 variables:
 \describe{
+\item{ID}{Unique identifier of respondent}
 \item{r2AA_FREEDOM}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Freedom; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
 \item{r2AB_UNSAFETY}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Unsafety; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
 \item{r2AC_FUNCTIONALITY}{indicatation of of the modes of transport that respondents relate to the following feelings and concepts: Functionality; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}

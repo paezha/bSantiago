@@ -20,6 +20,7 @@ Santiago sourced from 2016 survey.
 \details{
 @format A data frame with 451 rows and 12 variables:
 \describe{
+\item{ID}{Unique identifier of respondent}
 \item{r1A_STRESS}{How do respondents assess the level of stress they experience on their usual trips?; this variable is an ordered factor with five levels, "VHIGH", "HIGH", "MEDIUM", "LOW", "VLOW"}
 \item{r1B_EFFORT}{How do respondents assess the physical effort they make in their travels?; this variable is an ordered factor with five levels, "VNEGATIVE", "NEGATIVE", "NEUTRAL", "POSITIVE", "VPOSITVE"}
 \item{r1C_PROXIMITY}{How do respondents assess their level of proximity (proximity) to other transport users on their usual trips?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}

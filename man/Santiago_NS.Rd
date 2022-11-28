@@ -20,6 +20,7 @@ Santiago sourced from 2016 survey.
 \details{
 @format A data frame with 451 rows and 10 variables:
 \describe{
+\item{ID}{Unique identifier of respondent}
 \item{r5A_CHANGE}{In a climatic event like heavy rain or flood, do respondents change their main mode of transport?; this variable is an out of order factor with two levels, "YES", "NO"}
 \item{r5B_CHANGE_MODE}{If respondents answered yes (change mode of transport in a weather event), indication of the mode(s) is required; this variable is an out of order factor with eight levels, "CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
 \item{r5C_SUST}{How do respondents assess their access to the currently available sustainable modes of transport? (eg hybrid buses, electric cars, public bicycles); this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}

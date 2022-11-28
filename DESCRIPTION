@@ -12,7 +12,7 @@ Description: A dataset containing information about socio-demographics, health-r
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.1
 URL: https://github.com/paezha/bSantiago,
     https://paezha.github.io/bSantiago/
 Depends: 

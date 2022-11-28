@@ -20,6 +20,7 @@ Santiago sourced from 2016 survey.
 \details{
 @format A data frame with 451 rows and 7 variables:
 \describe{
+\item{ID}{Unique identifier of respondent}
 \item{r8A_ACCESSJOB}{How much do respondents think their access to the transport network has affected their chances of having a better job?; this variable is an ordered factor with five levels, "NO IMPACT", "MINOR IMPACT", "SOME IMPACT", "MODERATE IMPACT", "MAJOR IMPACT"}
 \item{r8B_JOBOPP}{How do respondents assess the job opportunities available in their commune of residence?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 \item{r8C_ACC_COM}{What level of access to employment are respondents interested in having in their commune of residence?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}

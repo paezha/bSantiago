@@ -20,6 +20,7 @@ Santiago sourced from 2016 survey.
 \details{
 @format A data frame with 451 rows and 23 variables:
 \describe{
+\item{ID}{Unique identifier of respondent}
 \item{r3A_ACCESS}{How do respondents assess their access to employment opportunities through public transport?; this variable is an ordered factor with five levels,"POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 \item{r3B_ACC_EM}{How does their access to public transport allows you to access the employment you need?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 \item{r3CA_FAM}{How often do respondents perform these activities? Visiting family and friends; this variable is an ordered factor with five levels, "NEVER", "RARELY", "SOMETIMES", "OFTEN", "ALWAYS"}

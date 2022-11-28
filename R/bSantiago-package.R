@@ -70,6 +70,7 @@ NULL
 #'
 #'  @format A data frame with 451 rows and 12 variables:
 #' \describe{
+#'   \item{ID}{Unique identifier of respondent}
 #'   \item{r1A_STRESS}{How do respondents assess the level of stress they experience on their usual trips?; this variable is an ordered factor with five levels, "VHIGH", "HIGH", "MEDIUM", "LOW", "VLOW"}
 #'   \item{r1B_EFFORT}{How do respondents assess the physical effort they make in their travels?; this variable is an ordered factor with five levels, "VNEGATIVE", "NEGATIVE", "NEUTRAL", "POSITIVE", "VPOSITVE"}
 #'   \item{r1C_PROXIMITY}{How do respondents assess their level of proximity (proximity) to other transport users on their usual trips?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
@@ -100,6 +101,7 @@ NULL
 #'
 #'  @format A data frame with 451 rows and 22 variables:
 #' \describe{
+#'   \item{ID}{Unique identifier of respondent}
 #'   \item{r2AA_FREEDOM}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Freedom; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
 #'   \item{r2AB_UNSAFETY}{indicatation of the modes of transport that respondents relate to the following feelings and concepts: Unsafety; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
 #'   \item{r2AC_FUNCTIONALITY}{indicatation of of the modes of transport that respondents relate to the following feelings and concepts: Functionality; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
@@ -140,6 +142,7 @@ NULL
 #'
 #'  @format A data frame with 451 rows and 23 variables:
 #' \describe{
+#'   \item{ID}{Unique identifier of respondent}
 #'   \item{r3A_ACCESS}{How do respondents assess their access to employment opportunities through public transport?; this variable is an ordered factor with five levels,"POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 #'   \item{r3B_ACC_EM}{How does their access to public transport allows you to access the employment you need?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 #'   \item{r3CA_FAM}{How often do respondents perform these activities? Visiting family and friends; this variable is an ordered factor with five levels, "NEVER", "RARELY", "SOMETIMES", "OFTEN", "ALWAYS"}
@@ -181,6 +184,7 @@ NULL
 #'
 #'  @format A data frame with 451 rows and 4 variables:
 #' \describe{
+#'   \item{ID}{Unique identifier of respondent}
 #'   \item{r4A_INTERACC}{How do respondents rate the level of interaction they have with other people during their usual trips?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 #'   \item{r4B_PERSON}{How important do respondents consider the presence of other people during their usual travels?; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 #'   \item{r4C_DISCRIM}{Have respondents ever felt discriminated while traveling in any mode of transport?; this variable is an out of order factor with two levels, "YES", "NO"}
@@ -203,6 +207,7 @@ NULL
 #'
 #'  @format A data frame with 451 rows and 10 variables:
 #' \describe{
+#'   \item{ID}{Unique identifier of respondent}
 #'   \item{r5A_CHANGE}{In a climatic event like heavy rain or flood, do respondents change their main mode of transport?; this variable is an out of order factor with two levels, "YES", "NO"}
 #'   \item{r5B_CHANGE_MODE}{If respondents answered yes (change mode of transport in a weather event), indication of the mode(s) is required; this variable is an out of order factor with eight levels, "CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
 #'   \item{r5C_SUST}{How do respondents assess their access to the currently available sustainable modes of transport? (eg hybrid buses, electric cars, public bicycles); this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
@@ -231,6 +236,7 @@ NULL
 #'
 #'  @format A data frame with 451 rows and 9 variables:
 #' \describe{
+#'   \item{ID}{Unique identifier of respondent}
 #'   \item{r6A_SHIFT}{Do respondents shift between transport modes on their usual trips?; this variable is an out of order factor with two levels, "YES", "NO"}
 #'   \item{r6B_QUALITY_SHIFT}{If YES in the previous question, how is the quality of these interchanges?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 #'   \item{r6CA_WAITING}{How would respondents assess their regular trips in terms of: Waiting times; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
@@ -258,6 +264,7 @@ NULL
 #'
 #'  @format A data frame with 451 rows and 22 variables:
 #' \describe{
+#'   \item{ID}{Unique identifier of respondent}
 #'   \item{r7AA_AUTOSPACE}{How do respondents evaluate the following aspects near their home? Space for cars; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 #'   \item{r7AB_PARKING_NUMB}{How do respondents evaluate the following aspects near their home? Amount of parking spaces; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 #'   \item{r7AC_QHIWAY}{How do respondents evaluate the following aspects near their home? Quality of highways; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
@@ -298,6 +305,7 @@ NULL
 #'
 #'  @format A data frame with 451 rows and 7 variables:
 #' \describe{
+#'   \item{ID}{Unique identifier of respondent}
 #'   \item{r8A_ACCESSJOB}{How much do respondents think their access to the transport network has affected their chances of having a better job?; this variable is an ordered factor with five levels, "NO IMPACT", "MINOR IMPACT", "SOME IMPACT", "MODERATE IMPACT", "MAJOR IMPACT"}
 #'   \item{r8B_JOBOPP}{How do respondents assess the job opportunities available in their commune of residence?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 #'   \item{r8C_ACC_COM}{What level of access to employment are respondents interested in having in their commune of residence?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}

@@ -20,6 +20,7 @@ Santiago sourced from 2016 survey.
 \details{
 @format A data frame with 451 rows and 9 variables:
 \describe{
+\item{ID}{Unique identifier of respondent}
 \item{r6A_SHIFT}{Do respondents shift between transport modes on their usual trips?; this variable is an out of order factor with two levels, "YES", "NO"}
 \item{r6B_QUALITY_SHIFT}{If YES in the previous question, how is the quality of these interchanges?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 \item{r6CA_WAITING}{How would respondents assess their regular trips in terms of: Waiting times; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}

@@ -20,6 +20,7 @@ Santiago sourced from 2016 survey.
 \details{
 @format A data frame with 451 rows and 22 variables:
 \describe{
+\item{ID}{Unique identifier of respondent}
 \item{r7AA_AUTOSPACE}{How do respondents evaluate the following aspects near their home? Space for cars; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 \item{r7AB_PARKING_NUMB}{How do respondents evaluate the following aspects near their home? Amount of parking spaces; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 \item{r7AC_QHIWAY}{How do respondents evaluate the following aspects near their home? Quality of highways; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
