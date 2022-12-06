@@ -5,31 +5,30 @@
 \alias{Santiago_IC}
 \title{A data frame with socio-demographic information of respondents to the survey}
 \format{
-A data frame with 451 rows and 23 variables:
+A data frame with 451 rows and 22 variables:
 \describe{
 \item{ID}{Unique identifier of respondent}
-\item{ORIGIN}{Origin of travel}
 \item{r0A_COMMUNE}{Commune of residence}
 \item{r0B_MACR_ZONE}{Macro area of residence}
 \item{r0B_STREET_1}{Intersections close to your home}
 \item{r0B_STREET_2}{Intersections close to your home}
-\item{r0C_GENDER}{Gender of respondents in Santiago in 2016; this variable is an out of order factor with two levels, "FEMALE" and "MALE"}
+\item{r0C_SEX}{Sex of respondents in Santiago in 2016; this variable is a factor with two levels, "FEMALE" and "MALE"}
 \item{r0D_AGE}{Age of respondents in Santiago in 2016; this variable is an ordered factor with Six levels, "Less18", "18to24", "25to34", "35to54", "55to64", "65more"}
-\item{r0E_WEIGHT}{Weight of respondents in Santiago in 2016}
-\item{r0F_HEIGHT}{Height of respondents in Santiago in 2016}
+\item{r0E_WEIGHT}{Weight of respondents in kg}
+\item{r0F_HEIGHT}{Height of respondents in cm}
 \item{r0G_EDUCATION}{Level of education of respondents in Santiago in 2016; this variable is an ordered factor with five levels, "ELEMENTARY", "SECUNDARY", "PROFESS_TECH", "COLLEGE", "POSTGRAD"}
-\item{r0H_OCCUPATION}{Occupation of respondents in Santiago in 2016; this variable is an out of order factor with nine levels, "FULL_TIME", "PART_TIME", "SELF_EMPLOYED", "UNEMPLOYED", "HOME_TAKER", "STUDENT", "STUDENT_WORK", "RETIRED", "OTHER"}
-\item{r0I_COM_TRAB_1}{Communes where you perform your work/studies/regular trips}
-\item{r0I_COM_TRAB_2}{Communes where you perform your work/studies/regular trips}
+\item{r0H_OCCUPATION}{Occupation of respondents in Santiago in 2016; this variable is a factor with nine levels, "FULL_TIME", "PART_TIME", "SELF_EMPLOYED", "UNEMPLOYED", "HOME_TAKER", "STUDENT", "STUDENT_WORK", "RETIRED", "OTHER"}
+\item{r0I_WORK_COM_1}{Commune where you perform your work/studies/regular trips}
+\item{r0I_WORK_COM_2}{Commune where you perform your second set of work/studies/regular trips}
 \item{r0J_INCOME}{Level of income of respondents in Santiago in 2016; this variable is an ordered factor with six levels, "Less423", "423to639", "639to977", "977to1550", "1550to2380", "2380more"}
 \item{r0K_ADULTS}{Number of adults living at home}
 \item{r0L_CHILDREN}{Number of children iving at home}
-\item{r0N_DRIVING_LICENSE}{Having driving licence; this variable is an out of order factor with two levels, "YES", "NO"}
-\item{r0M_DISABILITY}{Being disable or not; this variable is an out of order factor with two levels, "YES", "NO"}
+\item{r0N_DRIVING_LICENSE}{Having driving licence; this variable is a factor with two levels, "YES", "NO"}
+\item{r0M_DISABILITY}{Being disable or not; this variable is a factor with two levels, "YES", "NO"}
 \item{r0O_TYPE_DIS}{Type of disability}
-\item{r0P_MODE1}{Main transport mode used by respondents in Santiago in 2016; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
-\item{r0Q_MODE2}{Secondary transport mode used by respondents in Santiago in 2016; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
-\item{r0R_MODE3}{Other transport mode to add used by respondents in Santiago in 2016; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+\item{r0P_MODE1}{Main transport mode used by respondents in Santiago in 2016; this variable is a factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+\item{r0Q_MODE2}{Secondary transport mode used by respondents in Santiago in 2016; this variable is a factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+\item{r0R_MODE3}{Other transport mode to add used by respondents in Santiago in 2016; this variable is a factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
 }
 }
 \source{

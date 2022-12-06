@@ -5,7 +5,7 @@
 \alias{Santiago_BE}
 \title{A data frame with information about the build environment near the place of residence of respondents to the survey}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 451 rows and 22 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 451 rows and 23 columns.
 }
 \source{
 A face to face survey considering pre-census 2012

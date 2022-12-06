@@ -11,12 +11,10 @@ Read packages used:
 ```{r}
 library(readxl)
 library(dplyr)
-
 ```
 
 Read source file:
 ```{r}
-
 SantiagoSurvey <- read_excel("SantiagoSurvey2016.xlsx")
 ```
 
@@ -30,24 +28,23 @@ SantiagoSurvey_trans <- SantiagoSurvey %>%
        r0B_MACR_ZONE = `r0B_MACR_ ZONA`,
        r0B_STREET_1 = r0B_CALLE_1,
        r0B_STREET_2= r0B_CALLE_2,
-       r0C_GENDER = r0C_GENERO,
+       r0C_SEX = r0C_GENERO,
        r0D_AGE = r0D_EDAD,
        r0E_WEIGHT = r0E_PESO,
        r0F_HEIGHT= r0F_ALTURA,
        r0G_EDUCATION = r0G_EDUCACION,
        r0H_OCCUPATION = r0H_OCUPACION,
-       r0I_COM_TRAB_1 = r0I_COM_TRAB_1,
-       r0I_COM_TRAB_2 = r0I_COM_TRAB_2,
+       r0I_WORK_COM_1 = r0I_COM_TRAB_1,
+       r0I_WORK_COM_2 = r0I_COM_TRAB_2,
        r0J_INCOME = r0J_INGRESO,
        r0K_ADULTS = r0K_ADULTOS,
-       r0L_CHILDREN = r0L_NIÑOS,
+       r0L_CHILDREN = r0L_MENORES,
        r0N_DRIVING_LICENSE = r0N_LICENCIA,
        r0M_DISABILITY = r0M_DISCAPA,
        r0O_TYPE_DIS = r0O_TIPO,
        r0P_MODE1 = r0P_MODO1,
        r0Q_MODE2 = r0Q_MODO2,
        r0R_MODE3 = r0R_MODO3,
-       ID = NUMERO,
        r1A_STRESS = r1A_ESTRES,
        r1B_EFFORT = r1B_ESFUERZO,
        r1C_PROXIMITY = r1C_CERCANIA,
@@ -60,7 +57,6 @@ SantiagoSurvey_trans <- SantiagoSurvey %>%
        r1GD_CONTAM = r1GD_CONTAM,
        r1GE_SAFETY = r1GE_SEGUR,
        r1GF_COMFORT = r1GF_COMOD,
-       ID = NUMERO,
        r2AA_FREEDOM = r2AA_LIBERTAD,
        r2AB_UNSAFETY = r2AB_INSEG,
        r2AC_FUNCTIONALITY = r2AC_FUNCIONA,
@@ -83,7 +79,6 @@ SantiagoSurvey_trans <- SantiagoSurvey %>%
        r2C_IMP_QUALITY = r2C_IMPORT,
        r2D_AFFECT = r2D_AFECTA,
        r2E_FACILIT = r2E_FACILIT,
-       ID = NUMERO,
        r3A_ACCESS = r3A_ACCESS, 
        r3B_ACC_EM = r3B_ACC_EM,
        r3CA_FAM = r3CA_FAM,
@@ -107,12 +102,10 @@ SantiagoSurvey_trans <- SantiagoSurvey %>%
        r3JB_MODES = r3JB_MODOS,
        r3JC_COMFORT = r3JC_COMOD,
        r3JD_OTHERS = r3JD_OTROS,
-       ID = NUMERO,
        r4A_INTERACC = r4A_INTERACC,
        r4B_PERSON = r4B_PERSON,
        r4C_DISCRIM = r4C_DISCRIM,
        r4D_MODE = r4D_MODO,
-       ID = NUMERO,
        r5A_CHANGE = r5A_CAMBIO,
        r5B_CHANGE_MODE = r5B_CAMBIO,
        r5C_SUST = r5C_SUST,
@@ -123,7 +116,6 @@ SantiagoSurvey_trans <- SantiagoSurvey %>%
        r5GB_PARK = r5GB_PARK,
        r5GC_MODE = r5GC_MODO,
        r5GD_MODE = r5GD_MODO,
-       ID = NUMERO,
        r6A_SHIFT = r6A_INTERC,
        r6B_QUALITY_SHIFT = r6B_CALIDAD,
        r6CA_WAITING = r6CA_ESPERA,
@@ -133,7 +125,6 @@ SantiagoSurvey_trans <- SantiagoSurvey %>%
        r6E_TOOL = r6E_HERRAM,
        r6F_INFO = r6F_INFO,
        r6G_IMP_INFO = r6G_IMP_INFO,
-       ID = NUMERO,
        r7AA_AUTOSPACE = r7AA_AUTO,
        r7AB_PARKING_NUMB = r7AB_EST,
        r7AC_QHIWAY = r7AC_AUTOP,
@@ -156,7 +147,6 @@ SantiagoSurvey_trans <- SantiagoSurvey %>%
        r7BI_IMPCICLEWA_NUMB = r7BI_CICLOV,
        r7BJ_IMPCICLEWA_Q = r7BJ_CICLOV,
        r7BK_IMPBICSHARE = r7BK_BICI,
-       ID = NUMERO,
        r8A_ACCESSJOB = r8A_ACCESO,
        r8B_JOBOPP = r8B_OPORT,
        r8C_ACC_COM = r8C_ACC_COM,
@@ -165,16 +155,15 @@ SantiagoSurvey_trans <- SantiagoSurvey %>%
        r8F_SCHEDULE = r8F_HORARIOS,
        r8G_SPENDING = r8G_GASTO
        )
-
 ```
 
 Split table:
 ```{r INDIVIDUAL CHARACTERISTICS}
 Santiago_IC <- SantiagoSurvey_trans %>%
-  dplyr::select(ID, ORIGIN, starts_with("r0")) %>%
-  mutate(r0C_GENDER = factor(r0C_GENDER, 
+  dplyr::select(ID, starts_with("r0")) %>%
+  mutate(r0C_SEX = factor(r0C_SEX, 
                              levels = c("A", "B"), 
-                             labels = c("FEMALE", "MALE")))  %>% 
+                             labels = c("WOMAN", "MAN")))  %>% 
   mutate(r0D_AGE = factor(r0D_AGE, 
                              levels = c("A", "B", "C", "D", "E", "F"), 
                              labels = c("Less18", "18to24", "25to34", "35to54","55to64", "65more"),
@@ -212,7 +201,7 @@ Santiago_IC <- SantiagoSurvey_trans %>%
 <!-- NOTE: these variables are coded with numbers 1,2,...,5, instead of letters "A", "B", etc.-->
 ```{r Health}
 Santiago_H <- SantiagoSurvey_trans %>%
-  dplyr::select(starts_with("r1")) %>%
+  dplyr::select(ID, starts_with("r1")) %>%
   mutate(r1A_STRESS = factor(r1A_STRESS, 
                              levels = c("1", "2", "3", "4", "5"), 
                              labels = c("VHIGH", "HIGH", "MEDIUM", "LOW", "VLOW"),
@@ -268,7 +257,7 @@ Santiago_H <- SantiagoSurvey_trans %>%
 
 ```{r FEELINGS AND EMOTIONS}
 Santiago_FE <- SantiagoSurvey_trans %>%
-  dplyr::select(starts_with("r2")) %>%
+  dplyr::select(ID, starts_with("r2")) %>%
   mutate(r2AA_FREEDOM  = factor(r2AA_FREEDOM , 
                              levels = c("A", "B", "C","D", "E", "F", "G", "H"), 
                              labels = c("CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"))) %>%
@@ -342,7 +331,7 @@ Santiago_FE <- SantiagoSurvey_trans %>%
 
 ```{r REASON AND PLANNING OWN DECISIONS}
 Santiago_RPD <- SantiagoSurvey_trans %>%
-  dplyr::select(starts_with("r3")) %>%
+  dplyr::select(ID, starts_with("r3")) %>%
   mutate(r3A_ACCESS = factor(r3A_ACCESS, 
                              levels = c("1", "2", "3", "4", "5"), 
                              labels = c("POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"),
@@ -438,7 +427,7 @@ Santiago_RPD <- SantiagoSurvey_trans %>%
 
 ```{r SOCIAL INTERACTION}
 Santiago_SI <- SantiagoSurvey_trans %>%
-  dplyr::select(starts_with("r4")) %>%
+  dplyr::select(ID, starts_with("r4")) %>%
 mutate(r4A_INTERACC = factor(r4A_INTERACC, 
                              levels = c("1", "2", "3", "4", "5"), 
                              labels = c("POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"),
@@ -457,7 +446,7 @@ mutate(r4A_INTERACC = factor(r4A_INTERACC,
 
 ```{r NATURE _AND_ SUSTAINABILITY}
 Santiago_NS <- SantiagoSurvey_trans %>%
-  dplyr::select(starts_with("r5")) %>%
+  dplyr::select(ID, starts_with("r5")) %>%
   mutate(r5A_CHANGE = factor(r5A_CHANGE, 
                              levels = c("A", "B"), 
                              labels = c("YES", "NO"))) %>%
@@ -500,7 +489,7 @@ Santiago_NS <- SantiagoSurvey_trans %>%
 
 ```{r ITC AND SHIFTING}
 Santiago_IS <- SantiagoSurvey_trans %>%
-  dplyr::select(starts_with("r6")) %>%
+  dplyr::select(ID, starts_with("r6")) %>%
   mutate(r6A_SHIFT = factor(r6A_SHIFT, 
                              levels = c("A", "B"), 
                              labels = c("YES", "NO"))) %>%
@@ -538,7 +527,7 @@ Santiago_IS <- SantiagoSurvey_trans %>%
 
 ```{r BUILT ENVIRONMENT}
 Santiago_BE <- SantiagoSurvey_trans %>%
-  dplyr::select(starts_with("r7")) %>%
+  dplyr::select(ID, starts_with("r7")) %>%
 mutate(r7AA_AUTOSPACE = factor(r7AA_AUTOSPACE, 
                              levels = c("1", "2", "3", "4", "5"), 
                              labels = c("POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"),
@@ -631,7 +620,7 @@ mutate(r7AA_AUTOSPACE = factor(r7AA_AUTOSPACE,
 
 ```{r TRAVEL WORK}
 Santiago_TW <- SantiagoSurvey_trans %>%
-  dplyr::select(starts_with("r8")) %>%
+  dplyr::select(ID, starts_with("r8")) %>%
 mutate(r8A_ACCESSJOB = factor(r8A_ACCESSJOB, 
                              levels = c("1", "2", "3", "4", "5"), 
                              labels = c("NO IMPACT", "MINOR IMPACT", "SOME IMPACT", "MODERATE IMPACT", "MAJOR IMPACT"),
