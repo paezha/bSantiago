@@ -20,7 +20,7 @@ A data frame with 451 rows and 22 variables:
 \item{r0H_OCCUPATION}{Occupation of respondents in Santiago in 2016; this variable is a factor with nine levels, "FULL_TIME", "PART_TIME", "SELF_EMPLOYED", "UNEMPLOYED", "HOME_TAKER", "STUDENT", "STUDENT_WORK", "RETIRED", "OTHER"}
 \item{r0I_WORK_COM_1}{Commune where you perform your work/studies/regular trips}
 \item{r0I_WORK_COM_2}{Commune where you perform your second set of work/studies/regular trips}
-\item{r0J_INCOME}{Level of income of respondents in Santiago in 2016; this variable is an ordered factor with six levels, "Less423", "423to639", "639to977", "977to1550", "1550to2380", "2380more"}
+\item{r0J_INCOME}{Level of income of respondents in Santiago in 2016; this variable is an ordered factor with six levels, "Less423", "423to639", "639to977", "977to1550", "1550to2380", "2380more" and the levels are pesos}
 \item{r0K_ADULTS}{Number of adults living at home}
 \item{r0L_CHILDREN}{Number of children iving at home}
 \item{r0N_DRIVING_LICENSE}{Having driving licence; this variable is a factor with two levels, "YES", "NO"}
