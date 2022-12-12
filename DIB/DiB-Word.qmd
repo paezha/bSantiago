@@ -139,7 +139,6 @@ skim_IC$factor.top_counts[12] <- skim_IC$factor.top_counts[12] |>
                     "238" = "2,380 or more",
                     "Les" = "Less than 423",
                     "155" = "1,550 to 2,380"))
-"977: 90, 238: 83, Les: 71, 155: 68"   
 
 skim_IC
 ```
@@ -148,7 +147,7 @@ The theme of the next table, `Santiago_TW`, deals with commuting and work variab
 
 In terms of the level of satisfaction with their current job, we see that almost 60\% of respondents are at least highly satisfied. We also see that long commutes are frequent in this sample, with about one third or respondents spending 1 h or more travelling (**BEA:** ONE WAY OR TWO WAYS?) and about one quarter of respondents spending between 40 minutes and one hour in their daily commute. This distribution is noteworthy because time spent commuting has been recognized as a factor that can affect physical and mental health and well-being in particular in association with motorized transportation [@brutus2017cycling].
 
-The most common time of the day for commuting is between 7 am and 9 am, but there are also 171 missing responses in this variable, so not much can be read from it. Finally, we note that many people spend 35,000-75,000 (**BEA:** WHAT ARE THE UNITS OF THIS? IS IT 35 PESOS OR 35,000 PESOS) monthly on their transportation expenditure. (**BEA:** MAYBE COMMENT ON THE TYPICAL RATIO OF TRANSPORT EXPENDITURE TO INCOME).
+The most common time of the day for commuting is between 7 am and 9 am, but there are also 171 missing responses in this column, so not much can be read from it. Finally, we note that many people spend 35,000-75,000 (**BEA:** WHAT ARE THE UNITS OF THIS? IS IT 35 PESOS OR 35,000 PESOS) monthly on their transportation expenditure. (**BEA:** MAYBE COMMENT ON THE TYPICAL RATIO OF TRANSPORT EXPENDITURE TO INCOME).
 
 ```{r summary-travel-to-work}
 #| tbl-cap: Variables regarding the commuting behavior of respondents
@@ -206,13 +205,9 @@ skim_STW$factor.top_counts[7] <- skim_STW$factor.top_counts[7] |>
 skim_STW
 ```
 
-**NOTE FROM ANTONIO:** SEVERAL TABLES NEED MY ATTENTION BEFORE THEY ARE READY TO BE SEEN BY BEA
+Table `Santiago_SI` includes five variables that capture various aspects of social interaction while commuting (see @tbl-Social-Interaction-Descriptives). Social interaction is a topic of interest for mode-related choices given earlier evidence that for some commuters privacy is an important consideration and/or a way to manage social stressors [@gardner2007drives; @paez2010enjoyment; @lowe2016conceptual]. When asked to rate the level of interaction with other people during their usual trips, respondents  In terms of the level of interaction people have with others during their usual trips, most of them presume a good level and they moderately feel it is important when they consider the presence of other people during their usual travels (`r4A_INTERACC`) a plurality of responses are "POOR" or "FAIR" (187) and only 73, that is 16.2\% of respondents, rate their level of interaction as "GOOD" or "EXCELLENT" report poor or fair (there are 13 missing responses). With respect to the presence of other people during their travels, the responses tend to be somewhat more ambivalent, and the difference between those for whom this is less or more important is smaller (157 responses are "NOT" or only "SLIGHTLY IMPORTANT" whereas 132 responses are "IMPORTANT" or "VERY IMPORTANT").
 
-<!--
-
-Table of social interaction (see @tbl-Social-Interaction-Descriptives) discloses factorial variables and information using Likert scale to have an ordered data set. In terms of the level of interaction people have with others during their usual trips, most of them presume a good level and they moderately feel it is important when they consider the presence of other people during their usual travels. We have a large number of missing values in mode variable because most of people said no when they were asked to specify the mode of travel if they ever felt discriminated and most of people who felt discrimination they connected it to using bus. 
-
-Information about discrimination while traveling by different modes of travel, would be a kind of racism and can affect people who can not afford private mode of travel. It may also lead to conflicting approach to cope with it as it is promoting private mode would be a danger to environment. So there might be a transport inequality needed to being tackled by urban planner, environmentalist or any other decision makers. Also getting familiar with the level of social interaction and its importance from respondents' viewpoint will give an insight into certainty or uncertainty about the conditions among members of a social network, people's tendency towards collaboration with others in different experiences like tourism networks and so on. Managing social interactions would be a stressor factor for car owners regarding the costs associated with giving rides and apprehension about being taken advantage of [@lowe2016conceptual].
+The next two variables in this table deal with feelings and the experience of discrimination: "have you felt discriminated against while travelling?" (`r4C_DISCRIM`) and if so, "while using which mode of transportation" (`r4D_MODE`). We can see in @tbl-Social-Interaction-Descriptives, that slightly fewer than one quarter of respondents (24.2\%) report having felt discriminated while commuting (only 4 responses are missing), and of those close to half (44\%) had that experience in public transportation (however, note that about 58\% of those who felt discriminated against did not state the mode).
 
 ```{r summary-social-interaction}
 #| tbl-cap: Variables regarding social interactions of respondents
@@ -244,9 +239,43 @@ skim_SSI$factor.top_counts[4] <- skim_SSI$factor.top_counts[4] |>
 skim_SSI
 ```
 
+```{r}
+#| include: false
+Santiago_IC |> 
+  left_join(Santiago_SI, by = "ID") |>
+  select(r0C_SEX, r4C_DISCRIM, r0P_MODE1) |>
+  group_by(r0C_SEX, r4C_DISCRIM, r0P_MODE1) |>
+  summarize(discrim = n())
+```
+
+**BEA:** Niloofar described @tbl-ITC-Shifting-Descriptives as "telecommunication and shifting different modes" in the documentation, but I would like to ask for clarification, because it seems to me that the questions relate to _transfers_. For example, the question:
+
+- Do you shift between transport modes on your usual trips?	
+
+Seems to refer to transfers between public transportation modes (e.g., metro to bus), and then the next questions refer to how long waits are, and ease of transferring.
+
+- If YES in the previous question, how is the quality of these inerchanges?	
+
+- How would you assess your regular trips in terms of: Waiting times	How would you assess your regular trips in terms of: Time of shifts	
+
+- How would you assess your regular trips in terms of: Travel time	What main aspect makes your shifts difficult?	
+
+The last three questions relate to route planning tools, not ITC more generally (for instance, this is unrelated to working from home).
+
+- Do you have access to technology tools such as smartphones and internet, with which you can view information on transportation services?	
+
+- How do you assess the level of technological information available to see transportation alternatives? (eg smartphone applications, internet, signs)	
+
+- How important is it for you to have access to technological information for your usual trips?
+
+Please comment on these variables!
+
+**THIS IS NILOOFAR'S TEXT:**
+
 The information, telecommunications and mode shifting of respondents (see @tbl-ITC-Shifting-Descriptives) reveals numerous factorial variables using Likert scale to identify the exact level of respondents' viewpoints. We can see a considerable number of missing values in quality of changing mode of travel because of people's decision on mostly saying yes to shift between transport modes on their usual trips and for those who change the quality of these inerchanges was good. Many people assign a good level when they are asked to assess the waiting times, time of shifts and total travel time in their regular trips. Most people have access to technology tools such as smartphones and internet, with which they can view information on transportation services and they assign a good level of technological information available to see transportation alternatives (eg smartphone applications, internet, signs) and most of them assume it is very important to have access to technological information for their usual trips. 
 
 This section will gives insights on designing a strong transportation network to facilitate people's different activities such as work, school, grocery shopping and so forth. Also experts can make users informed about traffic circumstances, road information and cost of transportation by using various modes. Following this, car-use deduction has been turned into the political agenda around the world due to the increasing negative effects of motorized modes of travel on environment and public health. Therefore, improvements in public transportation sector are needed to achieve this goal regarding previous studies that has shown participants are more likely to use bus with increased frequencies, shorter travel time, and high access to bus stops[@ettema2011satisfaction].
+
 ```{r summary-ITC-and-shifting}
 #| tbl-cap: Variables regarding information and telecommunications and mode shifting of respondents
 #| tbl-cap-location: top
@@ -272,9 +301,9 @@ skim_SIS$factor.top_counts[3] <- skim_SIS$factor.top_counts[3] |>
 
 skim_SIS$factor.top_counts[4] <- skim_SIS$factor.top_counts[4] |>
   str_replace_all(c(GOO = "GOOD",
+                    VER = "VERY GOOD",
                     FAI = "FAIR",
-                    POO = "POOR",
-                    VER = "VERY GOOD"))
+                    POO = "POOR"))
 
 skim_SIS$factor.top_counts[5] <- skim_SIS$factor.top_counts[5] |>
   str_replace_all(c(GOO = "GOOD",
@@ -303,9 +332,11 @@ skim_SIS$factor.top_counts[9] <- skim_SIS$factor.top_counts[9] |>
 skim_SIS
 ```
 
-Built environment data set (see @tbl-Built-Environment-Descriptives) gives intuition about how people evaluate and assign importance to facilities and infrastructures such as parking sites, quality of highways, spaces for pedestrian based on Likert scales and with mainly complete responses to the variables. Most of people consider a good level when they are asked to evaluate space for cars and amount of parking spaces near their home and felt a high level of importance. Lots of people assign a very good and good level to the quality of highways and both space for pedestrians and quality of sidewalks located near of their home, respectively and it is very important to them. Unfortunately while it is important for people to have clean bus stops, sitting areas in bus stops, weather protection in bus stops,amount of cycle ways, quality of cycle ways and bike sharing schemes, they felt poor level when they were asked to evaluate them. 
+The theme of table `Santiago_BE` is perceptions of the built environment. The way environments are perceived, and not just their objective attributes, has been shown to correlate with travel behavior [e.g., @Jamal2020perceptions; @Loo2015transport]. Surveying perceptions is therefore a good remedy to the lack of canonical data sets in regions of the world where built environment attributes are not systematically collected. 
 
-Decision makers would use this information in different contexts such as planning for arrangement and appearance of the various physical elements in a transportation system as the relationships between the build environment, travel attitude or residential self-selection and travel behavior have been the notable subjects during last decades [@wang2019built]. Some of them may focus on enriching the environment in a way that they can encourage people to use more active modes of travel especially walking to reach a destination. Some of them would contribute to climate change background and study human activity to identify how transportation system, constructions, land-use and so on could be destructive due to high green house gas emissions. 
+There are in total 22 variables in this table, and their descriptive statistics appear in @tbl-Built-Environment-Descriptives. The variables are organized in pairs: one asks about the perception of an attribute and the second the importance of that attribute to the respondent. In this way, `r7AA_AUTOSPACE` is about the perception of space for autos, and `r7BA_AUTOSPACE` is about the importance that respondents assign to this attribute. Aspects of the built environment covered by this table, in addition to space for autos, are number of parking spaces, quality of highways (**BEA:** ROADS IN GENERAL OR HIGHWAYS SPECIFICALLY?), space for pedestrians, quality of sidewalks, cleanliness of bus stops and seating areas, protection from inclement weather at bus stops, amount and quality of cycleways, and bike sharing schemes. 
+
+The descriptive statistics suggest that most respondents have positive evaluations of space for cars and parking spaces, at the same time that they assign a high level of importance to these attributes. Respondents also show a slight tendency to assess positively the space for pedestrians and quality of sidewalks located near of their home, and these features are also regarded as very important or important by a majority of respondents. In contrast, although respondents feel strongly about the importance of facilities related to buses and cycling, the perception of these attributes tends to be poor. 
 ```{r summary-built-environment}
 #| tbl-cap: Variables regarding the built environment at the place of residence of respondents
 #| tbl-cap-location: top
@@ -330,8 +361,8 @@ skim_SBE$factor.top_counts[2] <- skim_SBE$factor.top_counts[2] |>
                     POO = "POOR"))
 
 skim_SBE$factor.top_counts[3] <- skim_SBE$factor.top_counts[3] |>
-  str_replace_all(c(VER = "VERY GOOD",
-                    GOO = "GOOD",
+  str_replace_all(c(GOO = "GOOD",
+                    VER = "VERY GOOD",
                     FAI = "FAIR",
                     EXC = "EXCELLENT"))
 
@@ -454,8 +485,10 @@ skim_SBE$factor.top_counts[22] <- skim_SBE$factor.top_counts[22] |>
 skim_SBE
 ```
 
-The Health information (see @tbl-Health-Information-Descriptives) indicates different factorial variables that are almost complete and organized categorically because of using Likert scale. In this table we have two part of variables: first the respondents' assessment of each variable and second what level of importance do people assign to each variable. Speaking about stress most people experience average level of stress on regular trips and they feel it is very important for them. Most of people were neutral in demonstrating physical effort on their usual trips and they assign high level of importance to it. Many people mentioned poor level of proximity (proximity) to other transport users on their usual trips and felt it was very important in their viewpoint. In terms of environmental contamination most of people were very dissatisfied and they consider it is very important on their regular trips. About safety variable most respondents were unsatisfied with level of safety (not being assaulted or harassed) that they experience on their usual trips and declared it was very important in their trips. A large number of people specified very dissatisfying level of comfort throughout their trips and they assume it is very important when they are on their trips. 
-Health information could be useful in investigating affects of transportation policy decisions on public health. Also being aware of specific factors making modes stressful will help transportation and public health experts make commuting a safer, more enjoyable and less stressful activity. Consequently ,planners and transportation experts could mitigate the potentially serious health outcomes of a stressful commute [@legrain2015stressed].Having such a detailed data set and understanding the relationship between health and mode choice in commuting would help them to adopt reform policies and management strategies in accordance with healthy modes of travel as active and public transportation [@mattisson2018modelling]. 
+Table `Santiago_H` contains responses to twelve questions related to health. 
+Health information could be useful in investigating affects of transportation policy decisions on public health. Also being aware of specific factors making modes stressful will help transportation and public health experts make commuting a safer, more enjoyable and less stressful activity. Consequently ,planners and transportation experts could mitigate the potentially serious health outcomes of a stressful commute [@legrain2015stressed]. Having such a detailed data set and understanding the relationship between health and mode choice in commuting would help them to adopt reform policies and management strategies in accordance with healthy modes of travel as active and public transportation [@mattisson2018modelling]. 
+
+Similar to the set of questions about the built environment, these questions have two parts: first, the respndents were asked to assess their experience of some aspect of their commute, and then  the importance they assign to this aspect of their commute. For example, variable `r1A_STRESS` refers to the level of stress that respondents experience in their usual trips; its companion variable is `r1GA_IMPSTRESS`, which refers to how important stress is to their experience. As seen in @tbl-Health-Information-Descriptives, a majority of respondents rate the stress in their commutes as medium or lower. This aspect of the experience is rated as very important or important by a majority of respondents. Other variables in this table contain information about the physical effort involved in their usual trips (`r1B_EFFORT` and `r1GB_IMPEFFORT`); proximity to other travelers in their usual trips (`r1C_PROX` and `r1GC_IMPPROX`); the environmental pollution they are exposed to in their usual trips (`r1D_CONTAM` and `r1GD_IMPCONTAM`); how safe they feel in their usual trips (`r1E_SAFETY` and `r1GE_IMPSAFETY`); and finally how comfortable their trips are (`r1F_COMFORT` and `r1GF_IMPCOMFORT`). 
 ```{r summary-health-information}
 #| tbl-cap: Variables regarding health information of respondents
 #| tbl-cap-location: top
@@ -541,7 +574,13 @@ skim_SH$factor.top_counts[12] <- skim_SH$factor.top_counts[12] |>
 
 skim_SH
 ```
- 
+
+**NOTE FROM ANTONIO:** SEVERAL TABLES NEED MY ATTENTION BEFORE THEY ARE READY TO BE SEEN BY BEA
+
+<!--
+
+@Mella2021drivers
+
 First part of the data set of feelings and emotions (see @tbl-Feelings-Emotions-Descriptives) reveals factorial variables that people consider them pertained to a specific mode of travel. In terms of freedom, health and social interactions most of people mention them related to walking as a transportation mode. Many people consider using bus connected to unsafety, poverty, unpunctuality, congestion and uncomfortale conditions variables.In terms of using car as the mode of travel, most of respondents identified it connected to functionality, safety, luxury and status. A large group of people declare that bike riding would be related to enjoyment, low-cost and environment care. The only efficiency variable is being connected to using metro as the mode of transportation in respondents' opinions. In the second part of this table people evaluate the level of enjoy when they are traveling to their daily activities and most of them use average level for this variable and revealed the quality of their trips are very low which is not satisfying. Totally in this table we have half of respondents' answer and the other half is missing values in all variables.
 feelings and emotions information can be used to mapping and understanding travel behavior and would lead to a more sustainable transportation network. Additionally, this information can make policy makers aware to make targeted choices about where to make physical amelioration as well as on which characteristics to attempt to influence perceptions of alternative modes[@anable2005all]. Similarly, by trying to identify a correlation between feelings, emotions and modes of transportation, planners would be able to persuade people to use more active modes of travel or public transport will be resulted in making our transportation system more sustainable. 
 
@@ -668,7 +707,6 @@ skim_SFE$factor.top_counts[22] <- skim_SFE$factor.top_counts[22] |>
 
 skim_SFE
 ```
-
 
 Table of decision-making and planning of respondents (see @tbl-Reason-Planning-Decision-Descriptives) includes different factorial variables using Likert scale and has two parts of an assessment of a variable and its importance from respondents' viewpoints. Most of people assign level of good when they assess their access to employment opportunities through public transport and presume a good level about their access to public transport which allows them to access the employment they need. While people sometimes visit family and friends, do recreational, cultural and sport activities,  and they assign a  moderate importance to them, most of them often go for grocery/food shopping and social activities and consider it moderately important. In terms of options most of people assume it is very important to have several options in using different modes of transport and they assign very high when they consider quality of life depends on the access they currently have to public transport. Also most people highly think their quality of life would increase if they have better access to public transport.About the affordability and unaffordability of a mode of travel, a large group of people assign car and taxi to these variables, respectively. For different aspects of the public transport system most of people mention that it has very importance for them to improve access to offices and commercial areas, disponibility of different transport modes, comfort for the use of public transport and the incorporation of other modes to the fare system. Almost all the variables are fairly complete except being economic and uneconomic variables which nearly half of respondents reacted to them.
 
@@ -885,6 +923,7 @@ skim_SNS$factor.top_counts[10] <- skim_SNS$factor.top_counts[10] |>
 skim_SNS
 ```
 -->
+
 ## Experimental Design, Materials and Methods
 
 The study is based on a paper-based survey conducted face-to-face in Santiago in 2016. The survey collected information on a wide range of travel-related issues (socio-demographics, health-related, perceptions and travel behavior, travel choices and planning, social interaction factors, built environment, among others). The data collection considered a quota-sampling method based on the information from Pre-Census of 2012, and in total, 451 persons validly completed the survey. This paper considers the first part of the survey, with information about the basic socio-economic data, travel choices, activities and commuting information, and the question related to the levels of stress experienced in while traveling.

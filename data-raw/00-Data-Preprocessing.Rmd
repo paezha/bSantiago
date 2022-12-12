@@ -47,16 +47,16 @@ SantiagoSurvey_trans <- SantiagoSurvey %>%
        r0R_MODE3 = r0R_MODO3,
        r1A_STRESS = r1A_ESTRES,
        r1B_EFFORT = r1B_ESFUERZO,
-       r1C_PROXIMITY = r1C_CERCANIA,
+       r1C_PROX = r1C_CERCANIA,
        r1D_CONTAM = r1D_CONTAM,
        r1E_SAFETY = r1E_SEGUR,
        r1F_COMFORT = r1F_COMOD,
-       r1GA_STRESS = r1GA_ESTRES,
-       r1GB_EFFORT = r1GB_ESFUER,
-       r1GC_PROXIMITY = r1GC_CERC,
-       r1GD_CONTAM = r1GD_CONTAM,
-       r1GE_SAFETY = r1GE_SEGUR,
-       r1GF_COMFORT = r1GF_COMOD,
+       r1GA_IMPSTRESS = r1GA_ESTRES,
+       r1GB_IMPEFFORT = r1GB_ESFUER,
+       r1GC_IMPPROX = r1GC_CERC,
+       r1GD_IMPCONTAM = r1GD_CONTAM,
+       r1GE_IMPSAFETY = r1GE_SEGUR,
+       r1GF_IMPCOMFORT = r1GF_COMOD,
        r2AA_FREEDOM = r2AA_LIBERTAD,
        r2AB_UNSAFETY = r2AB_INSEG,
        r2AC_FUNCTIONALITY = r2AC_FUNCIONA,
@@ -210,7 +210,7 @@ Santiago_H <- SantiagoSurvey_trans %>%
                              levels = c("1", "2", "3", "4", "5"), 
                              labels = c("VNEGATIVE", "NEGATIVE", "NEUTRAL", "POSITIVE", "VPOSITVE"),
                              ordered = TRUE)) %>%
-  mutate(r1C_PROXIMITY = factor(r1C_PROXIMITY, 
+  mutate(r1C_PROX = factor(r1C_PROX, 
                              levels = c("1", "2", "3", "4", "5"), 
                              labels = c("POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"),
                              ordered = TRUE)) %>%
@@ -226,34 +226,34 @@ Santiago_H <- SantiagoSurvey_trans %>%
                              levels = c("1", "2", "3", "4", "5"), 
                              labels = c("VDISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VSATISFIED"),
                              ordered = TRUE)) %>%
-  mutate(r1GA_STRESS  = factor(r1GA_STRESS , 
+  mutate(r1GA_IMPSTRESS  = factor(r1GA_IMPSTRESS , 
                              levels = c("1", "2", "3", "4", "5"), 
                              labels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),
                              ordered = TRUE)) %>%
-  mutate(r1GB_EFFORT = factor(r1GB_EFFORT, 
+  mutate(r1GB_IMPEFFORT = factor(r1GB_IMPEFFORT, 
                             levels = c("1", "2", "3", "4", "5"), 
                              labels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),
                             ordered = TRUE)) %>%
-  mutate(r1GC_PROXIMITY = factor(r1GC_PROXIMITY, 
+  mutate(r1GC_IMPPROX = factor(r1GC_IMPPROX, 
                              levels = c("1", "2", "3", "4", "5"), 
                              labels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),
                              ordered = TRUE)) %>%
-  mutate(r1GD_CONTAM = factor(r1GD_CONTAM, 
+  mutate(r1GD_IMPCONTAM = factor(r1GD_IMPCONTAM, 
                              levels = c("1", "2", "3", "4", "5"), 
                              labels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),
                              ordered = TRUE)) %>%
-  mutate(r1GE_SAFETY = factor(r1GE_SAFETY, 
+  mutate(r1GE_IMPSAFETY = factor(r1GE_IMPSAFETY, 
                              levels = c("1", "2", "3", "4", "5"), 
                              labels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),
                              ordered = TRUE)) %>%
-  mutate(r1GF_COMFORT = factor(r1GF_COMFORT, 
+  mutate(r1GF_IMPCOMFORT = factor(r1GF_IMPCOMFORT, 
                              levels = c("1", "2", "3", "4", "5"), 
                              labels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),
                              ordered = TRUE)) 
   
 ```
 
-
+**NOTE** THIS TABLE NEEDS TO BE RECREATED, IT HAS SO MANY MISSING VARIABLES BECAUSE IT FAILS TO ACCOUNT FOR THE FACT THAT IT WAS POSSIBLE TO SELECT VARIOUS RESPONSES TO EACH QUESTION!
 
 ```{r FEELINGS AND EMOTIONS}
 Santiago_FE <- SantiagoSurvey_trans %>%
@@ -328,6 +328,8 @@ Santiago_FE <- SantiagoSurvey_trans %>%
                              levels = c("A", "B", "C", "D", "E", "F", "G", "H"), 
                              labels = c("COMFORT IMPROVEMENT", "SAFETY IMPROVEMENT", "BETTER QULALITY ON STREETS", "LESS CROWDNESS OF PASSENGERS", "IMPROVEMENT ON ACCESIBILITY", "REDUCTION OF TIME TRAVEL", "ALL OF THEM", "OTHER"))) 
 ```
+
+**NOTE:** PART OF THIS TABLE NEEDS TO BE RECREATED: VARIABLES r3H_ECON AND r3I_NOECON CONTAIN SEVERAL RESPONSES TO A SINGLE QUESTION.
 
 ```{r REASON AND PLANNING OWN DECISIONS}
 Santiago_RPD <- SantiagoSurvey_trans %>%
@@ -425,6 +427,8 @@ Santiago_RPD <- SantiagoSurvey_trans %>%
   
 ```
 
+**NOTE:** PART OF THIS TABLE NEEDS TO BE RECREATED: VARIABLES r4D_MODE CONTAIN SEVERAL RESPONSES TO A SINGLE QUESTION.
+
 ```{r SOCIAL INTERACTION}
 Santiago_SI <- SantiagoSurvey_trans %>%
   dplyr::select(ID, starts_with("r4")) %>%
@@ -443,6 +447,8 @@ mutate(r4A_INTERACC = factor(r4A_INTERACC,
                              levels = c("A", "B", "C","D", "E", "F", "G", "H"), 
                              labels = c("CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK")))
 ```
+
+**NOTE:** PART OF THIS TABLE NEEDS TO BE RECREATED: VARIABLES r5B_CHANGE_MODE CONTAINS SEVERAL RESPONSES TO A SINGLE QUESTION.
 
 ```{r NATURE _AND_ SUSTAINABILITY}
 Santiago_NS <- SantiagoSurvey_trans %>%
@@ -486,6 +492,8 @@ Santiago_NS <- SantiagoSurvey_trans %>%
                              ordered = TRUE))
   
 ```
+
+**NOTE:** PART OF THIS TABLE NEEDS TO BE RECREATED: VARIABLES r6D_DIFFICULTY CONTAINS SEVERAL RESPONSES TO A SINGLE QUESTION.
 
 ```{r ITC AND SHIFTING}
 Santiago_IS <- SantiagoSurvey_trans %>%
@@ -617,6 +625,8 @@ mutate(r7AA_AUTOSPACE = factor(r7AA_AUTOSPACE,
                              labels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),
                              ordered = TRUE)) 
 ```
+
+**NOTE:** PART OF THIS TABLE NEEDS TO BE RECREATED: VARIABLE r8F_SCHEDULE CONTAINS SEVERAL RESPONSES TO A SINGLE QUESTION.
 
 ```{r TRAVEL WORK}
 Santiago_TW <- SantiagoSurvey_trans %>%

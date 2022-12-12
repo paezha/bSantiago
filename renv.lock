@@ -583,6 +583,14 @@
       "Hash": "c66b930d20bb6d858cd18e1cebcfae5c",
       "Requirements": []
     },
+    "remotes": {
+      "Package": "remotes",
+      "Version": "2.4.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "227045be9aee47e6dda9bb38ac870d67",
+      "Requirements": []
+    },
     "renv": {
       "Package": "renv",
       "Version": "0.16.0",
