@@ -17,14 +17,14 @@ library(dplyr)
 Read source file:
 ```{r}
 
-SantiagoSurvey <- read_excel("SantiagoSurvey2016.xlsx")
+SantiagoSurvey <- read_excel(choose.files())
 ```
 
 Rename:
 ```{r}
 SantiagoSurvey_trans <- SantiagoSurvey %>%
   rename( 
-       ID = NUMERO,# rename() function of dplyr
+       ID = NUMERO...1,# rename() function of dplyr
        ORIGIN = ORIGEN,
        r0A_COMMUNE= r0A_COMUNA,
        r0B_MACR_ZONE = `r0B_MACR_ ZONA`,
@@ -47,7 +47,7 @@ SantiagoSurvey_trans <- SantiagoSurvey %>%
        r0P_MODE1 = r0P_MODO1,
        r0Q_MODE2 = r0Q_MODO2,
        r0R_MODE3 = r0R_MODO3,
-       ID = NUMERO,
+       ID = NUMERO...1,
        r1A_STRESS = r1A_ESTRES,
        r1B_EFFORT = r1B_ESFUERZO,
        r1C_PROXIMITY = r1C_CERCANIA,
@@ -60,7 +60,7 @@ SantiagoSurvey_trans <- SantiagoSurvey %>%
        r1GD_CONTAM = r1GD_CONTAM,
        r1GE_SAFETY = r1GE_SEGUR,
        r1GF_COMFORT = r1GF_COMOD,
-       ID = NUMERO,
+       ID = NUMERO...1,
        r2AA_FREEDOM = r2AA_LIBERTAD,
        r2AB_UNSAFETY = r2AB_INSEG,
        r2AC_FUNCTIONALITY = r2AC_FUNCIONA,
@@ -83,7 +83,7 @@ SantiagoSurvey_trans <- SantiagoSurvey %>%
        r2C_IMP_QUALITY = r2C_IMPORT,
        r2D_AFFECT = r2D_AFECTA,
        r2E_FACILIT = r2E_FACILIT,
-       ID = NUMERO,
+       ID = NUMERO...1,
        r3A_ACCESS = r3A_ACCESS, 
        r3B_ACC_EM = r3B_ACC_EM,
        r3CA_FAM = r3CA_FAM,
@@ -107,12 +107,12 @@ SantiagoSurvey_trans <- SantiagoSurvey %>%
        r3JB_MODES = r3JB_MODOS,
        r3JC_COMFORT = r3JC_COMOD,
        r3JD_OTHERS = r3JD_OTROS,
-       ID = NUMERO,
+       ID = NUMERO...1,
        r4A_INTERACC = r4A_INTERACC,
        r4B_PERSON = r4B_PERSON,
        r4C_DISCRIM = r4C_DISCRIM,
        r4D_MODE = r4D_MODO,
-       ID = NUMERO,
+       ID = NUMERO...1,
        r5A_CHANGE = r5A_CAMBIO,
        r5B_CHANGE_MODE = r5B_CAMBIO,
        r5C_SUST = r5C_SUST,
@@ -123,7 +123,7 @@ SantiagoSurvey_trans <- SantiagoSurvey %>%
        r5GB_PARK = r5GB_PARK,
        r5GC_MODE = r5GC_MODO,
        r5GD_MODE = r5GD_MODO,
-       ID = NUMERO,
+       ID = NUMERO...1,
        r6A_SHIFT = r6A_INTERC,
        r6B_QUALITY_SHIFT = r6B_CALIDAD,
        r6CA_WAITING = r6CA_ESPERA,
@@ -133,7 +133,7 @@ SantiagoSurvey_trans <- SantiagoSurvey %>%
        r6E_TOOL = r6E_HERRAM,
        r6F_INFO = r6F_INFO,
        r6G_IMP_INFO = r6G_IMP_INFO,
-       ID = NUMERO,
+       ID = NUMERO...1,
        r7AA_AUTOSPACE = r7AA_AUTO,
        r7AB_PARKING_NUMB = r7AB_EST,
        r7AC_QHIWAY = r7AC_AUTOP,
@@ -156,7 +156,7 @@ SantiagoSurvey_trans <- SantiagoSurvey %>%
        r7BI_IMPCICLEWA_NUMB = r7BI_CICLOV,
        r7BJ_IMPCICLEWA_Q = r7BJ_CICLOV,
        r7BK_IMPBICSHARE = r7BK_BICI,
-       ID = NUMERO,
+       ID = NUMERO...1,
        r8A_ACCESSJOB = r8A_ACCESO,
        r8B_JOBOPP = r8B_OPORT,
        r8C_ACC_COM = r8C_ACC_COM,
