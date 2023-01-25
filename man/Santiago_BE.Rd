@@ -5,7 +5,7 @@
 \alias{Santiago_BE}
 \title{A data frame with information about the build environment near the place of residence of respondents to the survey}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 451 rows and 22 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 451 rows and 23 columns.
 }
 \source{
 A face to face survey considering pre-census 2012
@@ -26,7 +26,7 @@ Santiago sourced from 2016 survey.
 \item{r7AC_QHIWAY}{How do respondents evaluate the following aspects near their home? Quality of highways; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 \item{r7AD_PEDESTRN}{How do respondents evaluate the following aspects near their home? Space for pedestrians; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 \item{r7AE_QSIDEWA}{How do respondents evaluate the following aspects near their home? Quality of sidewalks; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
-\item{r7AF_CLEAN_STOP}{How do respondents evaluate the following aspects near their home? Cleaningness of bus stops; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{r7AF_CLEAN_STOP}{How do respondents evaluate the following aspects near their home? Cleanliness of bus stops; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 \item{r7AG_SEAT}{How do respondents evaluate the following aspects near their home? Sitting areas in bus stops; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 \item{r7AH_CLIMA}{How do respondents evaluate the following aspects near their home? Weather protection in bus stops; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
 \item{r7AI_CICLEWA_NUMB}{How do respondents evaluate the following aspects near their home? Amount of cycleways; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
@@ -37,7 +37,7 @@ Santiago sourced from 2016 survey.
 \item{r7BC_IMPQHIWAY}{How do respondents rate the leve of importance of: Quality of highways; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 \item{r7BD_IMPPEDESTRN}{How do respondents rate the leve of importance of: Space for pedestrians; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 \item{r7BE_IMPQSIDEWA}{How do respondents rate the leve of importance of: Quality of sidewalks; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
-\item{r7BF_IMPCLEAN_STOP}{How do respondents rate the leve of importance of: Cleaningness of bus stops; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{r7BF_IMPCLEAN_STOP}{How do respondents rate the leve of importance of: Cleanliness of bus stops; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 \item{r7BG_IMPSEAT}{How do respondents rate the leve of importance of: Sitting areas in bus stops; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 \item{r7BH_IMPCLIMA}{How do respondents rate the leve of importance of: Weather protection in bus stops; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 \item{r7BI_IMPCICLEWA_NUMB}{How do respondents rate the leve of importance of: Amount of cycleways; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}

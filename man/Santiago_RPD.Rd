@@ -5,7 +5,7 @@
 \alias{Santiago_RPD}
 \title{A data frame with information about the reason and planning decision of respondents to the survey}
 \format{
-An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 451 rows and 23 columns.
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 451 rows and 24 columns.
 }
 \source{
 A face to face survey considering pre-census 2012
@@ -38,8 +38,8 @@ Santiago sourced from 2016 survey.
 \item{r3E_OPTIONS}{How important do respondents consider having several options to use different modes of transport?; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 \item{r3F_ACCESS_DEPENDENCY}{How much does respondents' quality of life depend on the access respondents currently have to public transport?; this variable is an ordered factor with five levels, "VLOW", "LOW", "MEDIUM", "HIGH", "VHIGH"}
 \item{r3G_QUALITY_INCRS}{How much do respondents think their quality of life would increase if they have better access to public transport?; this variable is an ordered factor with five levels, "VLOW", "LOW", "MEDIUM", "HIGH", "VHIGH"}
-\item{r3H_ECON}{Which transport modes are affordable for respondents and their family?; this variable is an out of order factor with eight levels, "CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
-\item{r3I_NOECON}{Which transport modes are economically unaffordable?; this variable is an out of order factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+\item{r3H_ECON}{Which transport modes are affordable for respondents and their family?; this variable is a factor with eight levels, "CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+\item{r3I_NOECON}{Which transport modes are economically unaffordable?; this variable is a factor with eight levels,"CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
 \item{r3JA_OFIC}{How important it is to improve the following aspects of the public transport system? Improve access to offices and comerccial areas; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 \item{r3JB_MODES}{How important it is to improve the following aspects of the public transport system? Improve disponibility of different transport modes; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 \item{r3JC_COMFORT}{How important it is to improve the following aspects of the public transport system? Improve comfort for the use of public transport; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
