@@ -15,14 +15,14 @@ library(dplyr)
 
 Read source file:
 ```{r}
-SantiagoSurvey <- read_excel(choose.files())
+SantiagoSurvey2016 <- read_excel(choose.files())
 #SantiagoSurvey <- read_excel("SantiagoSurvey2016.xlsx")
 
 ```
 
 Rename:
 ```{r}
-SantiagoSurvey_trans <- SantiagoSurvey %>%
+SantiagoSurvey_trans <- SantiagoSurvey2016 %>%
   rename( 
        ID = NUMERO, # rename() function of dplyr
        ORIGIN = ORIGEN,
@@ -718,7 +718,7 @@ summary(comunas_1)
 plot(comunas_1)
 
 #reading excel file
-A <- SantiagoSurvey
+A <- SantiagoSurvey2016
 ```
 
 ```{r}
@@ -786,3 +786,78 @@ A <- A %>%
 ```{r}
 write.csv(comunas_1, file = 'C:/Users/nalaeen/Desktop/bSantiago/data-raw/comunas_1/comunas_1.csv')
 ```
+
+
+# Steps for splitting multiple answers in one cell 
+
+```{r Preparing functions}
+multiSeparate <- function(df, vars, pattern, remove = FALSE, drop_ns = FALSE){
+    for (var in vars){
+        nselected <- paste0(var, "_nselected")
+        df <- (df
+            %>% rename(temp_multi = var)
+            %>% mutate(temp_nselected = sapply(
+                    regmatches(temp_multi, gregexpr(pattern, temp_multi))
+                    , length
+                ) + 1
+            )
+        )
+        # Max number of new variables to create
+        maxselected <- max(pull(df, temp_nselected))
+
+        # Create the new variable
+        df <- (df 
+            %>% separate("temp_multi"
+                , c(paste0(rep(var, maxselected), "_", 1:maxselected))
+                , sep = pattern
+                , remove = remove
+                , convert = TRUE
+            )
+            %>% rename_(.dots = setNames(c("temp_multi", "temp_nselected"), c(var, nselected)))
+        )
+        if(drop_ns){
+            df <- select(df, -c(grep("_nselected$", colnames(df), value = TRUE)))
+        }
+    }
+    return(df)
+}
+```
+
+
+
+```{r}
+
+SantiagoSurvey2016 <- read_excel(choose.files())
+
+#choosing defected fields
+r2AA_LIBERTAD <- SantiagoSurvey2016
+
+
+SantiagoSurvey2016 <- (SantiagoSurvey2016
+ %>% mutate(r2AA_LIBERTAD_dummy1 = r2AA_LIBERTAD
+        , r2AA_LIBERTAD_dummy2 = gsub(",", "-", r2AA_LIBERTAD)
+        , r2AA_LIBERTAD_dummy3 = gsub(",", " ", r2AA_LIBERTAD)
+ )
+)
+
+multi_vars <- grep("^r2AA_LIBERTAD", colnames(SantiagoSurvey2016), value = TRUE)
+print("All multiple respnse variables")
+```
+
+```{r}
+multi_vars
+```
+
+
+```{r}
+library(DT)
+library(dplyr)
+library(tidyr)
+
+SantiagoSurvey2016 <- (SantiagoSurvey2016
+    %>% multiSeparate(vars = multi_vars, pattern = ",| |-", remove = FALSE, drop_ns = FALSE)
+    %>% datatable(., rownames = FALSE, options = list(scrollX = TRUE))
+)
+SantiagoSurvey2016
+```
+
