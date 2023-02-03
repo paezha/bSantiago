@@ -790,6 +790,7 @@ write.csv(comunas_1, file = 'C:/Users/nalaeen/Desktop/bSantiago/data-raw/comunas
 
 # Steps for splitting multiple answers in one cell 
 
+First method
 ```{r Preparing functions}
 multiSeparate <- function(df, vars, pattern, remove = FALSE, drop_ns = FALSE){
     for (var in vars){
@@ -835,27 +836,150 @@ r2AB_INSEG <- SantiagoSurvey2016
         , r2AA_LIBERTAD_dummy2 = gsub(" ", " ", r2AA_LIBERTAD)
         , r2AA_LIBERTAD_dummy3 = gsub(" ", " ", r2AA_LIBERTAD)
  ))
-
-
  SantiagoSurvey2016 <- (SantiagoSurvey2016
 %>% mutate(r2AB_INSEG_dummy1 = r2AB_INSEG
        , r2AB_INSEG_dummy2 = gsub(" ", " ", r2AB_INSEG)
        , r2AB_INSEG_dummy3 = gsub(" ", " ", r2AB_INSEG)
 ))
- 
   SantiagoSurvey2016 <- (SantiagoSurvey2016
 %>% mutate(r2AC_FUNCIONA_dummy1 = r2AC_FUNCIONA
        , r2AC_FUNCIONA_dummy2 = gsub(" ", " ", r2AC_FUNCIONA)
        , r2AC_FUNCIONA_dummy3 = gsub(" ", " ", r2AC_FUNCIONA)
 ))
- 
+   SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AD_ENTRET_dummy1 = r2AD_ENTRET
+       , r2AD_ENTRET_dummy2 = gsub(" ", " ", r2AD_ENTRET)
+       , r2AD_ENTRET_dummy3 = gsub(" ", " ", r2AD_ENTRET)
+))
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AE_COSTO_dummy1 = r2AE_COSTO
+       , r2AE_COSTO_dummy2 = gsub(" ", " ", r2AE_COSTO)
+       , r2AE_COSTO_dummy3 = gsub(" ", " ", r2AE_COSTO)
+))
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AF_POBREZ_dummy1 = r2AF_POBREZ
+       , r2AF_POBREZ_dummy2 = gsub(" ", " ", r2AF_POBREZ)
+       , r2AF_POBREZ_dummy3 = gsub(" ", " ", r2AF_POBREZ)
+))
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AG_SEGURIDAD_dummy1 = r2AG_SEGURIDAD
+       , r2AG_SEGURIDAD_dummy2 = gsub(" ", " ", r2AG_SEGURIDAD)
+       , r2AG_SEGURIDAD_dummy3 = gsub(" ", " ", r2AG_SEGURIDAD)
+))
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AH_TIEMPO_dummy1 = r2AH_TIEMPO
+       , r2AH_TIEMPO_dummy2 = gsub(" ", " ", r2AH_TIEMPO)
+       , r2AH_TIEMPO_dummy3 = gsub(" ", " ", r2AH_TIEMPO)
+))
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AI_IMPUNT_dummy1 = r2AI_IMPUNT
+       , r2AI_IMPUNT_dummy2 = gsub(" ", " ", r2AI_IMPUNT)
+       , r2AI_IMPUNT_dummy3 = gsub(" ", " ", r2AI_IMPUNT)
+)) 
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AJ_CONGEST_dummy1 = r2AJ_CONGEST
+       , r2AJ_CONGEST_dummy2 = gsub(" ", " ", r2AJ_CONGEST)
+       , r2AJ_CONGEST_dummy3 = gsub(" ", " ", r2AJ_CONGEST)
+))
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AK_EFICIENC_dummy1 = r2AK_EFICIENC
+       , r2AK_EFICIENC_dummy2 = gsub(" ", " ", r2AK_EFICIENC)
+       , r2AK_EFICIENC_dummy3 = gsub(" ", " ", r2AK_EFICIENC)
+))
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AL_LUJO_dummy1 = r2AL_LUJO
+       , r2AL_LUJO_dummy2 = gsub(" ", " ", r2AL_LUJO)
+       , r2AL_LUJO_dummy3 = gsub(" ", " ", r2AL_LUJO)
+)) 
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AM_AMBIENT_dummy1 = r2AM_AMBIENT
+       , r2AM_AMBIENT_dummy2 = gsub(" ", " ", r2AM_AMBIENT)
+       , r2AM_AMBIENT_dummy3 = gsub(" ", " ", r2AM_AMBIENT)
+))
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AN_SALUD_dummy1 = r2AN_SALUD
+       , r2AN_SALUD_dummy2 = gsub(" ", " ", r2AN_SALUD)
+       , r2AN_SALUD_dummy3 = gsub(" ", " ", r2AN_SALUD)
+)) 
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AO_INTSOCI_dummy1 = r2AO_INTSOCI
+       , r2AO_INTSOCI_dummy2 = gsub(" ", " ", r2AO_INTSOCI)
+       , r2AO_INTSOCI_dummy3 = gsub(" ", " ", r2AO_INTSOCI)
+))       
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AP_INCOM_dummy1 = r2AP_INCOM
+       , r2AP_INCOM_dummy2 = gsub(" ", " ", r2AP_INCOM)
+       , r2AP_INCOM_dummy3 = gsub(" ", " ", r2AP_INCOM)
+)) 
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AQ_FELICID_dummy1 = r2AQ_FELICID
+       , r2AQ_FELICID_dummy2 = gsub(" ", " ", r2AQ_FELICID)
+       , r2AQ_FELICID_dummy3 = gsub(" ", " ", r2AQ_FELICID)
+)) 
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AR_ESTAT_dummy1 = r2AR_ESTAT
+       , r2AR_ESTAT_dummy2 = gsub(" ", " ", r2AR_ESTAT)
+       , r2AR_ESTAT_dummy3 = gsub(" ", " ", r2AR_ESTAT)
+)) 
+      
+#r2B_DISFRUT and r2C_IMPORT were numerical and didn't need to modify.
 
-multi_vars <- grep("r2AA_LIBERTAD", SantiagoSurvey2016, value = TRUE) 
-              grep("r2AB_INSEG" , SantiagoSurvey2016, value = TRUE)
-              grep("r2AC_FUNCIONA" ,SantiagoSurvey2016, value = TRUE)
-              
-# multi_vars <- grep("^r2AB_INSEG", colnames(SantiagoSurvey2016), value = TRUE)
-# multi_vars <- grep("^r2AC_FUNCIONA", colnames(SantiagoSurvey2016), value = TRUE)
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AR_ESTAT_dummy1 = r2D_AFECTA
+       , r2AR_ESTAT_dummy2 = gsub(" ", " ", r2D_AFECTA)
+       , r2AR_ESTAT_dummy3 = gsub(" ", " ", r2D_AFECTA)
+))
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2E_FACILIT_dummy1 = r2E_FACILIT
+       , r2E_FACILIT_dummy2 = gsub(" ", " ", r2E_FACILIT)
+       , r2E_FACILIT_dummy3 = gsub(" ", " ", r2E_FACILIT)
+))
+# Starting with r3
+      
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r3H_ECON_dummy1 = r3H_ECON
+       , r3H_ECON_dummy2 = gsub(" ", " ", r3H_ECON)
+       , r3H_ECON_dummy3 = gsub(" ", " ", r3H_ECON)
+))      
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r3I_NOECON_dummy1 = r3I_NOECON
+       , r3I_NOECON_dummy2 = gsub(" ", " ", r3I_NOECON)
+       , r3I_NOECON_dummy3 = gsub(" ", " ", r3I_NOECON)
+))
+# Starting with r4      
+      
+      SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r4D_MODO_dummy1 = r4D_MODO
+       , r4D_MODO_dummy2 = gsub(" ", " ", r4D_MODO)
+       , r4D_MODO_dummy3 = gsub(" ", " ", r4D_MODO)
+))
+# Starting with r5
+            SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r5B_CAMBIO_dummy1 = r5B_CAMBIO
+       , r5B_CAMBIO_dummy2 = gsub(" ", " ", r5B_CAMBIO)
+       , r5B_CAMBIO_dummy3 = gsub(" ", " ", r5B_CAMBIO)
+))
+# Starting with r6 
+                 SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r6D_DIFICULTA_dummy1 = r6D_DIFICULTA
+       , r6D_DIFICULTA_dummy2 = gsub(" ", " ", r6D_DIFICULTA)
+       , r6D_DIFICULTA_dummy3 = gsub(" ", " ", r6D_DIFICULTA)
+))      
+# Starting with r8
+                 SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r8F_HORARIOS_dummy1 = r8F_HORARIOS
+       , r8F_HORARIOS_dummy2 = gsub(" ", " ", r8F_HORARIOS)
+       , r8F_HORARIOS_dummy3 = gsub(" ", " ", r8F_HORARIOS)
+))                 
+                 
+      multi_vars <- grep("r2AA_LIBERTAD|r2AB_INSEG|r2AC_FUNCIONA|r2AD_ENTRET|r2AE_COSTO|r2AF_POBREZ|r2AG_SEGURIDAD|r2AH_TIEMPO|r2AI_IMPUNT|r2AJ_CONGEST|r2AK_EFICIENC|r2AL_LUJO|r2AM_AMBIENT|r2AN_SALUD|r2AO_INTSOCI|r2AP_INCOM|r2AQ_FELICID|r2AR_ESTAT|r2D_AFECTA|r2E_FACILIT|r3H_ECON|r3I_NOECON|r4D_MODO|r5B_CAMBIO|r6D_DIFICULTA|r8F_HORARIOS", colnames(SantiagoSurvey2016), value = TRUE)
+
+
+              # grep("^r2AB_INSEG", colnames(SantiagoSurvey2016), value = TRUE)%>% 
+              # grep("^r2AC_FUNCIONA", colnames(SantiagoSurvey2016), value = TRUE)
+  # grep("r2AA_LIBERTAD", SantiagoSurvey2016, value = TRUE) %>% 
+  #             grep("r2AB_INSEG" , SantiagoSurvey2016, value = TRUE) %>% 
+  #             grep("r2AC_FUNCIONA" ,SantiagoSurvey2016, value = TRUE)
 print("All multiple respnse variables")
 ```
 
@@ -870,33 +994,30 @@ library(dplyr)
 library(tidyr)
 
 SantiagoSurvey2016 <- (SantiagoSurvey2016
-    %>% multiSeparate(vars = multi_vars, pattern = "| |", remove = FALSE, drop_ns = FALSE)
+    %>% multiSeparate(vars = multi_vars, pattern = "", remove = FALSE, drop_ns = FALSE)
     %>% datatable(., rownames = FALSE, options = list(scrollX = TRUE))
 )
 SantiagoSurvey2016
 ```
 
+
+Second method
 ```{r}
 SantiagoSurvey2016 <- read_excel(choose.files())
 
 library(stringr)
-str_split_fixed(SantiagoSurvey2016$r2AA_LIBERTAD, " ", 8)
+str_split_fixed(SantiagoSurvey2016$r2AA_LIBERTAD, "", 8)%>%
+ datatable(., rownames = FALSE, options = list(scrollX = TRUE))
+  
+options(max.print=1000)
+sample(1:1000,555555,replace=TRUE)
   
 ```
 
-```{r}
-library(dplyr)
-library(tidyr)
 
-before <- data.frame(
-  attr = c(1, 30 ,4 ,6 ), 
-  type = c('foo_and_bar', 'foo_and_bar_2')
-)
 
-before %>%
-  separate(type, c("foo", "bar"), "_and_")
 
-```
+
 
 
 
