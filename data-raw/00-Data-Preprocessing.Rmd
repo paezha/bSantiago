@@ -826,21 +826,36 @@ multiSeparate <- function(df, vars, pattern, remove = FALSE, drop_ns = FALSE){
 
 
 ```{r}
-
-SantiagoSurvey2016 <- read_excel(choose.files())
-
 #choosing defected fields
+SantiagoSurvey2016 <- read_excel(choose.files())
 r2AA_LIBERTAD <- SantiagoSurvey2016
+r2AB_INSEG <- SantiagoSurvey2016
+ SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AA_LIBERTAD_dummy1 = r2AA_LIBERTAD
+        , r2AA_LIBERTAD_dummy2 = gsub(" ", " ", r2AA_LIBERTAD)
+        , r2AA_LIBERTAD_dummy3 = gsub(" ", " ", r2AA_LIBERTAD)
+ ))
 
 
-SantiagoSurvey2016 <- (SantiagoSurvey2016
- %>% mutate(r2AA_LIBERTAD_dummy1 = r2AA_LIBERTAD
-        , r2AA_LIBERTAD_dummy2 = gsub(",", "-", r2AA_LIBERTAD)
-        , r2AA_LIBERTAD_dummy3 = gsub(",", " ", r2AA_LIBERTAD)
- )
-)
+ SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AB_INSEG_dummy1 = r2AB_INSEG
+       , r2AB_INSEG_dummy2 = gsub(" ", " ", r2AB_INSEG)
+       , r2AB_INSEG_dummy3 = gsub(" ", " ", r2AB_INSEG)
+))
+ 
+  SantiagoSurvey2016 <- (SantiagoSurvey2016
+%>% mutate(r2AC_FUNCIONA_dummy1 = r2AC_FUNCIONA
+       , r2AC_FUNCIONA_dummy2 = gsub(" ", " ", r2AC_FUNCIONA)
+       , r2AC_FUNCIONA_dummy3 = gsub(" ", " ", r2AC_FUNCIONA)
+))
+ 
 
-multi_vars <- grep("^r2AA_LIBERTAD", colnames(SantiagoSurvey2016), value = TRUE)
+multi_vars <- grep("r2AA_LIBERTAD", SantiagoSurvey2016, value = TRUE) 
+              grep("r2AB_INSEG" , SantiagoSurvey2016, value = TRUE)
+              grep("r2AC_FUNCIONA" ,SantiagoSurvey2016, value = TRUE)
+              
+# multi_vars <- grep("^r2AB_INSEG", colnames(SantiagoSurvey2016), value = TRUE)
+# multi_vars <- grep("^r2AC_FUNCIONA", colnames(SantiagoSurvey2016), value = TRUE)
 print("All multiple respnse variables")
 ```
 
@@ -855,9 +870,33 @@ library(dplyr)
 library(tidyr)
 
 SantiagoSurvey2016 <- (SantiagoSurvey2016
-    %>% multiSeparate(vars = multi_vars, pattern = ",| |-", remove = FALSE, drop_ns = FALSE)
+    %>% multiSeparate(vars = multi_vars, pattern = "| |", remove = FALSE, drop_ns = FALSE)
     %>% datatable(., rownames = FALSE, options = list(scrollX = TRUE))
 )
 SantiagoSurvey2016
 ```
+
+```{r}
+SantiagoSurvey2016 <- read_excel(choose.files())
+
+library(stringr)
+str_split_fixed(SantiagoSurvey2016$r2AA_LIBERTAD, " ", 8)
+  
+```
+
+```{r}
+library(dplyr)
+library(tidyr)
+
+before <- data.frame(
+  attr = c(1, 30 ,4 ,6 ), 
+  type = c('foo_and_bar', 'foo_and_bar_2')
+)
+
+before %>%
+  separate(type, c("foo", "bar"), "_and_")
+
+```
+
+
 
