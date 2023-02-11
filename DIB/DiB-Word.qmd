@@ -23,6 +23,10 @@ library(bSantiago) # A data package with the results of a travel and well-being 
 library(dplyr) # A Grammar of Data Manipulation
 library(skimr) # Compact and Flexible Summaries of Data
 library(stringr) # Simple, Consistent Wrappers for Common String Operations
+library(ggplot2)
+library(reshape2)
+library(plyr)
+library(readxl)
 ```
 
 ```{r load-data}
@@ -142,6 +146,85 @@ skim_IC$factor.top_counts[12] <- skim_IC$factor.top_counts[12] |>
 
 skim_IC
 ```
+
+```{r}
+
+par(mfrow=c(1,2))
+
+# Age and Gender Bar Graph
+SantiagoSurvey2016 <- read_excel(choose.files())
+
+ggplot(SantiagoSurvey2016,aes(x=factor(r0D_EDAD), fill=factor(r0C_GENERO)))+
+  geom_bar(position="dodge")+
+  scale_x_discrete("Age Groups", 
+                   labels=c("A"="Less18","B"="18-24","C"="25-34",
+                            "D"="35-54","E"="55-64","F"="65+"))+
+  scale_fill_discrete(name="Gender",
+                      breaks=c("A", "B"),
+                      labels=c("Female", "Male"))+
+  ggtitle("Age Groups by Gender")+
+  ylab('No. of People')
+
+
+# Education bar graph
+qplot(as.factor(SantiagoSurvey2016$r0G_EDUCACION), geom='bar', fill=as.factor(SantiagoSurvey2016$r0C_GENERO))+
+  coord_flip()+
+  scale_x_discrete("Education Levels",
+                   labels=c("A"="ELEMENTARY","B"="SECUNDARY",
+                            "C"="PROFESS_TECH","D"="COLLEGE",
+                            "E"="POSTGRAD"))+
+  scale_fill_discrete(name="Gender",
+                      breaks=c("1", "2"),
+                      labels=c("Male", "Female"))+
+  ggtitle("Education Levels by Gender")+ylab('No. of People')
+```
+
+```{r}
+#Employment Pie Chart
+SantiagoSurvey2016$r0H_OCUPACION <- reorder(SantiagoSurvey2016$r0H_OCUPACION, X = SantiagoSurvey2016$r0H_OCUPACION, 
+                            FUN = function(x) -length(x))
+
+at <- nrow(SantiagoSurvey2016) - as.numeric(cumsum(sort(table(SantiagoSurvey2016$r0H_OCUPACION)))-
+                                  0.5*sort(table(SantiagoSurvey2016$r0H_OCUPACION)))
+
+label=paste0(round(sort(table(SantiagoSurvey2016$r0H_OCUPACION))/
+                     sum(table(SantiagoSurvey2016$r0H_OCUPACION)),2) * 100,"%")
+
+p <- ggplot(SantiagoSurvey2016,aes(x="", fill = r0H_OCUPACION)) +
+  geom_bar(width = 1) +
+  scale_fill_discrete(name="Occupation",
+                      breaks=c("A","B","C", "D", "E", "F", "G", "H"),
+                      labels=c("FULL_TIME", "PART_TIME","SELF_EMPLOYED", "UNEMPLOYED", "HOME_TAKER", "STUDENT", "STUDENT_WORK", "RETIRED"))+
+  coord_polar(theta="y") +
+  annotate(geom = "text", y = at, x = 1, label = label,size=3)+
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid  = element_blank(),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank())+
+  ggtitle("Occupation Type")
+print(p)
+```
+
+```{r}
+# df <- data.frame(matrix(ncol = 2, nrow = 6)) 
+# colnames(df)<-c('Income','Frequency')
+# df$r0J_INGRESO<-c('Less423','423to639', '639to977','977to1550','1550to2380',
+#            '2380more')
+# 
+# for (i in 1:6){df[i,2]<-sum(SantiagoSurvey2016[,77+i])}
+# 
+# df$r0J_INGRESO<-factor(df$r0J_INGRESO, levels=df$r0J_INGRESO) #to prevent reordering of bars
+# 
+# 
+# ggplot(df,aes(x=r0J_INGRESO, y=Frequency), fill=df$r0J_INGRESO)+
+#   geom_bar(stat="identity")+
+#   scale_x_discrete("Personal Income Groups")+
+#   coord_flip()+
+#   ggtitle('Personal Income Distribution')+
+#   ylab('No. of People')
+```
+
 
 The theme of the next table, `Santiago_TW`, deals with commuting and work variables (see @tbl-Travel-work-Descriptives) and consists of seven ordinal categorical variables (factors). Variable `r8A_ACCESSJOB` refers to the impact that respondents feel the transportation network has affected their chances of having better jobs. The most common responses were `SOME IMPACT` and `NO IMPACT`, but we see that approximately 14.2\% of respondents feel that the network has had a major impact. This variable tracks to some extent with the responses to job opportunities in the commune of residence (`r8B_JOBOPP`), suggesting a possible correlation between local opportunities and the impact of the transportation network on job outcomes. When asked about their ideal level of accessibility in the commune of the residence (`r8C_ACC_COM`), a majority respondents opt for excellent and very good (**BEA:** I AM A LITTLE UNCLEAR ABOUT THE MEANING OF THE QUESTION THAT PRODUCES THIS VARIABLE).
 
