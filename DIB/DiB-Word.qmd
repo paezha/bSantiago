@@ -196,7 +196,7 @@ p <- ggplot(SantiagoSurvey2016,aes(x="", fill = r0H_OCUPACION)) +
                       breaks=c("A","B","C", "D", "E", "F", "G", "H"),
                       labels=c("FULL_TIME", "PART_TIME","SELF_EMPLOYED", "UNEMPLOYED", "HOME_TAKER", "STUDENT", "STUDENT_WORK", "RETIRED"))+
   coord_polar(theta="y") +
-  annotate(geom = "text", y = at, x = 1, label = label,size=3)+
+  annotate(geom = "text", y = at, x = 1.5, label = label,size=3)+
   theme(axis.text = element_blank(),
         axis.ticks = element_blank(),
         panel.grid  = element_blank(),

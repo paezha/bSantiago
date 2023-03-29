@@ -8,12 +8,14 @@ output:
 In this notebook we read and preprocess the raw data.
 
 Read packages used:
+
 ```{r}
 library(readxl)
 library(dplyr)
 ```
 
 Read source file:
+
 ```{r}
 SantiagoSurvey2016 <- read_excel(choose.files())
 #SantiagoSurvey <- read_excel("SantiagoSurvey2016.xlsx")
@@ -21,6 +23,7 @@ SantiagoSurvey2016 <- read_excel(choose.files())
 ```
 
 Rename:
+
 ```{r}
 SantiagoSurvey_trans <- SantiagoSurvey2016 %>%
   rename( 
@@ -166,6 +169,7 @@ SantiagoSurvey_trans <- SantiagoSurvey2016 %>%
 ```
 
 Split table:
+
 ```{r INDIVIDUAL CHARACTERISTICS}
 Santiago_IC <- SantiagoSurvey_trans %>%
   dplyr::select(ID, starts_with("r0")) %>%
@@ -206,13 +210,12 @@ Santiago_IC <- SantiagoSurvey_trans %>%
   
 ```
 
-
 ```{r Health}
 Santiago_H <- SantiagoSurvey_trans %>%
   dplyr::select(ID, starts_with("r1")) %>%
   mutate(r1A_STRESS = factor(r1A_STRESS, 
-                             levels = c("1", "2", "3", "4", "5"), 
-                             labels = c("VHIGH", "HIGH", "MEDIUM", "LOW", "VLOW"),
+                             levels = c("5", "4", "3", "2", "1"), 
+                             labels = c("VLOW", "LOW", "MODERATE", "HIGH", "VHIGH"),
                              ordered = TRUE)) %>%
   mutate(r1B_EFFORT = factor(r1B_EFFORT, 
                              levels = c("1", "2", "3", "4", "5"), 
@@ -669,7 +672,8 @@ mutate(r8A_ACCESSJOB = factor(r8A_ACCESSJOB,
                              ordered = TRUE)) 
 ```
 
-Save  to `data` folder:
+Save to `data` folder:
+
 ```{r}
 
 usethis::use_data(Santiago_IC, 
@@ -734,7 +738,6 @@ sapply(A, class)
 typeof(A)
 ```
 
-
 ```{r}
 names(A)
 ```
@@ -754,6 +757,7 @@ tail(A, 1)
 ```{r}
 head(1:10, -1)
 ```
+
 ```{r}
 #Data summaries
 for (i in 1:dim(A)[[2]])
@@ -787,10 +791,38 @@ A <- A %>%
 write.csv(comunas_1, file = 'C:/Users/nalaeen/Desktop/bSantiago/data-raw/comunas_1/comunas_1.csv')
 ```
 
+```{r}
+library(tidyverse)
+library(sf)
 
-# Steps for splitting multiple answers in one cell 
+comunas_1 <- st_read("C:/Users/nalaeen/Desktop/bSantiago/data-raw/comunas_1/comunas_1Polygon.shp")
+```
+
+```{r}
+# ggplot() +
+#   geom_sf(data = comunas_1,color = "RED", fill = "wheat")+
+#   coord_sf(crs = 5361, datum = NA) +
+#   theme_void()
+library(sfheaders)
+library(ggplot2)
+library(tmap)
+library(janitor)
+
+
+ggplot() +
+  geom_sf(data = comunas_1, aes(fill = COMUNA), color = "black") +
+  coord_sf(crs = 5361, datum = NA) +
+  theme_void() +
+  theme(legend.key.size = unit(0.2, "cm"))+
+  theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "cm")) 
+ 
+#SIRGAS-Chile 2002 / UTM zone 19S - EPSG:5361. #228B22
+```
+
+# Steps for splitting multiple answers in one cell
 
 First method
+
 ```{r Preparing functions}
 multiSeparate <- function(df, vars, pattern, remove = FALSE, drop_ns = FALSE){
     for (var in vars){
@@ -823,8 +855,6 @@ multiSeparate <- function(df, vars, pattern, remove = FALSE, drop_ns = FALSE){
     return(df)
 }
 ```
-
-
 
 ```{r}
 #choosing defected fields
@@ -987,21 +1017,20 @@ print("All multiple respnse variables")
 multi_vars
 ```
 
-
 ```{r}
 library(DT)
 library(dplyr)
 library(tidyr)
 
-SantiagoSurvey2016 <- (SantiagoSurvey2016
+SantiagoSplit <- (SantiagoSurvey2016
     %>% multiSeparate(vars = multi_vars, pattern = "", remove = FALSE, drop_ns = FALSE)
     %>% datatable(., rownames = FALSE, options = list(scrollX = TRUE))
 )
-SantiagoSurvey2016
+SantiagoSplit
 ```
 
-
 Second method
+
 ```{r}
 SantiagoSurvey2016 <- read_excel(choose.files())
 
@@ -1014,10 +1043,557 @@ sample(1:1000,555555,replace=TRUE)
   
 ```
 
+```{r}
+ggmap::register_google(key = "AIzaSyAzB1JkhxtCDr36TseHQOR9GBOHPratpZ4")
+
+```
+
+```{r}
+remotes::install_github("rstudio/htmltools")
+install.packages("raster")
+library(raster)
+library(tmap)
+```
+
+```{r force = TRUE}
+
+library(sf)
+comunas_1 <- read_sf('C:/Users/nalaeen/Desktop/bSantiago/data-raw/comunas_1')
+
+comunas_1 <- st_as_sf(comunas_1, coords = c("COORD_X", "COORD_Y"))
+land <- st_read(dsn ="comunas_1")
+st_crs(comunas_1) <- st_crs(land)
+
+library(tmap)
+
+tm_shape(land) +
+  tm_polygons()
+
+# Adding points of comunas
+tm_shape(land) +
+  tm_polygons() +
+  tm_shape(comunas_1)+
+  tm_symbols(size = 0.5)
+
+#For Cartography
+
+tm1 <- tm_shape(land) +
+  tm_fill(col = "wheat") +
+  tm_shape(comunas_1)+
+  tm_symbols(size = 0.3, col = "cover",
+             title.col = "Coral cover",
+             palette = "Reds") +
+  tm_compass(type = "4star", position = c(0.01, 0.67),
+             size = 1.5) +
+  #positions are between 0 & 1 and place the
+  #bottom left corner
+  tm_scale_bar(breaks = c(0, 10),
+               position = c(0.65, 0.01),
+               text.size = 0.6) +
+  tm_layout(legend.position = c("right", "top"),
+            legend.title.size = 0.8,
+            bg.color = "lightblue") +
+  tm_credits("Study sites from \nBrown and Hamilton 2018 \nConservation Biology. \nCoastline derived from Landsat.",
+             size = 0.7, position = c(0.01, 0.01))
+tm1
+
+
+
+##
+# library(maps)
+# 
+# mapdata <- map_data("world") ##ggplot 2
+# # view(mapdata)
+# 
+# # Convert the region column in df1 to uppercase
+# names(mapdata) <- toupper(names(mapdata))
+# mapdata <- left_join(mapdata, comunas_1, by="REGION")
+# 
+# mapdata1 <-mapdata %>% filter(!is.na(mapdata$COMUNA))
+# 
+# map1 <-ggplot(mapdata1, aes( x=COORD_X , y = COORD_Y  )) + 
+#   geom_polygon(aes(fill = COMUNA), color = "black ")
+# plot(map1)
+```
 
 
 
 
+## Using bivariate ordinal model to evaluate the relation between stress level and its importance regarding income level, age, gender and mode of transportation:
+
+```{r load-packages, message=FALSE}
+
+library(ggmap)
+library(ggplot2)
+library(ggridges) # Package for plotting ridgelines in ggplot2
+library(kableExtra) # Package for creating tables
+library(mvord) # Package for estimation of multivariate ordinal regression models
+library(ordinal) # Package for estimation of discrete choice models
+library(plyr) # Tools for Splitting, Applying and Combining Data
+library(tidyverse) # Includes {dplyr} (for data manipulation) and {ggplot2} (for plotting)
+```
+
+#Following loading the data, independent and dependent variables have been selected then their NA values have been dropped
+
+```{r}
+SantiagoSurvey <- read_excel("SantiagoSurvey2016.xlsx")
+
+SantiagoSelect <- dplyr::select ( SantiagoSurvey,r1A_ESTRES,r1GA_ESTRES,r0D_EDAD,r0C_GENERO,r0J_INGRESO,r0P_MODO1,r8E_TIEMPO)
+SanDrop <- drop_na(SantiagoSelect)
+
+```
+
+```{r}
+
+# SanDrop$r0C_GENERO <- relevel(SanDrop$r0C_GENERO, ref = "r0C_GENERO")
+SanDrop$FEMALE <- ifelse (SanDrop$r0C_GENERO == "Famale", 1, 0)
+SanDrop$MALE <- ifelse (SanDrop$r0C_GENERO == "Male", 1, 0)
 
 
+#SanDrop$r0D_EDAD <-factor("Less18", levels = c("Less18", "18to24", "25to34", "35to54", "55to64", "65more"), ordered = TRUE)
+# SanDrop$r0D_EDAD <- relevel(SanDrop$r0D_EDAD, ref = "")
+SanDrop$Less18 <- ifelse (SanDrop$r0D_EDAD == "Less18", 1, 0)
+SanDrop$From18to24 <- ifelse (SanDrop$r0D_EDAD == "18to24", 1, 0)
+SanDrop$From25to34 <- ifelse (SanDrop$r0D_EDAD == "25to34", 1, 0)
+SanDrop$From35to54 <- ifelse (SanDrop$r0D_EDAD == "35to54", 1, 0)
+SanDrop$From55to64 <- ifelse (SanDrop$r0D_EDAD == "55to64", 1, 0)
+SanDrop$more65 <- ifelse (SanDrop$r0D_EDAD == "65more", 1, 0)
 
+# SanDrop$r0J_INGRESO <-factor("Less423", levels = c("Less423", "423to639", "639to977", "977to1550", "1550to2380", "2380more"), ordered = TRUE)
+# SanDrop$r0J_INGRESO <- relevel(SanDrop$r0J_INGRESO, ref = "Less423")
+SanDrop$Less423 <- ifelse (SanDrop$r0J_INGRESO == "Less423", 1, 0)
+SanDrop$From423to639 <- ifelse (SanDrop$r0J_INGRESO == "423to639", 1, 0)
+SanDrop$From639to977 <- ifelse (SanDrop$r0J_INGRESO == "639to977", 1, 0)
+SanDrop$From977to1550 <- ifelse (SanDrop$r0J_INGRESO == "977to1550", 1, 0)
+SanDrop$From1550to2380 <- ifelse (SanDrop$r0J_INGRESO == "1550to2380", 1, 0)
+SanDrop$From2380more <- ifelse (SanDrop$r0J_INGRESO == "2380more", 1, 0)
+
+# SanDrop$r8E_TIEMPO <-factor("0-20 min", levels = c("0-20 min", "20-40 min", "40-60 min", "1h and more"), ordered = TRUE)
+# SanDrop$r8E_TIEMPO <- relevel(SanDrop$r8E_TIEMPO, ref = "0-20 min")
+SanDrop$Between0to20 <- ifelse (SanDrop$r8E_TIEMPO == "0-20 min", 1, 0)
+SanDrop$Between20to40 <- ifelse (SanDrop$r8E_TIEMPO == "20-40 min", 1, 0)
+SanDrop$Between40to60  <- ifelse (SanDrop$r8E_TIEMPO == "40-60 min", 1, 0)
+SanDrop$More1h <- ifelse (SanDrop$r8E_TIEMPO == "1h and more", 1, 0)
+```
+
+```{r}
+mod_bivariate <- mvord(formula = MMO2(r1A_ESTRES, r1GA_ESTRES) ~ 0 + r0D_EDAD + r0C_GENERO +
+                         r0J_INGRESO + r8E_TIEMPO + 
+                         r0P_MODO1, 
+                       link = mvlogit(df = 8L),
+                       # {mvord} does not like tbl or tbl_df objects:
+                       # convert to plain data.frame
+                       data = SanDrop |> mutate(r1A_ESTRES = factor(r1A_ESTRES, ordered = TRUE),
+                                                r1GA_ESTRES = factor(r1GA_ESTRES, ordered = TRUE)))
+summary(mod_bivariate)
+```
+
+of r0C_GENDER, r0J_INCOME, r0D_AGE, and r0P_MODE1 r1A_STRESS and r1GA_IMPSTRESS
+
+```{r}
+library(bSantiago)
+data("Santiago_H")
+```
+
+#Null model:
+
+```{r}
+mod_bivariate <- mvord(formula = MMO2(r1A_STRESS, r1GA_IMPSTRESS) ~ 0, 
+                       link = mvlogit(df = 8L),
+                       # {mvord} does not like tbl or tbl_df objects:
+                       # convert to plain data.frame
+                       data = as.data.frame(Santiago_H))
+summary(mod_bivariate)
+```
+
+```{r}
+data("Santiago_IC")
+
+df <- Santiago_H |>
+  left_join(Santiago_IC,
+            by = "ID") |>
+  as.data.frame() |>
+  drop_na(r0D_AGE,
+          r0J_INCOME,
+          r0G_EDUCATION,
+          r0P_MODE1) 
+```
+
+```{r}
+mod_bivariate <- mvord(formula = MMO2(r1A_STRESS, r1GA_IMPSTRESS) ~ 0 + r0D_AGE + r0J_INCOME + r0P_MODE1 + r0G_EDUCATION,  
+                    
+                       link = mvlogit(df = 8L),
+                       # {mvord} does not like tbl or tbl_df objects:
+                       # convert to plain data.frame
+                       data = as.data.frame(df))
+summary(mod_bivariate)
+```
+
+<!-- ## Start for Factor Analysis -->
+
+<!-- ```{r} -->
+
+<!-- df <- Santiago_H |> -->
+
+<!--   left_join(Santiago_IC, -->
+
+<!--             by = "ID") |> -->
+
+<!--   as.data.frame() |> -->
+
+<!--   drop_na(r0D_AGE, -->
+
+<!--           r0J_INCOME, -->
+
+<!--           r0G_EDUCATION, -->
+
+<!--           r0P_MODE1)  -->
+
+<!-- # We are going to evaluate the data for factor analysis in order to find highest correlation between predictors to put into the model -->
+
+<!-- df2 <- df %>% -->
+
+<!--   mutate(r0C_SEX = factor(r0C_SEX,  -->
+
+<!--                              levels = c("WOMAN", "MAN"),  -->
+
+<!--                              labels = c("1", "2")))  %>%  -->
+
+<!--   mutate(r0D_AGE = factor(r0D_AGE,  -->
+
+<!--                              levels = c("Less18", "18to24", "25to34", "35to54","55to64", "65more"),  -->
+
+<!--                              labels = c("1", "2", "3", "4","5", "6"), -->
+
+<!--                              ordered = TRUE)) %>%  -->
+
+<!--   mutate(r0G_EDUCATION = factor(r0G_EDUCATION,  -->
+
+<!--                              levels = c("ELEMENTARY", "SECUNDARY", "PROFESS_TECH", "COLLEGE", "POSTGRAD"),  -->
+
+<!--                              labels = c("1", "2", "3", "4", "5"), -->
+
+<!--                              ordered = TRUE))   %>%  -->
+
+<!--   mutate(r0H_OCCUPATION = factor(r0H_OCCUPATION,  -->
+
+<!--                              levels = c("FULL_TIME", "PART_TIME", "SELF_EMPLOYED", "UNEMPLOYED", "HOME_TAKER","STUDENT", "STUDENT_WORK", "RETIRED", "OTHER"),  -->
+
+<!--                              labels = c("1", "2", "3", "4", "5","6", "7", "8", "9"))) %>%   -->
+
+<!--   mutate(r0J_INCOME = factor(r0J_INCOME,  -->
+
+<!--                              levels = c("Less423", "423to639", "639to977", "977to1550", "1550to2380","2380more"),  -->
+
+<!--                              labels = c("1", "2", "3", "4", "5","6"), -->
+
+<!--                              ordered = TRUE)) %>%   -->
+
+<!--   mutate(r0N_DRIVING_LICENSE = factor(r0N_DRIVING_LICENSE,  -->
+
+<!--                              levels = c("YES", "NO"),  -->
+
+<!--                              labels = c("1", "2"))) %>%   -->
+
+<!--   mutate(r0M_DISABILITY = factor(r0M_DISABILITY,  -->
+
+<!--                              levels = c("YES", "NO"),  -->
+
+<!--                              labels = c("1", "2"))) %>%   -->
+
+<!--   mutate(r0P_MODE1  = factor(r0P_MODE1 ,  -->
+
+<!--                              levels = c("CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"),  -->
+
+<!--                              labels = c("1", "2", "3", "4", "5", "6","7", "8"))) %>%   -->
+
+<!--   mutate(r0Q_MODE2 = factor(r0Q_MODE2,  -->
+
+<!--                              levels = c("CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"),  -->
+
+<!--                              labels = c("1", "2", "3", "4", "5", "6","7", "8"))) %>%   -->
+
+<!--   mutate(r0R_MODE3 = factor(r0R_MODE3,  -->
+
+<!--                              levels = c("CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"),  -->
+
+<!--                              labels = c("1", "2", "3", "4", "5", "6","7", "8")))    %>%  -->
+
+<!--   mutate(r1A_STRESS = factor(r1A_STRESS,  -->
+
+<!--                              levels = c("VHIGH", "HIGH", "MEDIUM", "LOW", "VLOW"),  -->
+
+<!--                              labels = c("1", "2", "3", "4", "5"), -->
+
+<!--                              ordered = TRUE)) %>% -->
+
+<!--   mutate(r1B_EFFORT = factor(r1B_EFFORT,  -->
+
+<!--                              levels = c("VNEGATIVE", "NEGATIVE", "NEUTRAL", "POSITIVE", "VPOSITVE"),  -->
+
+<!--                              labels = c("1", "2", "3", "4", "5"), -->
+
+<!--                              ordered = TRUE)) %>% -->
+
+<!--   mutate(r1C_PROX = factor(r1C_PROX,  -->
+
+<!--                              levels = c("POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"),  -->
+
+<!--                              labels = c("1", "2", "3", "4", "5"), -->
+
+<!--                              ordered = TRUE)) %>% -->
+
+<!--   mutate(r1D_CONTAM = factor(r1D_CONTAM,  -->
+
+<!--                              levels = c("VDISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VSATISFIED"),  -->
+
+<!--                              labels = c("1", "2", "3", "4", "5"), -->
+
+<!--                              ordered = TRUE)) %>% -->
+
+<!--   mutate(r1E_SAFETY = factor(r1E_SAFETY,  -->
+
+<!--                              levels = c("VDISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VSATISFIED"),  -->
+
+<!--                              labels = c("1", "2", "3", "4", "5"), -->
+
+<!--                              ordered = TRUE)) %>% -->
+
+<!--   mutate(r1F_COMFORT = factor(r1F_COMFORT,  -->
+
+<!--                              levels = c("VDISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VSATISFIED"),  -->
+
+<!--                              labels = c("1", "2", "3", "4", "5"), -->
+
+<!--                              ordered = TRUE)) %>% -->
+
+<!--   mutate(r1GA_IMPSTRESS  = factor(r1GA_IMPSTRESS ,  -->
+
+<!--                              levels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),  -->
+
+<!--                              labels = c("1", "2", "3", "4", "5"), -->
+
+<!--                              ordered = TRUE)) %>% -->
+
+<!--   mutate(r1GB_IMPEFFORT = factor(r1GB_IMPEFFORT,  -->
+
+<!--                             levels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),  -->
+
+<!--                              labels = c("1", "2", "3", "4", "5"), -->
+
+<!--                             ordered = TRUE)) %>% -->
+
+<!--   mutate(r1GC_IMPPROX = factor(r1GC_IMPPROX,  -->
+
+<!--                              levels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),  -->
+
+<!--                              labels = c("1", "2", "3", "4", "5"), -->
+
+<!--                              ordered = TRUE)) %>% -->
+
+<!--   mutate(r1GD_IMPCONTAM = factor(r1GD_IMPCONTAM,  -->
+
+<!--                              levels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),  -->
+
+<!--                              labels = c("1", "2", "3", "4", "5"), -->
+
+<!--                              ordered = TRUE)) %>% -->
+
+<!--   mutate(r1GE_IMPSAFETY = factor(r1GE_IMPSAFETY,  -->
+
+<!--                              levels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),  -->
+
+<!--                              labels = c("1", "2", "3", "4", "5"), -->
+
+<!--                              ordered = TRUE)) %>% -->
+
+<!--   mutate(r1GF_IMPCOMFORT = factor(r1GF_IMPCOMFORT,  -->
+
+<!--                              levels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),  -->
+
+<!--                              labels = c("1", "2", "3", "4", "5"), -->
+
+<!--                              ordered = TRUE)) -->
+
+<!-- df3 <- subset(df2, select = -c(r0B_MACR_ZONE, r0I_WORK_COM_1, r0I_WORK_COM_2, r0A_COMMUNE, r0B_MACR_ZONE, r0B_STREET_1, r0B_STREET_2, r0O_TYPE_DIS)) |> -->
+
+<!-- mutate_if(is.factor, as.numeric) %>% -->
+
+<!-- mutate_if(is.ordered, as.numeric) %>% -->
+
+<!-- mutate_if(is.character, as.numeric) -->
+
+<!-- library(psych) -->
+
+<!-- KMO(df3 ) -->
+
+<!-- ``` -->
+
+<!-- ```{r} -->
+
+<!-- ##The results (MSA=0.49) are unacceptable. I am going to deal with that by eliminating all low-contribution variables. -->
+
+<!-- df4 <- df3[, KMO(df3)$MSAi>0.50] # Get rid of all variables with MSA < 0.50 -->
+
+<!-- ``` -->
+
+<!-- ```{r} -->
+
+<!-- # Now we are going to check if inappropriate variables have been removed or not -->
+
+<!-- round( KMO(df4)$MSA, 2 ) -->
+
+<!-- ``` -->
+
+<!-- ```{r} -->
+
+<!-- #Bartlett’s test for sphericity -->
+
+<!-- ##In this test we are going to rule out that the variables in the data set are essentially uncorrelated -->
+
+<!-- cortest.bartlett(df4) -->
+
+<!-- ``` -->
+
+<!-- ## Actually running the Factor Analysis -->
+
+<!-- ```{r} -->
+
+<!-- df5 <- na.omit(df4) -->
+
+<!-- ev <- eigen(cor(df5)) # get eigenvalues -->
+
+<!-- ev$values -->
+
+<!-- ``` -->
+
+<!-- ```{r} -->
+
+<!-- scree(df5, pc=FALSE)  # Use pc=FALSE for factor analysis -->
+
+<!-- ``` -->
+
+<!-- ## We can also check parallel analysis -->
+
+<!-- ```{r} -->
+
+<!-- fa.parallel(df5, fa="fa") -->
+
+<!-- ``` -->
+
+```{r}
+
+df <- Santiago_H |>
+  left_join(Santiago_IC,
+            by = "ID") |>
+  as.data.frame() |>
+  drop_na(r0D_AGE,
+          r0J_INCOME,
+          r0G_EDUCATION,
+          r0P_MODE1,
+          r0H_OCCUPATION ) 
+  
+
+df <- df %>%  mutate(r0J_INCOME = recode_factor(r0J_INCOME,
+                                  "Less423" = "Low Income",
+                                  "423to639" = "Low Income",
+                                  "639to977" = "Middle Income",
+                                  "977to1550" = "Middle Income",
+                                  "1550to2380" = "High Income",
+                                  "2380more" = "High Income"))  %>%
+  # mutate(r0D_AGE = recode_factor(r0D_AGE,
+  #                                 "Less18" = "Youth and Children",
+  #                                 "18to24" = "Youth and Children",
+  #                                 "25to34" = "Youth and Children",
+  #                                 "35to54" = "Adults",
+  #                                 "55to64" = "Adults",
+  #                                 "65more" = "Adults"))  %>%
+    mutate(r0D_AGE = recode_factor(r0D_AGE,
+                                  "Less18" = "Youth",
+                                  "18to24" = "Youth",
+                                  "25to34" = "Youth",
+                                  "35to54" = "Adults",
+                                  "55to64" = "Seniors",
+                                  "65more" = "Seniors"))  %>%
+  mutate(r0P_MODE1 = recode_factor(r0P_MODE1,
+                                  "CAR" = "Private Transportation",
+                                  "MOTO" = "Private Transportation",
+                                  "TAXI" = "Public Transportation",
+                                  "COLECTIVO" = "Public Transportation",
+                                  "METRO" = "Public Transportation",
+                                  "BUS" = "Public Transportation",
+                                  "BICYCLE" = "Active Transportation",
+                                  "WALK" = "Active Transportation")) %>%
+  # mutate(r0P_MODE1 = recode_factor(r0P_MODE1,
+  #                                 "CAR" = "Motorized Transportation",
+  #                                 "MOTO" = "Motorized Transportation",
+  #                                 "TAXI" = "Motorized Transportation",
+  #                                 "COLECTIVO" = "Motorized Transportation",
+  #                                 "METRO" = "Motorized Transportation",
+  #                                 "BUS" = "Motorized Transportation",
+  #                                 "BICYCLE" = "Active Transportation",
+  #                                 "WALK" = "Active Transportation")) %>%
+  # mutate(r0G_EDUCATION = recode_factor(r0G_EDUCATION,
+  #                                 "ELEMENTARY" = "Elementary Education",
+  #                                 "SECUNDARY" = "Middle Education",
+  #                                 "PROFESS_TECH" = "Middle Education",
+  #                                 "COLLEGE" = "Middle Education",
+  #                                 "POSTGRAD" = "Higher Education"))
+mutate(r0G_EDUCATION = recode_factor(r0G_EDUCATION,
+                                  "ELEMENTARY" = "Elementary Education",
+                                  "SECUNDARY" = "Higher Education",
+                                  "COLLEGE" = "Higher Education",
+                                  "PROFESS_TECH" = "Higher Education",
+                                  "POSTGRAD" = "Higher Education"))  %>%
+  
+mutate(r0H_OCCUPATION = recode_factor(r0H_OCCUPATION,
+                                  "FULL_TIME" = "Working",
+                                  "PART_TIME" = "Working",
+                                  "SELF_EMPLOYED" = "Working",
+                                  "UNEMPLOYED" = "Not Working",
+                                  "HOME_TAKER" = "Not Working",
+                                  "STUDENT" = "Student",
+                                  "STUDENT_WORK" = "Working",
+                                  "RETIRED" = "Not Working",
+                                  "OTHER" = "Non Professional"))
+
+   # df$r0C_SEX <- relevel(df$r0C_SEX, ref = "MAN")
+   df$r0P_MODE1 <- relevel(df$r0P_MODE1, ref = "Active Transportation")
+   df$r0D_AGE <- relevel(df$r0D_AGE, ref = "Youth")
+   df$r0J_INCOME <- relevel(df$r0J_INCOME, ref = "Low Income")
+   df$r0G_EDUCATION <- relevel(df$r0G_EDUCATION, ref = "Elementary Education")
+   df$r0M_DISABILITY <- relevel(df$r0M_DISABILITY, ref = "YES")
+   df$r0H_OCCUPATION <- relevel(df$r0H_OCCUPATION, ref = "UNEMPLOYED")
+  
+ 
+```
+
+```{r}
+mod_bivariate <- mvord(formula = MMO2(r1A_STRESS, r1GA_IMPSTRESS) ~ 0 + r0D_AGE + r0J_INCOME + r0P_MODE1 + r0G_EDUCATION + r0H_OCCUPATION  ,
+                       link = mvlogit(df = 8L),
+                       # {mvord} does not like tbl or tbl_df objects:
+                       # convert to plain data.frame
+                       data = df)
+summary(mod_bivariate)
+
+```
+```{r}
+coef.constraints = cbind(c(NA, 1), # Adults
+                         c(1, NA), # Seniors
+                         c(1, 2), # Middle Income
+                         c(1, NA), # High Income
+                         c(1, NA), # Private Transportation
+                         c(1, NA), # Public Transportation
+                         c(NA, 1), # Higher Education
+                         c(1, NA), # Professional
+                         c(1, NA)) #Non Professional
+
+mod_bivariate <- mvord(formula = MMO2(r1A_STRESS, r1GA_IMPSTRESS) ~ 0 + r0D_AGE + r0J_INCOME + r0P_MODE1 + r0G_EDUCATION + r0H_OCCUPATION  ,
+                       link = mvlogit(df = 8L),
+                       coef.constraints = coef.constraints,
+                       # {mvord} does not like tbl or tbl_df objects:
+                       # convert to plain data.frame
+                       data = df)
+summary(mod_bivariate)
+
+```
