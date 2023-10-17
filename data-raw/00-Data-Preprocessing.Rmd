@@ -17,8 +17,8 @@ library(dplyr)
 Read source file:
 
 ```{r}
-SantiagoSurvey2016 <- read_excel(choose.files())
-#SantiagoSurvey <- read_excel("SantiagoSurvey2016.xlsx")
+# SantiagoSurvey2016 <- read_excel(choose.files())
+SantiagoSurvey <- read_excel("SantiagoSurvey2016.xlsx")
 
 ```
 
@@ -694,12 +694,15 @@ usethis::use_data(Santiago_BE,
                   overwrite = TRUE)
 usethis::use_data(Santiago_TW, 
                   overwrite = TRUE)
+usethis::use_data(San_comuna, 
+                  overwrite = TRUE)
+
 
 ```
 
 ```{r sf}
 library(sf)
-library(rgdal)
+
 library(ggplot2)
 require(rgdal)
 library(dplyr)
@@ -712,12 +715,12 @@ if (!require("bSantiago", character.only = TRUE)) {
 library(bSantiago)
 
 # set working directory:
-setwd("C:/Users/nalaeen/Desktop/bSantiago/data-raw/comunas_1")
+setwd("C:/Users/nalaeen/Desktop/Master-Research/bSantiago/data-raw/comunas_1")
 
 # list files:
 list.files(path=".")
 
-comunas_1 <- read_sf('C:/Users/nalaeen/Desktop/bSantiago/data-raw/comunas_1')
+comunas_1 <- read_sf('C:/Users/nalaeen/Desktop/Master-Research/bSantiago/data-raw/comunas_1')
 summary(comunas_1)
 plot(comunas_1)
 
@@ -749,22 +752,75 @@ A <- SantiagoSurvey2016
 # Saving the communa file:
 ```{r}
 #table(A$r0A_COMUNA)
-A <- A %>%
+
+San_comuna <- A %>%
   left_join(comunas_1,
               #select(COMUNA) %>%
               #st_drop_geometry(),
             by = c("r0A_COMUNA"="COMUNA"))
+
 ```
 
 ```{r}
-write.csv(comunas_1, file = 'C:/Users/nalaeen/Desktop/bSantiago/data-raw/comunas_1/comunas_1.csv')
+write.csv(comunas_1, file = 'C:/Users/nalaeen/Desktop/Master-Research/bSantiago/data-raw/comunas_1/comunas_1.csv')
 ```
 
 ```{r}
 library(tidyverse)
 library(sf)
 
-comunas_1 <- st_read("C:/Users/nalaeen/Desktop/bSantiago/data-raw/comunas_1/comunas_1Polygon.shp")
+comunas_1 <- st_read("C:/Users/nalaeen/Desktop/Master-Research/bSantiago/data-raw/comunas_1/comunas_1Polygon.shp")
+```
+
+```{r}
+# ggplot() +
+#   annotation_map_tile() +
+#   geom_sf(data = comunas_1,
+#           linewidth = 1,
+#           fill = NA)
+```
+
+
+```{r force = TRUE}
+
+library(sf)
+comunas_1 <- read_sf('C:/Users/nalaeen/Desktop/Master-Research/bSantiago/data-raw/comunas_1')
+
+comunas_1 <- st_as_sf(comunas_1, coords = c("COORD_X", "COORD_Y"))
+land <- st_read(dsn ="comunas_1")
+st_crs(comunas_1) <- st_crs(land)
+
+library(tmap)
+
+tm_shape(land) +
+  tm_polygons()
+
+# Adding points of comunas
+tm_shape(land) +
+  tm_polygons() +
+  tm_shape(comunas_1)+
+  tm_symbols(size = 0.5)
+
+#For Cartography
+
+tm1 <- tm_shape(land) +
+  tm_fill(col = "wheat") +
+  tm_shape(comunas_1)+
+  tm_symbols(size = 0.3, col = "cover",
+             title.col = "Coral cover",
+             palette = "Reds") +
+  tm_compass(type = "4star", position = c(0.01, 0.67),
+             size = 1.5) +
+  #positions are between 0 & 1 and place the
+  #bottom left corner
+  tm_scale_bar(breaks = c(0, 10),
+               position = c(0.65, 0.01),
+               text.size = 0.6) +
+  tm_layout(legend.position = c("right", "top"),
+            legend.title.size = 0.8,
+            bg.color = "lightblue") +
+  tm_credits("Study sites from \nBrown and Hamilton 2018 \nConservation Biology. \nCoastline derived from Landsat.",
+             size = 0.7, position = c(0.01, 0.01))
 ```
 
 ```{r}
@@ -1013,7 +1069,7 @@ library(tmap)
 ```{r force = TRUE}
 
 library(sf)
-comunas_1 <- read_sf('C:/Users/nalaeen/Desktop/bSantiago/data-raw/comunas_1')
+comunas_1 <- read_sf('C:/Users/nalaeen/Desktop/Master-Research/bSantiago/data-raw/comunas_1')
 
 comunas_1 <- st_as_sf(comunas_1, coords = c("COORD_X", "COORD_Y"))
 land <- st_read(dsn ="comunas_1")

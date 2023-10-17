@@ -104,6 +104,20 @@ df <- Santiago_H |>
 ```
 
 ```{r}
+# Generate some example data
+set.seed(123)
+df <- sample(1:100, size = 1e7, replace = TRUE)
+
+# Convert to a factor with 10 levels
+df <- cut(df, breaks = 10)
+
+# Create a frequency table of the factor
+freq_table <- table(df)
+
+```
+
+
+```{r}
 mod_bivariate <- mvord(formula = MMO2(r1A_STRESS, r1GA_IMPSTRESS) ~ 0 + r0D_AGE + r0J_INCOME + r0P_MODE1 + r0G_EDUCATION,  
                     
                        link = mvlogit(df = 8L),
@@ -212,6 +226,8 @@ summary(mod_bivariate)
 ```
 
 ```{r}
+formula <- MMO2(r1A_STRESS, r1GA_IMPSTRESS) ~ 0 + r0D_AGE + r0J_INCOME + r0P_MODE1 + r0G_EDUCATION + r0H_OCCUPATION  
+names_constraints(formula, data = df)
 coef.constraints = cbind(c(NA, 1), # Adults
                          c(1, NA), # Seniors
                          c(1, 2), # Middle Income
@@ -230,5 +246,28 @@ mod_bivariate <- mvord(formula = MMO2(r1A_STRESS, r1GA_IMPSTRESS) ~ 0 + r0D_AGE 
                        # convert to plain data.frame
                        data = df)
 summary(mod_bivariate)
+
+
+```
+
+# writing the summary of desctiptive 
+
+```{r}
+library(bSantiago)
+library(vtable)
+
+
+data(df)
+st(df, vars = c('r1A_STRESS','r1GA_IMPSTRESS', 'r0D_AGE', 'r0J_INCOME', 'r0P_MODE1', 'r0G_EDUCATION', 'r0H_OCCUPATION'))
+
+sumtable(df,
+         summ=c('Min(x)',
+                'Max(x)',
+                'Mode(x)',
+                'Median(x)',
+                'Range(x)',
+                'IQR(x)'))
+
+st(df, group = NA , group.long = TRUE, out='return')
 
 ```
