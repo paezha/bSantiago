@@ -10,21 +10,27 @@ In this notebook we read and preprocess the raw data.
 Read packages used:
 
 ```{r}
+
+install.packages("remotes")
+remotes::install_github("paezha/bSantiago")
+library(bSantiago)
+
 library(readxl)
 library(dplyr)
 ```
 
 Read source file:
 
-```{r}
-# SantiagoSurvey2016 <- read_excel(choose.files())
-SantiagoSurvey <- read_excel("SantiagoSurvey2016.xlsx")
+```{r link to the survey}
+
+file_path <- system.file("data", "SantiagoSurvey2016.xlsx", package = "bSantiago")
+SantiagoSurvey <- readxl::read_excel(file_path)
 
 ```
 
 Rename:
 
-```{r}
+```{r translating variables}
 SantiagoSurvey_trans <- SantiagoSurvey2016 %>%
   rename( 
        ID = NUMERO, # rename() function of dplyr
