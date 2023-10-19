@@ -696,7 +696,8 @@ usethis::use_data(Santiago_TW,
                   overwrite = TRUE)
 usethis::use_data(San_comuna, 
                   overwrite = TRUE)
-
+usethis::use_data(San_comuna2, 
+                  overwrite = TRUE)
 ```
 
 ```{r sf}
@@ -752,13 +753,13 @@ A <- SantiagoSurvey2016
 ```{r}
 #table(A$r0A_COMUNA)
 
-San_comuna <- comunas_1 %>%
+San_comuna2 <- comunas_1 %>%
   left_join(A,
               #select(COMUNA) %>%
               #st_drop_geometry(),
             by = c("COMUNA"="r0A_COMUNA"))
 
-view(San_comuna)
+view(San_comuna2)
 
 
 ```
