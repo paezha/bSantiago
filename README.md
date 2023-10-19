@@ -23,6 +23,12 @@ install.packages("remotes")
 remotes::install_github("paezha/bSantiago")
 ```
 
+
+## Data Requirements
+This package requires the "SantiagoSurvey2016.xlsx" data file for analysis. You can obtain this file from [Download SantiagoSurvey2016.xlsx](https://github.com/paezha/bSantiago/blob/master/data/SantiagoSurvey2016.xlsx)
+.
+
+
 ## Example
 
 This example shows how to load one of the data tables included in the
