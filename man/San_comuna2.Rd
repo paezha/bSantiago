@@ -5,7 +5,7 @@
 \alias{San_comuna2}
 \title{A data frame with information about whole survey and geographic features of respondents to the survey}
 \format{
-An object of class \code{sf} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 396 rows and 142 columns.
+An object of class \code{sf} (inherits from \code{data.frame}) with 396 rows and 142 columns.
 }
 \source{
 A face to face survey considering pre-census 2012
