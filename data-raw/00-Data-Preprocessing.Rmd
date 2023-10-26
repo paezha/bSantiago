@@ -698,8 +698,6 @@ usethis::use_data(Santiago_BE,
                   overwrite = TRUE)
 usethis::use_data(Santiago_TW, 
                   overwrite = TRUE)
-usethis::use_data(San_comuna2, 
-                  overwrite = TRUE)
 ```
 
 
@@ -730,7 +728,7 @@ usethis::use_data(San_comuna2,
 library(glue)
 library(bSantiago)
 library(sf)
-A <- SantiagoSurvey
+# A <- SantiagoSurvey
 
 # bSantiago::San_comuna2
 # dir <-"data-raw/comunas_1/"
@@ -741,17 +739,15 @@ A <- SantiagoSurvey
 comunas_1 <- st_read(paste0(here(), "/data-raw/comunas_1/comunas_1Polygon.shp"))
 
 
-San_comuna2 <- comunas_1 %>%
-  left_join(A,
-              #select(COMUNA) %>%
-              #st_drop_geometry(),
-            by = c("COMUNA"="r0A_COMUNA"))
-
-
-San_comuna2_df <- st_as_sf(San_comuna2)
-View(San_comuna2_df)
-
-
+# San_comuna2 <- comunas_1 %>%
+#   left_join(A,
+#               #select(COMUNA) %>%
+#               #st_drop_geometry(),
+#             by = c("COMUNA"="r0A_COMUNA"))
+# 
+# 
+# San_comuna2_df <- st_as_sf(San_comuna2)
+# View(San_comuna2_df)
 ```
 
 ```{r}
@@ -759,8 +755,8 @@ View(San_comuna2_df)
 ```
 
 ```{r}
-library(tidyverse)
-library(sf)
+# library(tidyverse)
+# library(sf)
 # 
 # comunas_1 <- st_read("C:/Users/nalaeen/Desktop/Master-Research/bSantiago/data-raw/comunas_1/comunas_1Polygon.shp")
 ```
