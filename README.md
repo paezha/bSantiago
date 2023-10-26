@@ -25,8 +25,11 @@ remotes::install_github("paezha/bSantiago")
 
 
 ## Data Requirements
-This package requires the "SantiagoSurvey2016.xlsx", "San_comuna2.rda" data file for analysis. You can obtain this file from [Download SantiagoSurvey2016.xlsx](https://github.com/paezha/bSantiago/blob/master/data/SantiagoSurvey2016.xlsx), [Download San_comuna2.rda](https://github.com/paezha/bSantiago/blob/master/data/San_comuna2.rda)
-.
+This package requires the "SantiagoSurvey2016.xlsx", "San_comuna2.rda" and "comunas_1" data file for analysis. You can obtain this file from 
+[Download SantiagoSurvey2016.xlsx](https://github.com/paezha/bSantiago/blob/master/data/SantiagoSurvey2016.xlsx), 
+[Download San_comuna2.rda](https://github.com/paezha/bSantiago/blob/master/data/San_comuna2.rda)
+and
+[Download comunas_1](https://github.com/paezha/bSantiago/tree/master/data-raw/comunas_1).
 
 
 ## Example

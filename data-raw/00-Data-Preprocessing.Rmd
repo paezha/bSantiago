@@ -13,25 +13,23 @@ Read packages used:
 
 install.packages("remotes")
 remotes::install_github("paezha/bSantiago")
+install.packages("here")
 library(bSantiago)
-
+library(sf)
 library(readxl)
 library(dplyr)
+library(here)
 ```
 
-Read source file:
+Read source file and Rename:
 
-```{r link to the survey}
+```{r linking to the survey translating variables}
 
-file_path <- system.file("data", "SantiagoSurvey2016.xlsx", package = "bSantiago")
-SantiagoSurvey <- readxl::read_excel(file_path)
+SantiagoSurvey <- readxl::read_xlsx(paste0(here(), "/data-raw/SantiagoSurvey2016.xlsx"))
 
-```
 
-Rename:
 
-```{r translating variables}
-SantiagoSurvey_trans <- SantiagoSurvey2016 %>%
+SantiagoSurvey_trans <- SantiagoSurvey %>%
   rename( 
        ID = NUMERO, # rename() function of dplyr
        ORIGIN = ORIGEN,
@@ -706,33 +704,6 @@ usethis::use_data(San_comuna2,
                   overwrite = TRUE)
 ```
 
-```{r sf}
-library(sf)
-
-library(ggplot2)
-require(rgdal)
-library(dplyr)
-library(RColorBrewer)
-
-if (!require("bSantiago", character.only = TRUE)) {
-      remotes::install_github("paezha/bSantiago")
-}
-
-library(bSantiago)
-
-# set working directory:
-setwd("C:/Users/nalaeen/Desktop/Master-Research/bSantiago/data-raw/comunas_1")
-
-# list files:
-list.files(path=".")
-
-comunas_1 <- read_sf('C:/Users/nalaeen/Desktop/Master-Research/bSantiago/data-raw/comunas_1')
-summary(comunas_1)
-plot(comunas_1)
-
-#reading excel file
-A <- SantiagoSurvey2016
-```
 
 
 ```{r}
@@ -758,6 +729,19 @@ A <- SantiagoSurvey2016
 # Saving the communa file:
 ```{r}
 #table(A$r0A_COMUNA)
+library(glue)
+library(bSantiago)
+library(sf)
+A <- SantiagoSurvey
+
+# bSantiago::San_comuna2
+# dir <-"data-raw/comunas_1/"
+# comunas_1 <- st_read(paste0(dir,"comunas_1Polygon.shp"))
+# 
+
+
+comunas_1 <- st_read(paste0(here(), "/data-raw/comunas_1/comunas_1Polygon.shp"))
+
 
 San_comuna2 <- comunas_1 %>%
   left_join(A,
@@ -765,20 +749,22 @@ San_comuna2 <- comunas_1 %>%
               #st_drop_geometry(),
             by = c("COMUNA"="r0A_COMUNA"))
 
-view(San_comuna2)
+
+San_comuna2_df <- st_as_sf(San_comuna2)
+View(San_comuna2_df)
 
 
 ```
 
 ```{r}
-write.csv(comunas_1, file = 'C:/Users/nalaeen/Desktop/Master-Research/bSantiago/data-raw/comunas_1/comunas_1.csv')
+# write.csv(comunas_1, file = 'C:/Users/nalaeen/Desktop/Master-Research/bSantiago/data-raw/comunas_1/comunas_1.csv')
 ```
 
 ```{r}
 library(tidyverse)
 library(sf)
-
-comunas_1 <- st_read("C:/Users/nalaeen/Desktop/Master-Research/bSantiago/data-raw/comunas_1/comunas_1Polygon.shp")
+# 
+# comunas_1 <- st_read("C:/Users/nalaeen/Desktop/Master-Research/bSantiago/data-raw/comunas_1/comunas_1Polygon.shp")
 ```
 
 ```{r}
@@ -791,45 +777,45 @@ comunas_1 <- st_read("C:/Users/nalaeen/Desktop/Master-Research/bSantiago/data-ra
 
 
 ```{r force = TRUE}
-
-library(sf)
-comunas_1 <- read_sf('C:/Users/nalaeen/Desktop/Master-Research/bSantiago/data-raw/comunas_1')
-
-comunas_1 <- st_as_sf(comunas_1, coords = c("COORD_X", "COORD_Y"))
-land <- st_read(dsn ="comunas_1")
-st_crs(comunas_1) <- st_crs(land)
-
-library(tmap)
-
-tm_shape(land) +
-  tm_polygons()
-
-# Adding points of comunas
-tm_shape(land) +
-  tm_polygons() +
-  tm_shape(comunas_1)+
-  tm_symbols(size = 0.5)
-
-#For Cartography
-
-tm1 <- tm_shape(land) +
-  tm_fill(col = "wheat") +
-  tm_shape(comunas_1)+
-  tm_symbols(size = 0.3, col = "cover",
-             title.col = "Coral cover",
-             palette = "Reds") +
-  tm_compass(type = "4star", position = c(0.01, 0.67),
-             size = 1.5) +
-  #positions are between 0 & 1 and place the
-  #bottom left corner
-  tm_scale_bar(breaks = c(0, 10),
-               position = c(0.65, 0.01),
-               text.size = 0.6) +
-  tm_layout(legend.position = c("right", "top"),
-            legend.title.size = 0.8,
-            bg.color = "lightblue") +
-  tm_credits("Study sites from \nBrown and Hamilton 2018 \nConservation Biology. \nCoastline derived from Landsat.",
-             size = 0.7, position = c(0.01, 0.01))
+# 
+# library(sf)
+# comunas_1 <- read_sf('C:/Users/nalaeen/Desktop/Master-Research/bSantiago/data-raw/comunas_1')
+# 
+# comunas_1 <- st_as_sf(comunas_1, coords = c("COORD_X", "COORD_Y"))
+# land <- st_read(dsn ="comunas_1")
+# st_crs(comunas_1) <- st_crs(land)
+# 
+# library(tmap)
+# 
+# tm_shape(land) +
+#   tm_polygons()
+# 
+# # Adding points of comunas
+# tm_shape(land) +
+#   tm_polygons() +
+#   tm_shape(comunas_1)+
+#   tm_symbols(size = 0.5)
+# 
+# #For Cartography
+# 
+# tm1 <- tm_shape(land) +
+#   tm_fill(col = "wheat") +
+#   tm_shape(comunas_1)+
+#   tm_symbols(size = 0.3, col = "cover",
+#              title.col = "Coral cover",
+#              palette = "Reds") +
+#   tm_compass(type = "4star", position = c(0.01, 0.67),
+#              size = 1.5) +
+#   #positions are between 0 & 1 and place the
+#   #bottom left corner
+#   tm_scale_bar(breaks = c(0, 10),
+#                position = c(0.65, 0.01),
+#                text.size = 0.6) +
+#   tm_layout(legend.position = c("right", "top"),
+#             legend.title.size = 0.8,
+#             bg.color = "lightblue") +
+#   tm_credits("Study sites from \nBrown and Hamilton 2018 \nConservation Biology. \nCoastline derived from Landsat.",
+#              size = 0.7, position = c(0.01, 0.01))
 ```
 
 ```{r}
@@ -837,20 +823,20 @@ tm1 <- tm_shape(land) +
 #   geom_sf(data = comunas_1,color = "RED", fill = "wheat")+
 #   coord_sf(crs = 5361, datum = NA) +
 #   theme_void()
-library(sfheaders)
-library(ggplot2)
-library(tmap)
-library(janitor)
-
-
-ggplot() +
-  geom_sf(data = comunas_1, aes(fill = COMUNA), color = "black") +
-  coord_sf(crs = 5361, datum = NA) +
-  theme_void() +
-  theme(legend.key.size = unit(0.2, "cm"))+
-  theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "cm")) 
- 
-#SIRGAS-Chile 2002 / UTM zone 19S - EPSG:5361. #228B22
+# library(sfheaders)
+# library(ggplot2)
+# library(tmap)
+# library(janitor)
+# 
+# 
+# ggplot() +
+#   geom_sf(data = comunas_1, aes(fill = COMUNA), color = "black") +
+#   coord_sf(crs = 5361, datum = NA) +
+#   theme_void() +
+#   theme(legend.key.size = unit(0.2, "cm"))+
+#   theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "cm")) 
+#  
+# #SIRGAS-Chile 2002 / UTM zone 19S - EPSG:5361. #228B22
 ```
 
 # Steps for splitting multiple answers in one cell
@@ -891,7 +877,9 @@ multiSeparate <- function(df, vars, pattern, remove = FALSE, drop_ns = FALSE){
 
 ```{r}
 #choosing defected fields
-SantiagoSurvey2016 <- read_excel(choose.files())
+file_path <- system.file("data", "SantiagoSurvey2016.xlsx", package = "bSantiago")
+SantiagoSurvey2016 <- readxl::read_excel(file_path)
+
 r2AA_LIBERTAD <- SantiagoSurvey2016
 r2AB_INSEG <- SantiagoSurvey2016
  SantiagoSurvey2016 <- (SantiagoSurvey2016
@@ -1062,79 +1050,6 @@ SantiagoSplit <- (SantiagoSurvey2016
 SantiagoSplit
 ```
 
-# Mapping the case study (Santiago, Chile)
-```{r}
-ggmap::register_google(key = "AIzaSyAzB1JkhxtCDr36TseHQOR9GBOHPratpZ4")
-
-```
-
-```{r}
-remotes::install_github("rstudio/htmltools")
-install.packages("raster")
-library(raster)
-library(tmap)
-```
-
-```{r force = TRUE}
-
-library(sf)
-comunas_1 <- read_sf('C:/Users/nalaeen/Desktop/Master-Research/bSantiago/data-raw/comunas_1')
-
-comunas_1 <- st_as_sf(comunas_1, coords = c("COORD_X", "COORD_Y"))
-land <- st_read(dsn ="comunas_1")
-st_crs(comunas_1) <- st_crs(land)
-
-library(tmap)
-
-tm_shape(land) +
-  tm_polygons()
-
-# Adding points of comunas
-tm_shape(land) +
-  tm_polygons() +
-  tm_shape(comunas_1)+
-  tm_symbols(size = 0.5)
-
-#For Cartography
-
-tm1 <- tm_shape(land) +
-  tm_fill(col = "wheat") +
-  tm_shape(comunas_1)+
-  tm_symbols(size = 0.3, col = "cover",
-             title.col = "Coral cover",
-             palette = "Reds") +
-  tm_compass(type = "4star", position = c(0.01, 0.67),
-             size = 1.5) +
-  #positions are between 0 & 1 and place the
-  #bottom left corner
-  tm_scale_bar(breaks = c(0, 10),
-               position = c(0.65, 0.01),
-               text.size = 0.6) +
-  tm_layout(legend.position = c("right", "top"),
-            legend.title.size = 0.8,
-            bg.color = "lightblue") +
-  tm_credits("Study sites from \nBrown and Hamilton 2018 \nConservation Biology. \nCoastline derived from Landsat.",
-             size = 0.7, position = c(0.01, 0.01))
-tm1
-
-
-
-##
-# library(maps)
-# 
-# mapdata <- map_data("world") ##ggplot 2
-# # view(mapdata)
-# 
-# # Convert the region column in df1 to uppercase
-# names(mapdata) <- toupper(names(mapdata))
-# mapdata <- left_join(mapdata, comunas_1, by="REGION")
-# 
-# mapdata1 <-mapdata %>% filter(!is.na(mapdata$COMUNA))
-# 
-# map1 <-ggplot(mapdata1, aes( x=COORD_X , y = COORD_Y  )) + 
-#   geom_polygon(aes(fill = COMUNA), color = "black ")
-# plot(map1)
-```
 
 
 
