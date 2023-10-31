@@ -698,6 +698,8 @@ usethis::use_data(Santiago_BE,
                   overwrite = TRUE)
 usethis::use_data(Santiago_TW, 
                   overwrite = TRUE)
+usethis::use_data(comunas_1, 
+                  overwrite = TRUE)
 ```
 
 

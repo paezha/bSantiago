@@ -323,3 +323,33 @@ NULL
 #'  data(Santiago_TW)
 #'  r8A_ACCESSJOB <- Santiago_TW$r8A_ACCESSJOB
 "Santiago_TW"
+
+#' A data frame with geographic information of respondents to the survey
+#'
+#' A dataset containing geographic information of users of active and motorized modes of transportation in
+#' Santiago sourced from 2016 survey.
+#'
+#'  @format A data frame with 52 rows and 11 variables:
+#' \describe{
+#'   \item{OBJECTID}{Unique identifier of respondent}
+#'   \item{ID}{Unique identifier of respondent}
+#'   \item{COMUNA}{Commune of residence}
+#'   \item{REGION}{Region of residence}
+#'   \item{Ha}{Height of residence}
+#'   \item{LAYER}{Layer of residence}
+#'   \item{COORD_X}{X coordinate of the place where respondents live}
+#'   \item{COORD_X}{Y coordinate of the place where respondents live}
+#'   \item{Shape_Leng}{Length of the ploygons where respondents live}
+#'   \item{Shape_Area}{Area of the ploygons where respondents live}
+#'   \item{geometry}{Geometry of the ploygons where respondents live}
+#' }
+#'
+#' @docType data
+#' @keywords datasets
+#' @name comunas_1
+#' @usage data(comunas_1)
+#' @source A face to face survey considering pre-census 2012
+#' @examples
+#'  data(comunas_1)
+#'  COMUNA <- comunas_1$COMUNA
+"comunas_1"
