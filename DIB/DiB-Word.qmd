@@ -7,27 +7,26 @@ format:
     reference-doc: custom-reference-doc.docx
 ---
 
-```{r install-data-package, include = FALSE}
-#| label: install-data-package
-#| #| include: false
-# Run only once if needed to install data package `sobiEquity`
-if (!require("bSantiago", character.only = TRUE)) {
-      remotes::install_github("paezha/bSantiago")
-  }
-```
 
-```{r load-packages}
-#| label: load-packages
-#| include: false
-library(bSantiago) # A data package with the results of a travel and well-being survey conducted in Santiago in 2016
+```{r loading package, include=FALSE}
+
+install.packages("remotes")
+remotes::install_github("paezha/bSantiago")
+install.packages("here")
+library(bSantiago)
+library(sf)
+library(readxl)
+library(dplyr)
+library(here)
+library(glue)
 library(dplyr) # A Grammar of Data Manipulation
 library(skimr) # Compact and Flexible Summaries of Data
 library(stringr) # Simple, Consistent Wrappers for Common String Operations
 library(ggplot2)
 library(reshape2)
 library(plyr)
-library(readxl)
 ```
+
 
 ```{r load-data}
 #| label: load-data
@@ -149,12 +148,16 @@ skim_IC
 ```
 
 ```{r}
+library(bSantiago)
+library(here)
+library(readxl)
 
 par(mfrow=c(1,2))
 
 # Age and Gender Bar Graph
-SantiagoSurvey2016 <- read_excel(choose.files())
-
+SantiagoSurvey2016 <- readxl::read_xlsx(paste0(here(), "/data-raw/SantiagoSurvey2016.xlsx"))
+  
+  
 ggplot(SantiagoSurvey2016,aes(x=factor(r0D_EDAD), fill=factor(r0C_GENERO)))+
   geom_bar(position="dodge")+
   scale_x_discrete("Age Groups", 
