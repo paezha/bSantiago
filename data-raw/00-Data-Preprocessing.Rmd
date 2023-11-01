@@ -19,6 +19,32 @@ library(sf)
 library(readxl)
 library(dplyr)
 library(here)
+library(glue)
+```
+# Saving the communa file:
+```{r}
+#table(A$r0A_COMUNA)
+
+# A <- SantiagoSurvey
+
+# bSantiago::San_comuna2
+# dir <-"data-raw/comunas_1/"
+# comunas_1 <- st_read(paste0(dir,"comunas_1Polygon.shp"))
+# 
+
+
+comunas_1 <- st_read(paste0(here(), "/data-raw/comunas_1/comunas_1Polygon.shp"))
+
+
+# San_comuna2 <- comunas_1 %>%
+#   left_join(A,
+#               #select(COMUNA) %>%
+#               #st_drop_geometry(),
+#             by = c("COMUNA"="r0A_COMUNA"))
+# 
+# 
+# San_comuna2_df <- st_as_sf(San_comuna2)
+# View(San_comuna2_df)
 ```
 
 Read source file and Rename:
@@ -724,33 +750,7 @@ usethis::use_data(comunas_1,
 # }
 ```
 
-# Saving the communa file:
-```{r}
-#table(A$r0A_COMUNA)
-library(glue)
-library(bSantiago)
-library(sf)
-# A <- SantiagoSurvey
 
-# bSantiago::San_comuna2
-# dir <-"data-raw/comunas_1/"
-# comunas_1 <- st_read(paste0(dir,"comunas_1Polygon.shp"))
-# 
-
-
-comunas_1 <- st_read(paste0(here(), "/data-raw/comunas_1/comunas_1Polygon.shp"))
-
-
-# San_comuna2 <- comunas_1 %>%
-#   left_join(A,
-#               #select(COMUNA) %>%
-#               #st_drop_geometry(),
-#             by = c("COMUNA"="r0A_COMUNA"))
-# 
-# 
-# San_comuna2_df <- st_as_sf(San_comuna2)
-# View(San_comuna2_df)
-```
 
 ```{r}
 # write.csv(comunas_1, file = 'C:/Users/nalaeen/Desktop/Master-Research/bSantiago/data-raw/comunas_1/comunas_1.csv')

@@ -353,3 +353,4 @@ NULL
 #'  data(comunas_1)
 #'  COMUNA <- comunas_1$COMUNA
 "comunas_1"
+
