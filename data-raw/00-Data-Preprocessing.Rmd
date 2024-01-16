@@ -20,6 +20,7 @@ library(readxl)
 library(dplyr)
 library(here)
 library(glue)
+library(ggplot2)
 ```
 # Saving the communa file:
 ```{r}
