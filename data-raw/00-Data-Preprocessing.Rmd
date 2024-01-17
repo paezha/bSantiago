@@ -7,9 +7,10 @@ output:
 
 In this notebook we read and preprocess the raw data.
 
-Read packages used:
 
-```{r}
+This section installs and loads several R packages, including `remotes`, `bSantiago`, `sf`, `readxl`, `dplyr`, `here`, and `glue`. These packages provide various functionalities for data manipulation, spatial analysis, and more.
+
+```{r Package Installation and Loading}
 
 install.packages("remotes")
 remotes::install_github("paezha/bSantiago")
@@ -20,10 +21,12 @@ library(readxl)
 library(dplyr)
 library(here)
 library(glue)
-library(ggplot2)
 ```
+
 # Saving the communa file:
-```{r}
+Then we are going through Reading polygon shapefile data representing municipalities (communes) from a specified directory using the `st_read` function from the `sf` package.
+
+```{r Loading Communa (Municipality) Data}
 #table(A$r0A_COMUNA)
 
 # A <- SantiagoSurvey
@@ -49,8 +52,13 @@ comunas_1 <- st_read(paste0(here(), "/data-raw/comunas_1/comunas_1Polygon.shp"))
 ```
 
 Read source file and Rename:
+Now we are going to Read an Excel file containing survey data using `read_xlsx` from the `readxl` package.
+The survey data is then translated and reformatted using the %>% (pipe) operator from `dplyr`. The rename function is used to rename specific columns, which we used to translate our variable's name in this dataset.
 
-```{r linking to the survey translating variables}
+The `rename` section is extensive and involves renaming numerous variables in the survey data. Each line corresponds to renaming a specific variable using the `r0A_COMMUNE = r0A_COMUNA` format. For example, `r0A_COMMUNE` is the new name for the original variable r0A_COMUNA.
+This step is crucial for making the code more readable and understandable by using descriptive variable names.
+
+```{r Reading and Translating Survey Data}
 
 SantiagoSurvey <- readxl::read_xlsx(paste0(here(), "/data-raw/SantiagoSurvey2016.xlsx"))
 
@@ -199,7 +207,11 @@ SantiagoSurvey_trans <- SantiagoSurvey %>%
        )
 ```
 
-Split table:
+In this section we are going to split each section of the survey and make separate tables with the relevant subject. For first table which is individual characteristics we will do as follows:
+
+Select (ID, starts_with("r0")): Selects the "ID" column and all columns that start with "r0" from the `SantiagoSurvey_trans` data frame.
+
+Then we need to convert A-Z answers into meaningful answers to have a better understanding of people's choice. In this step, the code achieves exactly that by transforming coded responses (A-Z) into more interpretable and meaningful labels for various individual characteristics. This makes the data more accessible and provides a clearer understanding of survey participants' choices and characteristics.
 
 ```{r INDIVIDUAL CHARACTERISTICS}
 Santiago_IC <- SantiagoSurvey_trans %>%
@@ -240,6 +252,11 @@ Santiago_IC <- SantiagoSurvey_trans %>%
                              labels = c("CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK")))   
   
 ```
+
+Next one is going to be the health information table that we need to select those variables starting with `r1`. So 
+Select (ID, starts_with("r1")): Selects the "ID" column and all columns that start with "r1" from the `SantiagoSurvey_trans` data frame.
+For label conversion we will do the same as first table.
+
 
 ```{r Health}
 Santiago_H <- SantiagoSurvey_trans %>%
@@ -295,7 +312,9 @@ Santiago_H <- SantiagoSurvey_trans %>%
   
 ```
 
-**NOTE** THIS TABLE NEEDS TO BE RECREATED, IT HAS SO MANY MISSING VARIABLES BECAUSE IT FAILS TO ACCOUNT FOR THE FACT THAT IT WAS POSSIBLE TO SELECT VARIOUS RESPONSES TO EACH QUESTION!
+Next one is going to be the feelings and emotions table that we need to select those variables starting with `r2`. So 
+Select (ID, starts_with("r2")): Selects the "ID" column and all columns that start with "r2" from the `SantiagoSurvey_trans` data frame.
+For label conversion we will do the same as previous table.
 
 ```{r FEELINGS AND EMOTIONS}
 Santiago_FE <- SantiagoSurvey_trans %>%
@@ -371,7 +390,9 @@ Santiago_FE <- SantiagoSurvey_trans %>%
                              labels = c("COMFORT IMPROVEMENT", "SAFETY IMPROVEMENT", "BETTER QULALITY ON STREETS", "LESS CROWDNESS OF PASSENGERS", "IMPROVEMENT ON ACCESIBILITY", "REDUCTION OF TIME TRAVEL", "ALL OF THEM", "OTHER"))) 
 ```
 
-**NOTE:** PART OF THIS TABLE NEEDS TO BE RECREATED: VARIABLES r3H_ECON AND r3I_NOECON CONTAIN SEVERAL RESPONSES TO A SINGLE QUESTION.
+Next one is going to be the reason and planning own decisions table that we need to select those variables starting with `r3`. So 
+Select (ID, starts_with("r3")): Selects the "ID" column and all columns that start with "r3" from the `SantiagoSurvey_trans` data frame.
+For label conversion we will do the same as previous table.
 
 ```{r REASON AND PLANNING OWN DECISIONS}
 Santiago_RPD <- SantiagoSurvey_trans %>%
@@ -469,7 +490,9 @@ Santiago_RPD <- SantiagoSurvey_trans %>%
   
 ```
 
-**NOTE:** PART OF THIS TABLE NEEDS TO BE RECREATED: VARIABLES r4D_MODE CONTAIN SEVERAL RESPONSES TO A SINGLE QUESTION.
+Next one is going to be the social and interaction table that we need to select those variables starting with `r4`. So 
+Select (ID, starts_with("r4")): Selects the "ID" column and all columns that start with "r4" from the `SantiagoSurvey_trans` data frame.
+For label conversion we will do the same as previous table.
 
 ```{r SOCIAL INTERACTION}
 Santiago_SI <- SantiagoSurvey_trans %>%
@@ -490,7 +513,9 @@ mutate(r4A_INTERACC = factor(r4A_INTERACC,
                              labels = c("CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK")))
 ```
 
-**NOTE:** PART OF THIS TABLE NEEDS TO BE RECREATED: VARIABLES r5B_CHANGE_MODE CONTAINS SEVERAL RESPONSES TO A SINGLE QUESTION.
+Next one is going to be the nature and sustainability table that we need to select those variables starting with `r5`. So 
+Select (ID, starts_with("r5")): Selects the "ID" column and all columns that start with "r5" from the `SantiagoSurvey_trans` data frame.
+For label conversion we will do the same as previous table.
 
 ```{r NATURE _AND_ SUSTAINABILITY}
 Santiago_NS <- SantiagoSurvey_trans %>%
@@ -535,7 +560,9 @@ Santiago_NS <- SantiagoSurvey_trans %>%
   
 ```
 
-**NOTE:** PART OF THIS TABLE NEEDS TO BE RECREATED: VARIABLES r6D_DIFFICULTY CONTAINS SEVERAL RESPONSES TO A SINGLE QUESTION.
+Next one is going to be the ITC and shifting table that we need to select those variables starting with `r6`. So 
+Select (ID, starts_with("r6")): Selects the "ID" column and all columns that start with "r6" from the `SantiagoSurvey_trans` data frame.
+For label conversion we will do the same as previous table.
 
 ```{r ITC AND SHIFTING}
 Santiago_IS <- SantiagoSurvey_trans %>%
@@ -574,6 +601,10 @@ Santiago_IS <- SantiagoSurvey_trans %>%
                              labels = c("NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"),
                              ordered = TRUE))
 ```
+
+Next one is going to be the built environment table that we need to select those variables starting with `r7`. So 
+Select (ID, starts_with("r7")): Selects the "ID" column and all columns that start with "r7" from the `SantiagoSurvey_trans` data frame.
+For label conversion we will do the same as previous table.
 
 ```{r BUILT ENVIRONMENT}
 Santiago_BE <- SantiagoSurvey_trans %>%
@@ -668,7 +699,9 @@ mutate(r7AA_AUTOSPACE = factor(r7AA_AUTOSPACE,
                              ordered = TRUE)) 
 ```
 
-**NOTE:** PART OF THIS TABLE NEEDS TO BE RECREATED: VARIABLE r8F_SCHEDULE CONTAINS SEVERAL RESPONSES TO A SINGLE QUESTION.
+Next one is going to be the travel to work information table that we need to select those variables starting with `r8`. So 
+Select (ID, starts_with("r8")): Selects the "ID" column and all columns that start with "r8" from the `SantiagoSurvey_trans` data frame.
+For label conversion we will do the same as previous table.
 
 ```{r TRAVEL WORK}
 Santiago_TW <- SantiagoSurvey_trans %>%
@@ -703,9 +736,11 @@ mutate(r8A_ACCESSJOB = factor(r8A_ACCESSJOB,
                              ordered = TRUE)) 
 ```
 
-Save to `data` folder:
+After making all tables apart and doing all the label conversion we need to save them into `data` folder. So steps are as follows: 
+The `usethis::use_data()` function is used to save each data frame (`Santiago_IC`, `Santiago_H`, ..., `comunas_1`) to the "data" folder.
+The `overwrite = TRUE` argument indicates that if a file with the same name already exists, it should be overwritten.
 
-```{r}
+```{r Saving Data Frames}
 
 usethis::use_data(Santiago_IC, 
                   overwrite = TRUE)
