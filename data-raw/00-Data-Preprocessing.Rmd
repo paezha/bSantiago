@@ -4,9 +4,10 @@ output:
   html_document:
     df_print: paged
 ---
+# Introduction
+In this notebook we read and preprocess the raw data collected as a paper-based survey conducted face-to-face in Santiago in 2016 by Dr. Beatriz Mella-Lira. The survey collected information on a wide range of travel-related issues (socio-demographics, health-related, perceptions and travel behaviour, travel choices and planning, social interaction factors, built environment, and so on). 
 
-In this notebook we read and preprocess the raw data.
-
+The data collection considered a quota-sampling method based on the information from the Pre-census of 2012, and with a total of 451 persons. 
 
 This section installs and loads several R packages, including `remotes`, `bSantiago`, `sf`, `readxl`, `dplyr`, `here`, and `glue`. These packages provide various functionalities for data manipulation, spatial analysis, and more.
 
@@ -24,6 +25,7 @@ library(glue)
 ```
 
 # Saving the communa file:
+
 Then we are going through Reading polygon shapefile data representing municipalities (communes) from a specified directory using the `st_read` function from the `sf` package.
 
 ```{r Loading Communa (Municipality) Data}
@@ -51,11 +53,13 @@ comunas_1 <- st_read(paste0(here(), "/data-raw/comunas_1/comunas_1Polygon.shp"))
 # View(San_comuna2_df)
 ```
 
-Read source file and Rename:
+# Read source file and Rename:
+
 Now we are going to Read an Excel file containing survey data using `read_xlsx` from the `readxl` package.
 The survey data is then translated and reformatted using the %>% (pipe) operator from `dplyr`. The rename function is used to rename specific columns, which we used to translate our variable's name in this dataset.
 
 The `rename` section is extensive and involves renaming numerous variables in the survey data. Each line corresponds to renaming a specific variable using the `r0A_COMMUNE = r0A_COMUNA` format. For example, `r0A_COMMUNE` is the new name for the original variable r0A_COMUNA.
+
 This step is crucial for making the code more readable and understandable by using descriptive variable names.
 
 ```{r Reading and Translating Survey Data}
@@ -206,6 +210,8 @@ SantiagoSurvey_trans <- SantiagoSurvey %>%
        r8G_SPENDING = r8G_GASTO
        )
 ```
+
+# Splitting tables based on subject
 
 In this section we are going to split each section of the survey and make separate tables with the relevant subject. For first table which is individual characteristics we will do as follows:
 
@@ -736,6 +742,8 @@ mutate(r8A_ACCESSJOB = factor(r8A_ACCESSJOB,
                              ordered = TRUE)) 
 ```
 
+# Saving data frames
+
 After making all tables apart and doing all the label conversion we need to save them into `data` folder. So steps are as follows: 
 The `usethis::use_data()` function is used to save each data frame (`Santiago_IC`, `Santiago_H`, ..., `comunas_1`) to the "data" folder.
 The `overwrite = TRUE` argument indicates that if a file with the same name already exists, it should be overwritten.
@@ -871,8 +879,9 @@ usethis::use_data(comunas_1,
 # #SIRGAS-Chile 2002 / UTM zone 19S - EPSG:5361. #228B22
 ```
 
-# Steps for splitting multiple answers in one cell
+# Steps for splitting multiple answers in a single cell
 
+Now we need to solve a problem. The problem is having multiple choices stored in a single column. So we will use `multiSeparate` which is a function designed for splitting multiple answers stored in one cell into individual columns.
 
 ```{r Preparing functions}
 multiSeparate <- function(df, vars, pattern, remove = FALSE, drop_ns = FALSE){
@@ -906,6 +915,8 @@ multiSeparate <- function(df, vars, pattern, remove = FALSE, drop_ns = FALSE){
     return(df)
 }
 ```
+
+Here we need to specify which columns we are going to use for this function to gain the separate answers:
 
 ```{r}
 #choosing defected fields
@@ -1083,8 +1094,21 @@ SantiagoSplit <- (SantiagoSurvey
 SantiagoSplit
 ```
 
+#How this process contributes to reproducibility?
+
+Having the answers separated into distinct columns, let future researchers gain flexibility in analyzing the data and generating tables tailored to their research questions or goals. The specific analyses and tables created will depend on the nature of the data and the research objectives. 
+
+When starting from scratch after splitting and reshaping the data, researchers can use various techniques for a more granular analysis of individual responses and choosing the specific answer among multiple ones in a single cell.
+
+One idea is using frequency tables as they can observe the occurrences of each response for each split variable useful in understanding the distribution of the response.
+
+Second way is to take advantage of cross-tabulations for split variables against each other, as it gives insights about relationships and patterns in the data.
+
+Also calculating summary statistics for each split variable allows us to understand central tendency and variability. There are many other ways in this regard to specify the appropriate answer out of multiple ones like visualization, comparisons and tests, data exploration and so on.
 
 
+When starting from the raw data and following the same preprocessing and analysis steps, researchers could generally end up with similar tables and results. However, several factors can influence whether the results are exactly the same such as differences in data cleaning and handling missing data, parameters or thresholds according to the analysis, random sampling (if applicable).
 
+In summary, while exact replication is not always guaranteed, careful documentation, consistency in preprocessing, and transparent reporting of analysis steps contribute to the reproducibility of results. Additionally, using github repository and sharing code can facilitate collaboration and make it easier for future researchers to reproduce the results.
 
 
