@@ -15,8 +15,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r flowchart , echo=FALSE}
+```{r  , echo=FALSE, include=FALSE, message=FALSE, error=FALSE, warning=FALSE}
 library(DiagrammeR)
+
 
 DiagrammeR::grViz("digraph {
 
@@ -46,9 +47,6 @@ data1 [label = 'Survey Data Preprocessing Guide', shape = rectangle, fillcolor =
 
 ```
 
-
-
-
 # bSantiago
 ## Introduction
 
@@ -56,11 +54,15 @@ In this notebook we read and preprocess the raw data collected as a paper-based 
 
 The data collection considered a quota-sampling method based on the information from the Pre-census of 2012, and with a total of 451 persons. 
 
+Here is a flowchart starting from raw data to ready for analysis dataset
+
+[![""](Doc/Flowchart.png)](https://paezha.github.io/bSantiago/)
+
 ## Installation
 
 You can install the development version of Santiago from [GitHub](https://github.com/) with:
 
-``` r
+``` {r}
 install.packages("remotes")
 remotes::install_github("paezha/bSantiago")
 ```

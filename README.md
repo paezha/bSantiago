@@ -1,12 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-    #> Warning: package 'DiagrammeR' was built under R version 4.3.2
-    #> PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
-
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5a225c4a1155037df65c" style="width:100%;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-5a225c4a1155037df65c">{"x":{"diagram":"digraph {\n\ngraph [layout = dot, rankdir = TB]\n\n# define the global styles of the nodes. We can override these in box if we wish\nnode [shape = rectangle, style = filled, fillcolor = Linen]\n\ndata1 [label = \"Survey Data Preprocessing Guide\", shape = rectangle, fillcolor = Beige]\n\n1 [label =  \"Navigation to Data Preprocessing Script \n  from data-raw/00-Data-Preprocessing.Rmd\"]\n\n\n2 [label = \"Package Installation \n and Loading\"]\n3 [label = \"Loading Communa \n (Municipality) Data\n\"]\n4 [label = \"Reading and Translating \n Survey Data\"]\n5 [label = \"Table separation based on \n subject and lable conversion\"]\n6 [label = \"Saving Data Frames\"]\n\n7 [label = \"Steps for splitting multiple answers  \n in a single cell\"]\n\n\n# edge definitions with the node IDs\n{data1}  -> 1 -> 2 -> 3-> 4 -> 5 -> 6-> 7\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
-
 # bSantiago
 
 ## Introduction
@@ -22,6 +16,10 @@ The data collection considered a quota-sampling method based on the
 information from the Pre-census of 2012, and with a total of 451
 persons.
 
+Here is a flowchart starting from raw data to ready for analysis dataset
+
+[![“”](Doc/Flowchart.png)](https://paezha.github.io/bSantiago/)
+
 ## Installation
 
 You can install the development version of Santiago from
@@ -29,7 +27,11 @@ You can install the development version of Santiago from
 
 ``` r
 install.packages("remotes")
+#> Installing remotes [2.4.2.1] ...
+#>  OK [linked cache]
 remotes::install_github("paezha/bSantiago")
+#> Skipping install of 'bSantiago' from a github remote, the SHA1 (f232cf00) has not changed since last install.
+#>   Use `force = TRUE` to force installation
 ```
 
 ## Example
