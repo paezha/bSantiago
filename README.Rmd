@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r flowchart ,include=FALSE}
+```{r flowchart , echo=TRUE}
 library(DiagrammeR)
 
 DiagrammeR::grViz("digraph {
@@ -41,7 +41,6 @@ data1 [label = 'Survey Data Preprocessing Guide', shape = rectangle, fillcolor =
 # edge definitions with the node IDs
 {data1}  -> 1 -> 2 -> 3-> 4 -> 5 -> 6-> 7
 }")
-
 
 ```
 
