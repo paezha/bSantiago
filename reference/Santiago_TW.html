@@ -67,25 +67,25 @@ Santiago sourced from 2016 survey.</p>
     <p>@format A data frame with 451 rows and 7 variables:</p><dl><dt>ID</dt>
 <dd><p>Unique identifier of respondent</p></dd>
 
-<dt>r8A_ACCESSJOB</dt>
+<dt>TW_JobAccess</dt>
 <dd><p>How much do respondents think their access to the transport network has affected their chances of having a better job?; this variable is an ordered factor with five levels, "NO IMPACT", "MINOR IMPACT", "SOME IMPACT", "MODERATE IMPACT", "MAJOR IMPACT"</p></dd>
 
-<dt>r8B_JOBOPP</dt>
+<dt>TW_Job_Opportunity</dt>
 <dd><p>How do respondents assess the job opportunities available in their commune of residence?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"</p></dd>
 
-<dt>r8C_ACC_COM</dt>
+<dt>TW_Interested_Access</dt>
 <dd><p>What level of access to employment are respondents interested in having in their commune of residence?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"</p></dd>
 
-<dt>r8D_EMPLSATISF</dt>
+<dt>TW_Jobsatisfaction</dt>
 <dd><p>How satisfied are respondents with their current job?; this variable is an ordered factor with five levels, "NOT SATISFIED", "LOW SATISFIED", "MEDIUM SATISFIED", "HIGH SATIAFIED", "VHIGH SATISFIED"</p></dd>
 
-<dt>r8E_TIMECOMMUT</dt>
+<dt>TW_Commute_duration</dt>
 <dd><p>How long is your regular commuting?; this variable is an ordered factor with four levels, "0-20 min", "20-40 min", "40-60 min", "1h and more"</p></dd>
 
-<dt>r8F_SCHEDULE</dt>
+<dt>TW_Commute_schedule</dt>
 <dd><p>What is the frequent time of their commuting?; this variable is an ordered factor with six levels, "7:00 - 9:00", "9:00 - 13:00", "13:00 - 15:00", "15:00 - 18:00", "18:00 - 21:00", "Others"</p></dd>
 
-<dt>r8G_SPENDING</dt>
+<dt>TW_Commute_monthlycost</dt>
 <dd><p>Monthly expenditure on transport; this variable is an ordered factor with four levels, "Less than 35.000", "35.000-75.000", "75.000-125.000", "More than 125.000"</p></dd>
 
 
@@ -95,6 +95,7 @@ Santiago sourced from 2016 survey.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">Santiago_TW</span><span class="op">)</span></span></span>
 <span class="r-in"><span> <span class="va">r8A_ACCESSJOB</span> <span class="op">&lt;-</span> <span class="va">Santiago_TW</span><span class="op">$</span><span class="va">r8A_ACCESSJOB</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Unknown or uninitialised column: `r8A_ACCESSJOB`.</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

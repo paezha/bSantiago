@@ -67,40 +67,40 @@ Santiago sourced from 2016 survey.</p>
     <p>@format A data frame with 451 rows and 12 variables:</p><dl><dt>ID</dt>
 <dd><p>Unique identifier of respondent</p></dd>
 
-<dt>r1A_STRESS</dt>
+<dt>H_Stress</dt>
 <dd><p>How do respondents assess the level of stress they experience on their usual trips?; this variable is an ordered factor with five levels, "VLOW", "LOW", "MODERATE", "HIGH", "VHIGH"</p></dd>
 
-<dt>r1B_EFFORT</dt>
+<dt>H_Effort</dt>
 <dd><p>How do respondents assess the physical effort they make in their travels?; this variable is an ordered factor with five levels, "VNEGATIVE", "NEGATIVE", "NEUTRAL", "POSITIVE", "VPOSITVE"</p></dd>
 
-<dt>r1C_PROX</dt>
+<dt>H_Proximity</dt>
 <dd><p>How do respondents assess their level of proximity (proximity) to other transport users on their usual trips?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"</p></dd>
 
-<dt>r1D_CONTAM</dt>
+<dt>H_Contam</dt>
 <dd><p>How do respondents assess the level of environmental pollution they experience on their usual trips?; this variable is an ordered factor with five levels, "VDISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VSATTISFIED"</p></dd>
 
-<dt>r1E_SAFETY</dt>
+<dt>H_Safety</dt>
 <dd><p>How do respondents assess the level of safety (not being assaulted or harassed) that they experience on their usual trips?; this variable is an ordered factor with five levels, "VDISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VSATTISFIED"</p></dd>
 
-<dt>r1F_COMFORT</dt>
+<dt>H_Comfort</dt>
 <dd><p>How do respondents assess the level of comfort they experience on their usual trips?; this variable is an ordered factor with five levels, "VDISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VSATTISFIED"</p></dd>
 
-<dt>r1GA_IMPSTRESS</dt>
+<dt>H_Imp_stress</dt>
 <dd><p>What is the importance respondents assign to these aspects? Levels of stress; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"</p></dd>
 
-<dt>r1GB_IMPEFFORT</dt>
+<dt>H_Imp_effort</dt>
 <dd><p>What is the importance respondents assign to these aspects? Levels of physical effort; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"</p></dd>
 
-<dt>r1GC_IMPPROX</dt>
+<dt>H_Imp_prox</dt>
 <dd><p>What is the importance respondents assign to these aspects? Levels of proximity to other transport users; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"</p></dd>
 
-<dt>r1GD_IMPCONTAM</dt>
+<dt>H_Imp_contam</dt>
 <dd><p>What is the importance respondents assign to these aspects? Levels of (perceived) air pollution; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"</p></dd>
 
-<dt>r1GE_IMPSAFETY</dt>
+<dt>H_Imp_safety</dt>
 <dd><p>What is the importance respondents assign to these aspects? Levels of safety; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"</p></dd>
 
-<dt>r1GF_IMPCOMFORT</dt>
+<dt>H_Imp_comfort</dt>
 <dd><p>What is the importance respondents assign to these aspects? Levels of comfort; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"</p></dd>
 
 
@@ -110,6 +110,7 @@ Santiago sourced from 2016 survey.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">Santiago_H</span><span class="op">)</span></span></span>
 <span class="r-in"><span> <span class="va">r1A_STRESS</span> <span class="op">&lt;-</span> <span class="va">Santiago_H</span><span class="op">$</span><span class="va">r1A_STRESS</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Unknown or uninitialised column: `r1A_STRESS`.</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
