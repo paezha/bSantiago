@@ -21,18 +21,18 @@ Santiago sourced from 2016 survey.
 @format A data frame with 451 rows and 12 variables:
 \describe{
 \item{ID}{Unique identifier of respondent}
-\item{r1A_STRESS}{How do respondents assess the level of stress they experience on their usual trips?; this variable is an ordered factor with five levels, "VLOW", "LOW", "MODERATE", "HIGH", "VHIGH"}
-\item{r1B_EFFORT}{How do respondents assess the physical effort they make in their travels?; this variable is an ordered factor with five levels, "VNEGATIVE", "NEGATIVE", "NEUTRAL", "POSITIVE", "VPOSITVE"}
-\item{r1C_PROX}{How do respondents assess their level of proximity (proximity) to other transport users on their usual trips?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
-\item{r1D_CONTAM}{How do respondents assess the level of environmental pollution they experience on their usual trips?; this variable is an ordered factor with five levels, "VDISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VSATTISFIED"}
-\item{r1E_SAFETY}{How do respondents assess the level of safety (not being assaulted or harassed) that they experience on their usual trips?; this variable is an ordered factor with five levels, "VDISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VSATTISFIED"}
-\item{r1F_COMFORT}{How do respondents assess the level of comfort they experience on their usual trips?; this variable is an ordered factor with five levels, "VDISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VSATTISFIED"}
-\item{r1GA_IMPSTRESS}{What is the importance respondents assign to these aspects? Levels of stress; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
-\item{r1GB_IMPEFFORT}{What is the importance respondents assign to these aspects? Levels of physical effort; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
-\item{r1GC_IMPPROX}{What is the importance respondents assign to these aspects? Levels of proximity to other transport users; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
-\item{r1GD_IMPCONTAM}{What is the importance respondents assign to these aspects? Levels of (perceived) air pollution; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
-\item{r1GE_IMPSAFETY}{What is the importance respondents assign to these aspects? Levels of safety; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
-\item{r1GF_IMPCOMFORT}{What is the importance respondents assign to these aspects? Levels of comfort; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{H_Stress}{How do respondents assess the level of stress they experience on their usual trips?; this variable is an ordered factor with five levels, "VLOW", "LOW", "MODERATE", "HIGH", "VHIGH"}
+\item{H_Effort}{How do respondents assess the physical effort they make in their travels?; this variable is an ordered factor with five levels, "VNEGATIVE", "NEGATIVE", "NEUTRAL", "POSITIVE", "VPOSITVE"}
+\item{H_Proximity}{How do respondents assess their level of proximity (proximity) to other transport users on their usual trips?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{H_Contam}{How do respondents assess the level of environmental pollution they experience on their usual trips?; this variable is an ordered factor with five levels, "VDISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VSATTISFIED"}
+\item{H_Safety}{How do respondents assess the level of safety (not being assaulted or harassed) that they experience on their usual trips?; this variable is an ordered factor with five levels, "VDISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VSATTISFIED"}
+\item{H_Comfort}{How do respondents assess the level of comfort they experience on their usual trips?; this variable is an ordered factor with five levels, "VDISSATISFIED", "DISSATISFIED", "UNSURE", "SATISFIED", "VSATTISFIED"}
+\item{H_Imp_stress}{What is the importance respondents assign to these aspects? Levels of stress; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{H_Imp_effort}{What is the importance respondents assign to these aspects? Levels of physical effort; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{H_Imp_prox}{What is the importance respondents assign to these aspects? Levels of proximity to other transport users; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{H_Imp_contam}{What is the importance respondents assign to these aspects? Levels of (perceived) air pollution; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{H_Imp_safety}{What is the importance respondents assign to these aspects? Levels of safety; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{H_Imp_comfort}{What is the importance respondents assign to these aspects? Levels of comfort; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 }
 }
 \examples{

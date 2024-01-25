@@ -21,15 +21,15 @@ Santiago sourced from 2016 survey.
 @format A data frame with 451 rows and 9 variables:
 \describe{
 \item{ID}{Unique identifier of respondent}
-\item{r6A_SHIFT}{Do respondents shift between transport modes on their usual trips?; this variable is a factor with two levels, "YES", "NO"}
-\item{r6B_QUALITY_SHIFT}{If YES in the previous question, how is the quality of these interchanges?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
-\item{r6CA_WAITING}{How would respondents assess their regular trips in terms of: Waiting times; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
-\item{r6CB_TIME_SHIFT}{How would respondents assess their regular trips in terms of: Time of shifts; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
-\item{r6CC_TOTALTIME}{How would respondents assess their regular trips in terms of: Travel time; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
-\item{r6D_DIFFICULTY}{What main aspect makes their shifts difficult?; this variable is a factor with six levels, "Bad physical conection in sidewalks", "Too long shifts", "Uncomfortable shifting", "Bad infrastructure for waiting times", "Unsafe shifting ", "All the previous ones","Other"}
-\item{r6E_TOOL}{Do respondents have access to technology tools such as smartphones and internet, with which they can view information on transportation services?; this variable is a factor with two levels, "YES", "NO"}
-\item{r6F_INFO}{How do you assess the level of technological information available to see transportation alternatives? (eg smartphone applications, internet, signs); this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
-\item{r6G_IMP_INFO}{How important is it for respondents to have access to technological information for their usual trips?; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{IS_Shiftmode}{Do respondents shift between transport modes on their usual trips?; this variable is a factor with two levels, "YES", "NO"}
+\item{IS_Qualityshift}{If YES in the previous question, how is the quality of these interchanges?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{IS_Waitingtime}{How would respondents assess their regular trips in terms of: Waiting times; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{IS_Shift_time}{How would respondents assess their regular trips in terms of: Time of shifts; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{IS_Travel_time}{How would respondents assess their regular trips in terms of: Travel time; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{IS_Difficulty_modechange}{What main aspect makes their shifts difficult?; this variable is a factor with six levels, "Bad physical conection in sidewalks", "Too long shifts", "Uncomfortable shifting", "Bad infrastructure for waiting times", "Unsafe shifting ", "All the previous ones","Other"}
+\item{IS_Techtool}{Do respondents have access to technology tools such as smartphones and internet, with which they can view information on transportation services?; this variable is a factor with two levels, "YES", "NO"}
+\item{IS_Info_techtool}{How do you assess the level of technological information available to see transportation alternatives? (eg smartphone applications, internet, signs); this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{IS_Imp_techtool}{How important is it for respondents to have access to technological information for their usual trips?; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 }
 }
 \examples{

@@ -21,16 +21,16 @@ Santiago sourced from 2016 survey.
 @format A data frame with 451 rows and 10 variables:
 \describe{
 \item{ID}{Unique identifier of respondent}
-\item{r5A_CHANGE}{In a climatic event like heavy rain or flood, do respondents change their main mode of transport?; this variable is a factor with two levels, "YES", "NO"}
-\item{r5B_CHANGE_MODE}{If respondents answered yes (change mode of transport in a weather event), indication of the mode(s) is required; this variable is a factor with eight levels, "CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
-\item{r5C_SUST}{How do respondents assess their access to the currently available sustainable modes of transport? (eg hybrid buses, electric cars, public bicycles); this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
-\item{r5D_IMP_SUST}{How important is it for respondents to have access to sustainable modes of transport?; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
-\item{r5E_PAYMENT}{Would respondents be willing to spend more on transportation to gain access to more sustainable modes?; this variable is a factor with two levels, "YES", "NO"}
-\item{r5F_PAYMENTS}{If respondents' previous response was positive, indication of how much their transportation expense would increase; this variable is an ordered factor with three levels, "5-15\%", "15-30\%", "30\% or more"}
-\item{r5GA_TREE}{indication of how important it is improving the following aspects in public transport routes: Presence of trees; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
-\item{r5GB_PARK}{indication of how important it is improving the following aspects in public transport routes: Access to parks; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
-\item{r5GC_MODE}{indication of how important it is improving the following aspects in public transport routes: Access to sustainable transport modes; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
-\item{r5GD_MODE}{indication of how important it is improving the following aspects in public transport routes: Broaden supply of sustainable transport modes; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{NS_Change_mode}{In a climatic event like heavy rain or flood, do respondents change their main mode of transport?; this variable is a factor with two levels, "YES", "NO"}
+\item{NS_Change_type}{If respondents answered yes (change mode of transport in a weather event), indication of the mode(s) is required; this variable is a factor with eight levels, "CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+\item{NS_Sustain_mode}{How do respondents assess their access to the currently available sustainable modes of transport? (eg hybrid buses, electric cars, public bicycles); this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{NS_Imp_sustainmode}{How important is it for respondents to have access to sustainable modes of transport?; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{NS_Willing_pay_sustainmode}{Would respondents be willing to spend more on transportation to gain access to more sustainable modes?; this variable is a factor with two levels, "YES", "NO"}
+\item{NS_Pay_sustaintype}{If respondents' previous response was positive, indication of how much their transportation expense would increase; this variable is an ordered factor with three levels, "5-15\%", "15-30\%", "30\% or more"}
+\item{NS_Imp_tree}{indication of how important it is improving the following aspects in public transport routes: Presence of trees; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{NS_Imp_park}{indication of how important it is improving the following aspects in public transport routes: Access to parks; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{NS_Imp_imprv_sustainmode}{indication of how important it is improving the following aspects in public transport routes: Access to sustainable transport modes; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{NS_Imp_increasesusmodes}{indication of how important it is improving the following aspects in public transport routes: Broaden supply of sustainable transport modes; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
 }
 }
 \examples{
