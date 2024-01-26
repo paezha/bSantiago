@@ -1095,6 +1095,51 @@ SantiagoSplit <- (SantiagoSurvey
 SantiagoSplit
 ```
 
+
+```{r save survey answers in csv format}
+library(readxl)
+library(here)
+
+# Specify the path to your Excel file
+excel_file <- here("data-raw", "SantiagoSurvey2016.xlsx")
+
+# Read the Excel file into R
+data <- read_excel(excel_file)
+
+# Specify the path for the CSV file
+csv_file <- here("data-raw", "SantiagoSurvey2016.csv")
+
+# Write the data to a CSV file
+write.csv(data, file = csv_file, row.names = FALSE)
+
+# Print a message indicating the conversion is complete
+cat("Excel file has been successfully converted to CSV format.\n")
+
+```
+
+```{r save survey questions in csv format}
+library(readxl)
+library(here)
+
+# Specify the path to your Excel file
+excel_file2 <- here("data-raw", "SantiagoSurvey2016-Survey-Questions-and-Dictionary.xlsx")
+
+# Read the Excel file into R
+data2 <- read_excel(excel_file2)
+
+# Specify the path for the CSV file
+csv_file2 <- here("data-raw", "SantiagoSurvey2016-Survey-Questions-and-Dictionary.csv")
+
+# Write the data to a CSV file
+write.csv(data2, file = csv_file2, row.names = FALSE)
+
+# Print a message indicating the conversion is complete
+cat("Excel file has been successfully converted to CSV format.\n")
+
+```
+
+
+
 # How this process contributes to reproducibility?
 
 Having the answers separated into distinct columns, let future researchers gain flexibility in analyzing the data and generating tables tailored to their research questions or goals. The specific analyses and tables created will depend on the nature of the data and the research objectives. 
