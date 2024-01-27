@@ -21,10 +21,10 @@ Santiago sourced from 2016 survey.
 @format A data frame with 451 rows and 4 variables:
 \describe{
 \item{ID}{Unique identifier of respondent}
-\item{r4A_INTERACC}{How do respondents rate the level of interaction they have with other people during their usual trips?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
-\item{r4B_PERSON}{How important do respondents consider the presence of other people during their usual travels?; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
-\item{r4C_DISCRIM}{Have respondents ever felt discriminated while traveling in any mode of transport?; this variable is a factor with two levels, "YES", "NO"}
-\item{r4D_MODE}{If their answer was yes (respondents have felt discriminated),indication of the mode(s) is required; this variable is a factor with eight levels, "CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
+\item{SI_Interactionlevel}{How do respondents rate the level of interaction they have with other people during their usual trips?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{SI_Imp_interaction}{How important do respondents consider the presence of other people during their usual travels?; this variable is an ordered factor with five levels, "NOT IMPORTANT", "SLIGHTLY IMPORTANT", "MODERATELY IMPORTANT", "IMPORTANT", "VERY IMPORTANT"}
+\item{SI_Discrimination}{Have respondents ever felt discriminated while traveling in any mode of transport?; this variable is a factor with two levels, "YES", "NO"}
+\item{SI_Discrim_mode}{If their answer was yes (respondents have felt discriminated),indication of the mode(s) is required; this variable is a factor with eight levels, "CAR", "TAXI", "COLECTIVO", "MOTO", "METRO", "BUS","BICYCLE", "WALK"}
 }
 }
 \examples{

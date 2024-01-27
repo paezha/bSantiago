@@ -21,13 +21,13 @@ Santiago sourced from 2016 survey.
 @format A data frame with 451 rows and 7 variables:
 \describe{
 \item{ID}{Unique identifier of respondent}
-\item{r8A_ACCESSJOB}{How much do respondents think their access to the transport network has affected their chances of having a better job?; this variable is an ordered factor with five levels, "NO IMPACT", "MINOR IMPACT", "SOME IMPACT", "MODERATE IMPACT", "MAJOR IMPACT"}
-\item{r8B_JOBOPP}{How do respondents assess the job opportunities available in their commune of residence?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
-\item{r8C_ACC_COM}{What level of access to employment are respondents interested in having in their commune of residence?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
-\item{r8D_EMPLSATISF}{How satisfied are respondents with their current job?; this variable is an ordered factor with five levels, "NOT SATISFIED", "LOW SATISFIED", "MEDIUM SATISFIED", "HIGH SATIAFIED", "VHIGH SATISFIED"}
-\item{r8E_TIMECOMMUT}{How long is your regular commuting?; this variable is an ordered factor with four levels, "0-20 min", "20-40 min", "40-60 min", "1h and more"}
-\item{r8F_SCHEDULE}{What is the frequent time of their commuting?; this variable is an ordered factor with six levels, "7:00 - 9:00", "9:00 - 13:00", "13:00 - 15:00", "15:00 - 18:00", "18:00 - 21:00", "Others"}
-\item{r8G_SPENDING}{Monthly expenditure on transport; this variable is an ordered factor with four levels, "Less than 35.000", "35.000-75.000", "75.000-125.000", "More than 125.000"}
+\item{TW_JobAccess}{How much do respondents think their access to the transport network has affected their chances of having a better job?; this variable is an ordered factor with five levels, "NO IMPACT", "MINOR IMPACT", "SOME IMPACT", "MODERATE IMPACT", "MAJOR IMPACT"}
+\item{TW_Job_Opportunity}{How do respondents assess the job opportunities available in their commune of residence?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{TW_Interested_Access}{What level of access to employment are respondents interested in having in their commune of residence?; this variable is an ordered factor with five levels, "POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"}
+\item{TW_Jobsatisfaction}{How satisfied are respondents with their current job?; this variable is an ordered factor with five levels, "NOT SATISFIED", "LOW SATISFIED", "MEDIUM SATISFIED", "HIGH SATIAFIED", "VHIGH SATISFIED"}
+\item{TW_Commute_duration}{How long is your regular commuting?; this variable is an ordered factor with four levels, "0-20 min", "20-40 min", "40-60 min", "1h and more"}
+\item{TW_Commute_schedule}{What is the frequent time of their commuting?; this variable is an ordered factor with six levels, "7:00 - 9:00", "9:00 - 13:00", "13:00 - 15:00", "15:00 - 18:00", "18:00 - 21:00", "Others"}
+\item{TW_Commute_monthlycost}{Monthly expenditure on transport; this variable is an ordered factor with four levels, "Less than 35.000", "35.000-75.000", "75.000-125.000", "More than 125.000"}
 }
 }
 \examples{

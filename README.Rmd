@@ -1,5 +1,7 @@
 ---
 output: github_document
+always_allow_html: yes
+ 
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -13,18 +15,54 @@ knitr::opts_chunk$set(
 )
 ```
 
+```{r  , echo=FALSE, include=FALSE, message=FALSE, error=FALSE, warning=FALSE}
+library(DiagrammeR)
+
+
+DiagrammeR::grViz("digraph {
+
+graph [layout = dot, rankdir = TB]
+
+# define the global styles of the nodes. We can override these in box if we wish
+node [shape = rectangle, style = filled, fillcolor = Linen]
+
+data1 [label = 'Survey Data Preprocessing Guide', shape = rectangle, fillcolor = Beige]
+
+1 [label =  'Navigation to Data Preprocessing Script \n  from data-raw/00-Data-Preprocessing.Rmd']
+
+
+2 [label = 'Package Installation \n and Loading']
+3 [label = 'Loading Communa \n (Municipality) Data
+']
+4 [label = 'Reading and Translating \n Survey Data']
+5 [label = 'Table separation based on \n subject and lable conversion']
+6 [label = 'Saving Data Frames']
+
+7 [label = 'Steps for splitting multiple answers  \n in a single cell']
+
+
+# edge definitions with the node IDs
+{data1}  -> 1 -> 2 -> 3-> 4 -> 5 -> 6-> 7
+}")
+
+```
+
 # bSantiago
+## Introduction
 
-<!-- badges: start -->
-<!-- badges: end -->
+In this notebook we read and preprocess the raw data collected as a paper-based survey conducted face-to-face in Santiago in 2016 by Dr. Beatriz Mella-Lira. The survey collected information on a wide range of travel-related issues (socio-demographics, health-related, perceptions and travel behaviour, travel choices and planning, social interaction factors, built environment, and so on). 
 
-bSantiago is a data package with the results of a 2016 survey conducted in Santiago, Chile, designed to study the health and psychological status of residents in the city with respect to their daily commuting/travel experience. The survey provides data to examine feelings and values with respect to active and motorized modes of transportation.
+The data collection considered a quota-sampling method based on the information from the Pre-census of 2012, and with a total of 451 persons. 
+
+Here is a flowchart starting from raw data to ready for analysis dataset
+
+[![""](Doc/Flowchart.png)](https://paezha.github.io/bSantiago/)
 
 ## Installation
 
 You can install the development version of Santiago from [GitHub](https://github.com/) with:
 
-``` r
+``` {r}
 install.packages("remotes")
 remotes::install_github("paezha/bSantiago")
 ```
