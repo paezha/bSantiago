@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# bSantiago
+# A Reproducible Dataset to Study Transportation, Residential Context, and Well-being in Santiago, Chile in R
 
 ## Introduction
 
@@ -16,100 +16,107 @@ The data collection considered a quota-sampling method based on the
 information from the Pre-census of 2012, and with a total of 451
 persons.
 
-Here is a flowchart starting from raw data to ready for analysis dataset
+To access the raw material used for generating this dataset, we first
+need to learn how to use this repository in `RStudio`.
 
-[![“”](Doc/Flowchart.png)](https://paezha.github.io/bSantiago/)
+This project repository utilizes the
+{[renv](https://rstudio.github.io/renv/)} package to establish a
+reproducible environment. It is designed to facilitate work with the
+bSantiago dataset, titled [A Reproducible Dataset to Study
+Transportation, Residential Context, and Well-being in Santiago, Chile
+in R](https://github.com/paezha/bSantiago/).
 
-## Installation
+The repository offers the necessary setup to recreate the environment
+used for generating the dataset. This encompasses the specific version
+of R and all the packages utilized in the dataset.
+
+## Instructions on using this repository
+
+1.  Begin by installing R as a programming language, ensuring that you
+    select the appropriate version for your operating system. You can
+    find R as a core package here: <https://cran.rstudio.com/>.
+
+2.  Install RStudio, again ensuring that you choose the correct version
+    for your operating system. RStudio serves as an Integrated
+    Development Environment (IDE) and can be downloaded from:
+    <https://www.rstudio.com/products/rstudio/download/>.
+
+3.  If you’re using Windows, download and run the Rtools43 installer
+    from this link:
+    <https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html>.
+    For Mac users, you may need to install Xcode, though we can’t verify
+    this since we don’t have access to Macs. You can find more
+    information here: <https://mac.r-project.org/tools/>.
+
+4.  Download the code from the repository available at:
+    <https://github.com/paezha/bSantiago>. The repository contains a
+    `renv.lock` file specifying all package versions used in the
+    data-set. Open the file and store it in a suitable directory.
+
+5.  Now open the `.RProj` file named “bSantiago” to launch the `R`
+    project in RStudio.
+
+6.  Install the `renv` package by running the following command. After
+    installation, close RStudio and restart your computer.
+
+<!-- -->
+
+    install.packages("Renv")
+
+7.  Double-click the bSantiago.Rproj file to relaunch RStudio. You’ll
+    receive a message in the console indicating that your library is out
+    of sync with the lock file. Ensure both are synchronized by running
+    the code below:
+
+<!-- -->
+
+    renv::restore()
+
+If any individual library fails to install, run:
+
+    install.packages("name of the library")
+
+replacing “name of the library” with the package name. Then run
+`renv::restore()` again. Repeat this process if needed.
+
+8.  Check the status of `renv` by `running renv::status()` in the R
+    Console. The output should display a table where the second and
+    third columns are populated with “y” characters, indicating that the
+    versions of packages on your system match those specified by the
+    `renv.lock` file.
+
+9.  Install `TinyTex` by running `tinytex::install_tinytex()` in the
+    RStudio console. This command allows us to knit PDF from templates.
+
+10. Restart R by navigating to Session -\> Restart R. Then, click the
+    green “+” button and open a new “R Markdown” file. Choose the 4th
+    option in the left panel labeled “From Template”. Select a template
+    option from the {isdas} package, with each template representing a
+    chapter or activity in the web-book. Provide a name for the
+    template, such as “template-1”.
+
+Knit the “template-1.Rmd” to a .pdf file by clicking the arrow on the
+“Knit” button and selecting “PDF”.
+
+Congratulations! You’ve successfully knitted your first PDF file.
+
+## Working with bSantiago data set
+
+Now here is the instructions on how to use raw material to generate all
+the necessary information based on the research objectives. After
+opening a new R Markdown file you can go through the following steps:
+
+### bSantiago Installation
 
 You can install the development version of Santiago from
 [GitHub](https://github.com/) with:
 
-``` r
-install.packages("remotes")
-#> Installing remotes [2.4.2.1] ...
-#>  OK [linked cache]
-remotes::install_github("paezha/bSantiago")
-#> Skipping install of 'bSantiago' from a github remote, the SHA1 (f232cf00) has not changed since last install.
-#>   Use `force = TRUE` to force installation
-```
+    install.packages("remotes")
+    remotes::install_github("paezha/bSantiago")
 
-## Example
+### How to regenerate bSantiago data-set
 
-This example shows how to load one of the data tables included in the
-package:
+Here is a flowchart starting from raw data to ready for analysis
+data-set:
 
-``` r
-library(bSantiago)
-data("Santiago_BE")
-```
-
-The data table `Santiago_BE` includes information about the built
-environment around the place of residence of respondents:
-
-``` r
-summary(Santiago_BE)
-#>        ID          r7AA_AUTOSPACE r7AB_PARKING_NUMB    r7AC_QHIWAY 
-#>  Min.   :  1.0   POOR     : 58    POOR     : 85     POOR     : 41  
-#>  1st Qu.:113.5   FAIR     : 72    FAIR     : 96     FAIR     : 67  
-#>  Median :226.0   GOOD     :127    GOOD     :119     GOOD     :141  
-#>  Mean   :226.0   VERY GOOD:117    VERY GOOD: 88     VERY GOOD:142  
-#>  3rd Qu.:338.5   EXCELLENT: 67    EXCELLENT: 53     EXCELLENT: 49  
-#>  Max.   :451.0   NA's     : 10    NA's     : 10     NA's     : 11  
-#>    r7AD_PEDESTRN    r7AE_QSIDEWA  r7AF_CLEAN_STOP     r7AG_SEAT  
-#>  POOR     : 48   POOR     : 67   POOR     :129    POOR     :142  
-#>  FAIR     : 82   FAIR     :110   FAIR     :108    FAIR     :122  
-#>  GOOD     :141   GOOD     :119   GOOD     :102    GOOD     : 94  
-#>  VERY GOOD:102   VERY GOOD: 99   VERY GOOD: 67    VERY GOOD: 53  
-#>  EXCELLENT: 68   EXCELLENT: 47   EXCELLENT: 36    EXCELLENT: 31  
-#>  NA's     : 10   NA's     :  9   NA's     :  9    NA's     :  9  
-#>      r7AH_CLIMA  r7AI_CICLEWA_NUMB   r7AJ_CICLEWA_Q   r7AK_BICSHARE
-#>  POOR     :156   POOR     :189     POOR     :171    POOR     :177  
-#>  FAIR     :139   FAIR     : 96     FAIR     : 96    FAIR     : 69  
-#>  GOOD     : 88   GOOD     : 84     GOOD     : 96    GOOD     :100  
-#>  VERY GOOD: 36   VERY GOOD: 37     VERY GOOD: 44    VERY GOOD: 47  
-#>  EXCELLENT: 22   EXCELLENT: 36     EXCELLENT: 35    EXCELLENT: 49  
-#>  NA's     : 10   NA's     :  9     NA's     :  9    NA's     :  9  
-#>             r7BA_IMPAUTOSPACE           r7BB_IMPPARKING_NUMB
-#>  NOT IMPORTANT       : 44     NOT IMPORTANT       : 43      
-#>  SLIGHTLY IMPORTANT  : 56     SLIGHTLY IMPORTANT  : 51      
-#>  MODERATELY IMPORTANT:104     MODERATELY IMPORTANT:102      
-#>  IMPORTANT           : 95     IMPORTANT           : 91      
-#>  VERY IMPORTANT      :140     VERY IMPORTANT      :152      
-#>  NA's                : 12     NA's                : 12      
-#>               r7BC_IMPQHIWAY             r7BD_IMPPEDESTRN
-#>  NOT IMPORTANT       : 23    NOT IMPORTANT       : 10    
-#>  SLIGHTLY IMPORTANT  : 21    SLIGHTLY IMPORTANT  :  8    
-#>  MODERATELY IMPORTANT: 82    MODERATELY IMPORTANT: 41    
-#>  IMPORTANT           :100    IMPORTANT           :103    
-#>  VERY IMPORTANT      :214    VERY IMPORTANT      :278    
-#>  NA's                : 11    NA's                : 11    
-#>              r7BE_IMPQSIDEWA            r7BF_IMPCLEAN_STOP
-#>  NOT IMPORTANT       : 10    NOT IMPORTANT       : 10     
-#>  SLIGHTLY IMPORTANT  : 12    SLIGHTLY IMPORTANT  : 13     
-#>  MODERATELY IMPORTANT: 35    MODERATELY IMPORTANT: 39     
-#>  IMPORTANT           : 86    IMPORTANT           : 92     
-#>  VERY IMPORTANT      :297    VERY IMPORTANT      :286     
-#>  NA's                : 11    NA's                : 11     
-#>                r7BG_IMPSEAT              r7BH_IMPCLIMA
-#>  NOT IMPORTANT       : 15   NOT IMPORTANT       : 13  
-#>  SLIGHTLY IMPORTANT  : 19   SLIGHTLY IMPORTANT  : 14  
-#>  MODERATELY IMPORTANT: 56   MODERATELY IMPORTANT: 34  
-#>  IMPORTANT           : 92   IMPORTANT           : 83  
-#>  VERY IMPORTANT      :258   VERY IMPORTANT      :296  
-#>  NA's                : 11   NA's                : 11  
-#>            r7BI_IMPCICLEWA_NUMB            r7BJ_IMPCICLEWA_Q
-#>  NOT IMPORTANT       :  7       NOT IMPORTANT       : 11    
-#>  SLIGHTLY IMPORTANT  : 19       SLIGHTLY IMPORTANT  : 10    
-#>  MODERATELY IMPORTANT: 42       MODERATELY IMPORTANT: 44    
-#>  IMPORTANT           : 76       IMPORTANT           : 67    
-#>  VERY IMPORTANT      :296       VERY IMPORTANT      :308    
-#>  NA's                : 11       NA's                : 11    
-#>              r7BK_IMPBICSHARE
-#>  NOT IMPORTANT       : 14    
-#>  SLIGHTLY IMPORTANT  : 22    
-#>  MODERATELY IMPORTANT: 66    
-#>  IMPORTANT           : 78    
-#>  VERY IMPORTANT      :259    
-#>  NA's                : 12
-```
+[![“”](Doc/Flowchart.png)](https://paezha.github.io/bSantiago/)
