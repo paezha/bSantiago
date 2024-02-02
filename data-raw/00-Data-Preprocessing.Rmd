@@ -14,10 +14,10 @@ This section installs and loads several R packages, including `remotes`, `bSanti
 
 ```{r Package Installation and Loading}
 
-install.packages("remotes")
-remotes::install_github("paezha/bSantiago")
-install.packages("here")
-library(bSantiago)
+#install.packages("remotes")
+#remotes::install_github("paezha/bSantiago")
+#install.packages("here")
+#library(bSantiago)
 library(sf)
 library(readxl)
 library(dplyr)
@@ -222,7 +222,7 @@ Then we need to convert A-Z answers into meaningful answers to have a better und
 
 ```{r INDIVIDUAL CHARACTERISTICS}
 Santiago_IC <- SantiagoSurvey_trans %>%
-  dplyr::select(ID, starts_with("I")) %>%
+  dplyr::select(ID, starts_with("IC")) %>%
   mutate(IC_Gender = factor(IC_Gender, 
                              levels = c("A", "B"), 
                              labels = c("WOMAN", "MAN")))  %>% 

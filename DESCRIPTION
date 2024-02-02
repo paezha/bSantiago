@@ -1,6 +1,6 @@
 Package: bSantiago
 Title: A data package with the results of a travel and well-being survey conducted in Santiago in 2016
-Version: 0.0.0.9-1
+Version: 0.0.0.9-2
 Authors@R: 
     c(person("Antonio", "Paez", , "paezha@mcmaster.ca", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-6912-9919")),
