@@ -65,8 +65,13 @@ This step is crucial for making the code more readable and understandable by usi
 
 ```{r Reading and Translating Survey Data}
 
+# Loading dataset (answers to the questions)
 SantiagoSurvey <- readxl::read_xlsx(paste0(here(), "/data-raw/SantiagoSurvey2016.xlsx"))
+SantiagoSurvey_csv <- readr::read_csv(paste0(here(), "/data-raw/SantiagoSurvey2016.csv"))
 
+# Loading dataset dictionary (the questions)
+SantiagoSurvey_dicxl <- readxl::read_xlsx(paste0(here(), "/data-raw/SantiagoSurvey2016-Survey-Questions-and-Dictionary.xlsx"))
+SantiagoSurvey_diccsv <- readr::read_csv(paste0(here(), "/data-raw/SantiagoSurvey2016-Survey-Questions-and-Dictionary.csv"))
 
 
 SantiagoSurvey_trans <- SantiagoSurvey %>%
