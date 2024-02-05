@@ -104,7 +104,11 @@
 <div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div>
 <p>As a general tip if any individual library fails to install, run:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"name of the library"</span>)</span></code></pre></div>
-<p>replacing “name of the library” with the package name. Then run <code><a href="https://rstudio.github.io/renv/reference/restore.html" class="external-link">renv::restore()</a></code> again. Repeat this process if needed. ### Verify Package Installation</p>
+<p>replacing “name of the library” with the package name. Then run <code><a href="https://rstudio.github.io/renv/reference/restore.html" class="external-link">renv::restore()</a></code> again. Repeat this process if needed.</p>
+</div>
+<div class="section level3">
+<h3 id="verify-package-installation">Verify Package Installation<a class="anchor" aria-label="anchor" href="#verify-package-installation"></a>
+</h3>
 <p>Check the status of the <code>renv</code> environment by running <code><a href="https://rstudio.github.io/renv/reference/status.html" class="external-link">renv::status()</a></code> in the R Console. Ensure that the versions of packages on your system match those specified in the <code>renv.lock</code> file.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">status</span>()</span></code></pre></div>
 </div>
