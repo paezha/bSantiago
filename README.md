@@ -91,8 +91,9 @@ As a general tip if any individual library fails to install, run:
     install.packages("name of the library")
 
 replacing “name of the library” with the package name. Then run
-`renv::restore()` again. Repeat this process if needed. \### Verify
-Package Installation
+`renv::restore()` again. Repeat this process if needed.
+
+### Verify Package Installation
 
 Check the status of the `renv` environment by running `renv::status()`
 in the R Console. Ensure that the versions of packages on your system
